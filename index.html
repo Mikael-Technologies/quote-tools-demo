@@ -21,14 +21,14 @@
 <header><div class="header-inner"><div class="brand"><span class="mark" aria-hidden="true">C</span><div><div class="brand-name">Clearspace</div><div class="micro">Fictional cleaning company</div></div></div><span class="demo-badge">DEMO · FICTIONAL RATES</span></div></header>
 <div id="config-error" class="config-error" role="alert" hidden></div>
 <main class="wrap" id="app"><div class="intro"><div><h1>A clearer cleaning budget.</h1><p>Explore a sample monthly budget for regular office cleaning. Change the space, schedule and service level below.</p></div><span class="tag">Illustrative estimate only</span></div>
-<div class="mobile-budget"><div><span>Illustrative monthly budget · demo</span><strong id="mobile-range">£533–£723</strong><span>Excludes VAT · not a quote</span></div><a href="#budget-result">Details</a></div>
+<div class="mobile-budget"><div><span id="mobile-caption">Illustrative monthly budget · demo</span><strong id="mobile-range">£533–£723</strong><span>Excludes VAT · not a quote</span></div><a href="#budget-result">Details</a></div>
 <div class="layout">
 <form class="input-panel" id="calculator" novalidate autocomplete="off">
-<section class="section" id="inputs"><div class="section-heading"><span class="step">01</span><h2>Your space & schedule</h2></div><div class="two-up"><div><label class="field-label" for="area">Cleanable floor area</label><div class="input-wrap"><input id="area" name="area" type="number" inputmode="decimal" min="0" step="any" required value="350" aria-describedby="area-hint area-error"><span class="unit">m²</span></div><p class="hint" id="area-hint">Area to be cleaned</p><p class="field-error" id="area-error"></p></div><div><label class="field-label" for="frequency">Visits per week</label><select id="frequency" name="frequency" required aria-describedby="frequency-hint"><option value="1">1 visit</option><option value="2">2 visits</option><option value="3" selected>3 visits</option><option value="5">5 visits</option><option value="7">7 visits</option></select><p class="hint" id="frequency-hint">52 weeks a year</p></div></div><div class="scope-field"><label class="field-label" for="scope">Type of cleaning</label><select id="scope" name="scope" required aria-describedby="scope-hint"><option value="office" selected>Routine office cleaning</option><option value="specialist">Specialist or non-standard cleaning</option></select><p class="hint" id="scope-hint">Specialist, clinical, high-level, post-build or one-off work needs a tailored estimate.</p></div></section>
+<section class="section" id="inputs"><div class="section-heading"><span class="step">01</span><h2>Your space & schedule</h2></div><div class="two-up"><div><label class="field-label" for="area">Cleanable floor area</label><div class="input-wrap"><input id="area" name="area" type="number" inputmode="decimal" min="0" step="any" required value="350" aria-describedby="area-hint area-error"><span class="unit">m²</span></div><p class="hint" id="area-hint">Area to be cleaned</p><p class="field-error" id="area-error"></p></div><div><label class="field-label" for="frequency">How often</label><select id="frequency" name="frequency" required aria-describedby="frequency-hint"><option value="1">1 visit a week</option><option value="2">2 visits a week</option><option value="3" selected>3 visits a week</option><option value="5">5 visits a week</option><option value="7">7 visits a week</option><option value="fortnightly">Fortnightly</option><option value="monthly">Monthly</option><option value="one-off">One-off</option></select><p class="hint" id="frequency-hint">Weekly options use 52 weeks a year. The working line shows the sum for the option you pick.</p></div></div><div class="scope-field"><label class="field-label" for="scope">Type of cleaning</label><select id="scope" name="scope" required aria-describedby="scope-hint"><option value="office" selected>Routine office cleaning</option><option value="specialist">Specialist or non-standard cleaning</option></select><p class="hint" id="scope-hint">Specialist, clinical, high-level or post-build work needs a tailored estimate.</p></div></section>
 <section class="section"><div class="section-heading"><span class="step">02</span><h2>Choose a service level</h2></div><fieldset aria-describedby="service-note"><legend class="sr-only">Service level</legend><div class="levels"><label class="level"><input type="radio" name="level" value="essential" required><strong>Essential</strong><small>Core areas<br>× 1.00</small></label><label class="level"><input type="radio" name="level" value="standard" checked><strong>Standard</strong><small>Broader coverage<br>× 1.15</small></label><label class="level"><input type="radio" name="level" value="enhanced"><strong>Enhanced</strong><small>Extra detail<br>× 1.35</small></label></div></fieldset><p class="service-note" id="service-note">Example scope: floors, bins, desks and shared facilities. Exact tasks would be agreed after a survey.</p></section>
-<section class="section"><details class="assumptions" id="assumptions"><summary>Edit the fictional rate assumptions</summary><p class="assumptions-intro">Demo values, not researched market prices. A live pilot would use the cleaning firm's approved rates and scope.</p><div class="assumption-grid"><div><label class="field-label" for="rate">Base £ / m² / visit</label><input id="rate" name="rate" type="number" inputmode="decimal" min="0.01" max="5" step="any" required value="0.12" aria-describedby="rate-error"><p class="field-error" id="rate-error"></p></div><div><label class="field-label" for="minimum">Minimum £ / visit</label><input id="minimum" name="minimum" type="number" inputmode="decimal" min="1" max="1000" step="any" required value="45" aria-describedby="minimum-error"><p class="field-error" id="minimum-error"></p></div><div><label class="field-label" for="variance">Budget range ± %</label><input id="variance" name="variance" type="number" inputmode="decimal" min="0" max="50" step="any" required value="15" aria-describedby="variance-error"><p class="field-error" id="variance-error"></p></div></div><div class="formula"><strong>The calculation, in plain sight</strong>Per visit = the higher of (area × base rate × service multiplier) or the minimum.<br>Monthly midpoint = per visit × visits per week × 52 ÷ 12.<br>Range = midpoint ± the selected percentage, rounded outwards to whole pounds. At ± 0% the figure is the midpoint itself, with no band. This range is a demo setting, not a confidence interval.</div></details><button class="reset" type="reset">Reset to the sample office</button></section>
+<section class="section"><details class="assumptions" id="assumptions"><summary>Edit the fictional rate assumptions</summary><p class="assumptions-intro">Demo values, not researched market prices. A live pilot would use the cleaning firm's approved rates and would not let a visitor change them.</p><div class="assumption-grid"><div><label class="field-label" for="rate">Base £ / m² / visit</label><input id="rate" name="rate" type="number" inputmode="decimal" min="0.01" max="5" step="any" required value="0.12" aria-describedby="rate-error"><p class="field-error" id="rate-error"></p></div><div><label class="field-label" for="minimum">Minimum £ / visit</label><input id="minimum" name="minimum" type="number" inputmode="decimal" min="1" max="1000" step="any" required value="45" aria-describedby="minimum-error"><p class="field-error" id="minimum-error"></p></div><div><label class="field-label" for="variance">Budget range ± %</label><input id="variance" name="variance" type="number" inputmode="decimal" min="0" max="50" step="any" required value="15" aria-describedby="variance-error"><p class="field-error" id="variance-error"></p></div></div><div class="formula"><strong>The calculation, in plain sight</strong>Per visit = the higher of (area × base rate × service multiplier) or the minimum.<br>A weekly option: monthly midpoint = per visit × visits per week × 52 ÷ 12.<br>Fortnightly uses visits per year ÷ 12. Monthly uses visits per month. A one-off job is the visit charge on its own.<br>Range = that figure ± the selected percentage, rounded outwards to whole pounds. At ± 0% the figure is the midpoint itself, with no band. This range is a demo setting, not a confidence interval.</div></details><button class="reset" type="reset">Reset to the sample office</button></section>
 </form>
-<aside id="budget-result" class="result-card" aria-label="Illustrative budget result"><div class="result-top"><span class="eyebrow">Your sample budget</span><span class="sample-label">FICTIONAL RATES</span></div><div id="result-valid"><p class="estimate-label" id="estimate-label">Monthly budget range</p><div class="price" id="monthly-range">£533–£723</div><p class="price-note">GBP · excludes VAT and any additional charges</p><p class="workings" id="workings">£48.30 × 3 × 52 ÷ 12 = £627.90 a month. The range is £627.90 ± 15%, rounded outwards to whole pounds.</p><div class="range-track" id="range-track" aria-hidden="true"></div><dl class="breakdown"><div><dt>Sample area</dt><dd id="result-area">350 m²</dd></div><div><dt>Rate × service level</dt><dd id="result-rate">£0.12 × 1.15</dd></div><div><dt id="per-visit-label">Per visit</dt><dd id="per-visit">£48.30</dd></div><div><dt>Average visits / month</dt><dd id="monthly-visits">13</dd></div><div class="total-row"><dt>Monthly midpoint</dt><dd id="midpoint">£627.90</dd></div></dl><p id="minimum-note" class="price-note" hidden></p></div><div id="result-invalid" class="result-invalid" hidden><h2 id="invalid-heading">Check your inputs</h2><p id="invalid-detail"></p></div><p class="disclaimer"><strong>Illustrative estimate only.</strong> These invented figures are for testing the calculator. They are not a quote or an offer. A survey, confirmed scope and approved rates are needed before any real price.</p><button type="button" class="primary" id="survey" aria-haspopup="dialog" aria-controls="survey-dialog">Preview survey request</button><div class="secondary-actions"><button type="button" id="download">Download summary</button><button type="button" id="print">Print / save PDF</button></div><p class="privacy-note">Nothing is stored in this browser. This preview does not send the form.</p>
+<aside id="budget-result" class="result-card" aria-label="Illustrative budget result"><div class="result-top"><span class="eyebrow">Your sample budget</span><span class="sample-label">FICTIONAL RATES</span></div><div id="result-valid"><p class="estimate-label" id="estimate-label">Monthly budget range</p><div class="price" id="monthly-range">£533–£723</div><p class="price-note">GBP · excludes VAT and any additional charges</p><p class="workings" id="workings">£48.30 × 3 × 52 ÷ 12 = £627.90 a month. The range is £627.90 ± 15%, rounded outwards to whole pounds.</p><div class="range-track" id="range-track" aria-hidden="true"></div><dl class="breakdown"><div><dt>Sample area</dt><dd id="result-area">350 m²</dd></div><div><dt>Rate × service level</dt><dd id="result-rate">£0.12 × 1.15</dd></div><div><dt id="per-visit-label">Per visit</dt><dd id="per-visit">£48.30</dd></div><div><dt id="visits-label">Average visits / month</dt><dd id="monthly-visits">13</dd></div><div class="total-row"><dt id="midpoint-label">Monthly midpoint</dt><dd id="midpoint">£627.90</dd></div></dl><p id="minimum-note" class="price-note" hidden></p></div><div id="result-invalid" class="result-invalid" hidden><h2 id="invalid-heading">Check your inputs</h2><p id="invalid-detail"></p></div><p class="disclaimer"><strong>Illustrative estimate only.</strong> These invented figures are for testing the calculator. They are not a quote or an offer. A survey, confirmed scope and approved rates are needed before any real price.</p>
 <div class="enquiry" id="enquiry">
 <p id="enquiry-fallback" class="enquiry-fallback" hidden></p>
 <button type="button" class="primary" id="enquiry-open" aria-expanded="false" aria-controls="enquiry-form">Send this estimate to Clearspace</button>
@@ -52,10 +52,10 @@
 <div id="enquiry-copy-wrap" hidden><p id="enquiry-copy-label">The message was not sent. Copy this summary if you want to keep it.</p><textarea id="enquiry-copy" class="enquiry-copy" readonly aria-labelledby="enquiry-copy-label"></textarea></div>
 </form>
 </div>
+<div class="secondary-actions"><button type="button" id="download">Download summary</button><button type="button" id="print">Print / save PDF</button></div><p class="privacy-note">Nothing is stored in this browser. This preview does not send the form.</p>
 <a class="mobile-edit" href="#inputs">Change the sample inputs</a><div class="print-only" id="print-summary"></div><div class="sr-only" role="status" aria-live="polite" id="live-result"></div></aside>
 </div><p class="below-note">Model boundaries: 20–10,000 m². Routine office cleaning is priced inside that area. Consumables, equipment, travel, specialist tasks and other extras are excluded. The example assumes 52 operating weeks and does not adjust for holidays.</p></main>
 <footer><span>Demo experience by <strong>MikaelTech</strong></span><span>Clearspace is a fictional brand. No cleaning service is being offered.</span></footer>
-<dialog id="survey-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-body"><span class="demo-badge">DEMO · NOTHING IS SENT</span><h2 id="dialog-title">The next step would be a site survey.</h2><p id="dialog-body">In a live version, the cleaning firm would confirm the scope and route an enquiry to its approved contact channel.</p><div class="dialog-summary" id="survey-summary"></div><p id="dialog-footnote">This prototype has no contact form, booking system or inbox connection.</p><button class="primary" id="simulate" type="button">Close preview</button><button class="close-dialog" id="close-dialog" type="button">Back to calculator</button></dialog>
 <div id="toast" class="toast" role="status" hidden></div>
 <noscript><p style="padding:24px">JavaScript is required for this calculator. The figures displayed are a fictional sample, not a quote.</p></noscript>
 <script>
@@ -63,17 +63,20 @@
 // Pure calculator and firm-config checks. No DOM, network, storage or dependencies.
 // Node loads this file directly. The page build inlines it into dist/index.html.
 
-const TOP_KEYS = ['firm', 'branding', 'currency', 'enquiry', 'pricing'];
-const FIRM_KEYS = ['name', 'mark', 'tagline', 'product'];
+const TOP_KEYS = ['firm', 'branding', 'currency', 'enquiry', 'assumptions', 'pricing'];
+const FIRM_KEYS = ['name', 'mark', 'tagline', 'product', 'isFictional'];
 const BRAND_KEYS = ['demoLabel', 'illustrativeLabel', 'headline', 'intro', 'fictionalNotice'];
 const CURRENCY_KEYS = ['code', 'locale', 'vatLabel', 'vatShort'];
-const ENQUIRY_KEYS = ['button', 'tailoredButton', 'title', 'tailoredTitle', 'body', 'footnote', 'destination', 'close', 'back', 'mode', 'endpoint', 'recipientLabel', 'privacyNote', 'privacyUrl', 'successMessage', 'extraFields'];
+const ENQUIRY_KEYS = ['destination', 'mode', 'endpoint', 'recipientLabel', 'privacyNote', 'privacyUrl', 'successMessage', 'extraFields'];
 const EXTRA_FIELD_KEYS = ['phone', 'postcode', 'preferredStart'];
+const ASSUMPTION_KEYS = ['visitorEditable'];
 const PRICING_KEYS = ['weeksPerYear', 'area', 'rate', 'minimum', 'variancePercent', 'frequencies', 'defaultFrequency', 'levels', 'scopes'];
 const BOUND_KEYS = ['default', 'min', 'max'];
 const LEVEL_KEYS = ['id', 'label', 'factor', 'detail', 'note', 'default'];
 const SCOPE_KEYS = ['id', 'label', 'priced', 'reason'];
+const FREQUENCY_KEYS = ['id', 'label', 'visitsPerWeek', 'visitsPerYear', 'visitsPerMonth', 'oneOff'];
 const ID_PATTERN = /^[a-z][a-z0-9-]{0,30}$/;
+const FREQUENCY_ID = /^[a-z0-9][a-z0-9-]{0,30}$/;
 
 function isObject(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -136,9 +139,8 @@ function validateConfig(raw) {
   }
   unknownKeys(raw, TOP_KEYS, 'config', errors);
   for (const key of TOP_KEYS) {
-    if (!isObject(raw[key]) && key !== 'pricing') {
-      if (!isObject(raw[key])) push(errors, key, 'is required.');
-    }
+    if (key === 'assumptions' || key === 'pricing') continue;
+    if (!isObject(raw[key])) push(errors, key, 'is required.');
   }
   if (!isObject(raw.pricing)) push(errors, 'pricing', 'is required.');
 
@@ -148,6 +150,20 @@ function validateConfig(raw) {
   text(firm.mark, 'firm.mark', errors, 2);
   text(firm.tagline, 'firm.tagline', errors, 80);
   text(firm.product, 'firm.product', errors, 40);
+  if (typeof firm.isFictional !== 'boolean') push(errors, 'firm.isFictional', 'must be true or false.');
+
+  let visitorEditable = true;
+  if (raw.assumptions !== undefined) {
+    if (!isObject(raw.assumptions)) push(errors, 'assumptions', 'must be an object.');
+    else {
+      unknownKeys(raw.assumptions, ASSUMPTION_KEYS, 'assumptions', errors);
+      if (typeof raw.assumptions.visitorEditable !== 'boolean') push(errors, 'assumptions.visitorEditable', 'must be true or false.');
+      else visitorEditable = raw.assumptions.visitorEditable;
+    }
+  }
+  if (firm.isFictional === false && visitorEditable) {
+    push(errors, 'assumptions.visitorEditable', 'must be false when firm.isFictional is false. A live firm cannot let visitors change its prices.');
+  }
 
   const branding = isObject(raw.branding) ? raw.branding : {};
   unknownKeys(raw.branding, BRAND_KEYS, 'branding', errors);
@@ -177,15 +193,7 @@ function validateConfig(raw) {
 
   const enquiry = isObject(raw.enquiry) ? raw.enquiry : {};
   unknownKeys(raw.enquiry, ENQUIRY_KEYS, 'enquiry', errors);
-  text(enquiry.button, 'enquiry.button', errors, 60);
-  text(enquiry.tailoredButton, 'enquiry.tailoredButton', errors, 60);
-  text(enquiry.title, 'enquiry.title', errors, 120);
-  text(enquiry.tailoredTitle, 'enquiry.tailoredTitle', errors, 120);
-  text(enquiry.body, 'enquiry.body', errors, 320, { multiline: true });
-  text(enquiry.footnote, 'enquiry.footnote', errors, 240, { multiline: true });
   text(enquiry.destination, 'enquiry.destination', errors, 200, { multiline: true });
-  text(enquiry.close, 'enquiry.close', errors, 40);
-  text(enquiry.back, 'enquiry.back', errors, 40);
   const mode = enquiry.mode;
   if (mode !== 'preview' && mode !== 'live') push(errors, 'enquiry.mode', 'must be preview or live.');
   text(enquiry.recipientLabel, 'enquiry.recipientLabel', errors, 80);
@@ -229,21 +237,7 @@ function validateConfig(raw) {
   bounds(pricing.minimum, 'pricing.minimum', errors, { minAllowed: 0.01, maxAllowed: 10000000 });
   bounds(pricing.variancePercent, 'pricing.variancePercent', errors, { minAllowed: 0, maxAllowed: 100, allowMinEqualMax: true });
 
-  if (!Array.isArray(pricing.frequencies) || pricing.frequencies.length < 1 || pricing.frequencies.length > 14) {
-    push(errors, 'pricing.frequencies', 'must list between 1 and 14 visit frequencies.');
-  } else {
-    const seen = new Set();
-    pricing.frequencies.forEach((value, index) => {
-      if (typeof value !== 'number' || !Number.isInteger(value) || value < 1 || value > 14) {
-        push(errors, 'pricing.frequencies[' + index + ']', 'must be a whole number from 1 to 14.');
-      } else if (seen.has(value)) {
-        push(errors, 'pricing.frequencies', 'lists ' + value + ' more than once.');
-      } else seen.add(value);
-    });
-    if (typeof pricing.defaultFrequency !== 'number' || !seen.has(pricing.defaultFrequency)) {
-      push(errors, 'pricing.defaultFrequency', 'must be one of the listed frequencies.');
-    }
-  }
+  const normalizedFrequencies = readFrequencies(pricing, errors);
 
   if (!Array.isArray(pricing.levels) || pricing.levels.length < 1 || pricing.levels.length > 6) {
     push(errors, 'pricing.levels', 'must list between 1 and 6 service levels.');
@@ -300,7 +294,103 @@ function validateConfig(raw) {
   const config = JSON.parse(JSON.stringify(raw));
   config.enquiry.extraFields = extra;
   if (typeof config.enquiry.endpoint !== 'string') config.enquiry.endpoint = '';
+  config.assumptions = { visitorEditable };
+  config.pricing.frequencies = normalizedFrequencies;
   return { ok: true, config, delivery, errors: [] };
+}
+
+function readFrequencies(pricing, errors) {
+  const list = pricing.frequencies;
+  if (!Array.isArray(list) || list.length < 1 || list.length > 14) {
+    push(errors, 'pricing.frequencies', 'must list between 1 and 14 visit frequencies.');
+    return null;
+  }
+  const numbers = list.every(value => typeof value === 'number');
+  const objects = list.every(value => isObject(value));
+  if (!numbers && !objects) {
+    push(errors, 'pricing.frequencies', 'must be whole numbers or frequency objects, not a mix.');
+    return null;
+  }
+  if (numbers) {
+    const seen = new Set();
+    let ok = true;
+    list.forEach((value, index) => {
+      if (!Number.isInteger(value) || value < 1 || value > 14) {
+        push(errors, 'pricing.frequencies[' + index + ']', 'must be a whole number from 1 to 14.');
+        ok = false;
+      } else if (seen.has(value)) {
+        push(errors, 'pricing.frequencies', 'lists ' + value + ' more than once.');
+        ok = false;
+      } else seen.add(value);
+    });
+    if (typeof pricing.defaultFrequency !== 'number' || !seen.has(pricing.defaultFrequency)) {
+      push(errors, 'pricing.defaultFrequency', 'must be one of the listed frequencies.');
+      ok = false;
+    }
+    return ok ? list.map(value => ({
+      id: String(value),
+      label: value === 1 ? '1 visit a week' : value + ' visits a week',
+      visitsPerWeek: value
+    })) : null;
+  }
+  const seen = new Set();
+  const normalized = [];
+  let ok = true;
+  list.forEach((item, index) => {
+    const path = 'pricing.frequencies[' + index + ']';
+    let itemOk = true;
+    unknownKeys(item, FREQUENCY_KEYS, path, errors);
+    if (typeof item.id !== 'string' || !FREQUENCY_ID.test(item.id)) {
+      push(errors, path + '.id', 'must be a short lowercase id.');
+      itemOk = false;
+    } else if (seen.has(item.id)) {
+      push(errors, 'pricing.frequencies', 'lists ' + item.id + ' more than once.');
+      itemOk = false;
+    } else seen.add(item.id);
+    if (typeof item.label !== 'string' || item.label.trim() === '') itemOk = false;
+    text(item.label, path + '.label', errors, 40);
+    const modes = ['visitsPerWeek', 'visitsPerYear', 'visitsPerMonth'].filter(key => item[key] !== undefined);
+    if (item.oneOff !== undefined && item.oneOff !== true) {
+      push(errors, path + '.oneOff', 'must be true for a one-off job.');
+      itemOk = false;
+    }
+    const oneOff = item.oneOff === true;
+    if (oneOff && modes.length) {
+      push(errors, path, 'must set either oneOff or a visit count, not both.');
+      itemOk = false;
+    } else if (!oneOff && modes.length !== 1) {
+      push(errors, path, 'must set one of visitsPerWeek, visitsPerYear, visitsPerMonth, or oneOff.');
+      itemOk = false;
+    }
+    if (item.visitsPerWeek !== undefined && (!Number.isInteger(item.visitsPerWeek) || item.visitsPerWeek < 1 || item.visitsPerWeek > 14)) {
+      push(errors, path + '.visitsPerWeek', 'must be a whole number from 1 to 14.');
+      itemOk = false;
+    }
+    if (item.visitsPerYear !== undefined && (!Number.isInteger(item.visitsPerYear) || item.visitsPerYear < 1 || item.visitsPerYear > 366)) {
+      push(errors, path + '.visitsPerYear', 'must be a whole number from 1 to 366.');
+      itemOk = false;
+    }
+    if (item.visitsPerMonth !== undefined && (!(typeof item.visitsPerMonth === 'number' && Number.isFinite(item.visitsPerMonth)) || item.visitsPerMonth <= 0 || item.visitsPerMonth > 62)) {
+      if (!(typeof item.visitsPerMonth === 'number' && Number.isFinite(item.visitsPerMonth))) push(errors, path + '.visitsPerMonth', 'must be a finite number.');
+      else push(errors, path + '.visitsPerMonth', 'must be greater than 0 and at most 62.');
+      itemOk = false;
+    }
+    if (!itemOk) {
+      ok = false;
+      return;
+    }
+    const next = { id: item.id, label: item.label };
+    if (oneOff) next.oneOff = true;
+    else if (item.visitsPerWeek !== undefined) next.visitsPerWeek = item.visitsPerWeek;
+    else if (item.visitsPerYear !== undefined) next.visitsPerYear = item.visitsPerYear;
+    else next.visitsPerMonth = item.visitsPerMonth;
+    normalized.push(next);
+  });
+  if (typeof pricing.defaultFrequency === 'object' || !seen.has(String(pricing.defaultFrequency))) {
+    push(errors, 'pricing.defaultFrequency', 'must be one of the listed frequencies.');
+    ok = false;
+  }
+  return ok ? normalized : null;
 }
 
 function failure(errors) {
@@ -390,7 +480,24 @@ function createCalculator(raw) {
   const pricing = config.pricing;
   const delivery = loaded.delivery;
 
-  function calculate(s) {
+  function frequencyOf(key) {
+    return pricing.frequencies.find(item => item.id === String(key));
+  }
+
+  function frequencyMath(freq) {
+    const weeks = pricing.weeksPerYear;
+    if (freq.oneOff) return { visits: 1, step: '', kind: 'one-off' };
+    if (freq.visitsPerWeek != null) return { visits: freq.visitsPerWeek * weeks / 12, step: freq.visitsPerWeek + ' × ' + weeks + ' ÷ 12', kind: 'week' };
+    if (freq.visitsPerYear != null) return { visits: freq.visitsPerYear / 12, step: freq.visitsPerYear + ' ÷ 12', kind: 'year' };
+    return { visits: freq.visitsPerMonth, step: String(freq.visitsPerMonth), kind: 'month' };
+  }
+
+  function calculate(input) {
+    const s = config.assumptions.visitorEditable ? input : Object.assign({}, input, {
+      rate: pricing.rate.default,
+      minimum: pricing.minimum.default,
+      variance: pricing.variancePercent.default
+    });
     const errors = {};
     const finite = value => typeof value === 'number' && Number.isFinite(value);
     if (!finite(s.area) || s.area <= 0) errors.area = 'Enter an area greater than zero.';
@@ -403,7 +510,8 @@ function createCalculator(raw) {
     if (!finite(s.variance) || s.variance < pricing.variancePercent.min || s.variance > pricing.variancePercent.max) {
       errors.variance = 'Use a range from ' + plain(config, pricing.variancePercent.min, 2) + '% to ' + plain(config, pricing.variancePercent.max, 2) + '%.';
     }
-    if (!pricing.frequencies.includes(s.frequency)) errors.frequency = 'Choose an available visit frequency.';
+    const freq = frequencyOf(s.frequency);
+    if (!freq) errors.frequency = 'Choose an available visit frequency.';
     if (!levelById(config, s.level)) errors.level = 'Choose a service level.';
     if (!scopeById(config, s.scope)) errors.scope = 'Choose a cleaning type.';
     if (Object.keys(errors).length) return { status: 'invalid', errors };
@@ -419,8 +527,9 @@ function createCalculator(raw) {
     const factor = level.factor;
     const rawVisit = s.area * s.rate * factor;
     const visit = Math.max(rawVisit, s.minimum);
-    const visits = s.frequency * pricing.weeksPerYear / 12;
-    const midpoint = visit * visits;
+    const math = frequencyMath(freq);
+    const visits = math.visits;
+    const midpoint = freq.oneOff ? visit : visit * visits;
     // A ±0% setting is the midpoint itself. Outward whole-pound rounding applies only when a range was asked for.
     const spread = s.variance > 0;
     const low = spread ? Math.floor(midpoint * (1 - s.variance / 100) + 1e-8) : midpoint;
@@ -435,6 +544,13 @@ function createCalculator(raw) {
       low,
       high,
       spread,
+      oneOff: !!freq.oneOff,
+      frequencyId: freq.id,
+      frequencyLabel: freq.label,
+      billing: freq.oneOff ? 'one-off' : 'monthly',
+      usedRate: s.rate,
+      usedMinimum: s.minimum,
+      usedVariance: s.variance,
       minimumApplied: rawVisit < s.minimum,
       errors: {}
     };
@@ -451,25 +567,49 @@ function createCalculator(raw) {
   }
 
   function workingsText(state, result) {
-    const weeks = pricing.weeksPerYear;
+    const freq = frequencyOf(state.frequency);
+    const math = frequencyMath(freq);
+    const variance = result.usedVariance != null ? result.usedVariance : state.variance;
     const per = money(config, result.visit);
     const mid = money(config, result.midpoint);
-    const step = state.frequency + ' × ' + weeks + ' ÷ 12';
     const visit2 = Math.round(result.visit * 100) / 100;
     const mid2 = Math.round(result.midpoint * 100) / 100;
-    const aligned = Math.abs(result.visit - visit2) < 1e-6 && Math.abs(visit2 * state.frequency * weeks / 12 - mid2) < 0.005;
-    const sum = aligned
-      ? per + ' × ' + step + ' = ' + mid + ' a month.'
-      : 'Monthly midpoint = per visit × ' + step + ', shown to the nearest penny.';
+    const visitExact = Math.abs(result.visit - visit2) < 1e-6;
+    let sum;
+    if (freq.oneOff) {
+      sum = visitExact && Math.abs(visit2 - mid2) < 0.005
+        ? per + ' for this job.'
+        : 'One-off job total = per visit, shown to the nearest penny.';
+    } else {
+      const product = math.kind === 'week'
+        ? visit2 * freq.visitsPerWeek * pricing.weeksPerYear / 12
+        : math.kind === 'year'
+          ? visit2 * freq.visitsPerYear / 12
+          : visit2 * freq.visitsPerMonth;
+      sum = visitExact && Math.abs(product - mid2) < 0.005
+        ? per + ' × ' + math.step + ' = ' + mid + ' a month.'
+        : 'Monthly midpoint = per visit × ' + math.step + ', shown to the nearest penny.';
+    }
     return result.spread
-      ? sum + ' The range is ' + mid + ' ± ' + plain(config, state.variance) + '%, rounded outwards to whole pounds.'
+      ? sum + ' The range is ' + mid + ' ± ' + plain(config, variance) + '%, rounded outwards to whole pounds.'
       : sum + ' No ± range is applied.';
+  }
+
+  function scheduleLines(state) {
+    const freq = frequencyOf(state.frequency);
+    if (!freq) return ['Frequency: not selected', 'Billing: not selected'];
+    let detail = freq.label;
+    if (freq.visitsPerWeek != null) detail += ', ' + pricing.weeksPerYear + ' weeks per year';
+    else if (freq.visitsPerYear != null) detail += ', ' + freq.visitsPerYear + ' visits a year';
+    else if (freq.oneOff) detail += ', single job';
+    else detail += ', ' + plain(config, freq.visitsPerMonth, 4) + (freq.visitsPerMonth === 1 ? ' visit a month' : ' visits a month');
+    return ['Frequency: ' + detail, 'Billing: ' + (freq.oneOff ? 'One-off' : 'Monthly')];
   }
 
   function minimumNote(state, result) {
     if (!result.minimumApplied) return '';
     const calculated = moneyFlex(config, result.rawVisit);
-    const floor = moneyFlex(config, state.minimum);
+    const floor = moneyFlex(config, result.usedMinimum != null ? result.usedMinimum : state.minimum);
     if (calculated === floor) return 'Minimum visit charge of ' + floor + ' applies.';
     return 'Calculated visit is ' + calculated + ', below the ' + floor + ' minimum, so the minimum is used.';
   }
@@ -483,14 +623,14 @@ function createCalculator(raw) {
     const level = levelById(config, state.level);
     const lines = [
       'Cleaning scope: ' + scopeLabel(state),
-      'Cleanable area: ' + plain(config, state.area, 8) + ' m²',
-      'Schedule: ' + state.frequency + ' visits / week',
+      'Cleanable area: ' + plain(config, state.area, 8) + ' m²'
+    ].concat(scheduleLines(state), [
       'Service level: ' + (level ? level.label : '')
-    ];
+    ]);
     const estimate = result.status === 'tailored'
       ? ['No estimate available.', result.reason]
       : [
-          'Illustrative monthly ' + (result.spread ? 'range' : 'budget') + ': ' + monthlyFigure(result),
+          'Illustrative ' + (result.oneOff ? 'one-off job ' : 'monthly ') + (result.spread ? 'range' : 'budget') + ': ' + monthlyFigure(result),
           'Excludes VAT and additional charges. Not a quote or an offer.'
         ];
     return lines.concat([''], estimate, ['', config.enquiry.destination]).join('\n');
@@ -500,33 +640,51 @@ function createCalculator(raw) {
     if (result.status !== 'valid') return surveyText(state, result);
     const level = levelById(config, state.level);
     const note = minimumNote(state, result);
+    const freq = frequencyOf(state.frequency);
+    const rate = result.usedRate != null ? result.usedRate : state.rate;
+    const minimum = result.usedMinimum != null ? result.usedMinimum : state.minimum;
+    const variance = result.usedVariance != null ? result.usedVariance : state.variance;
+    const totalLabel = result.oneOff
+      ? (result.spread ? 'One-off job range' : 'One-off job')
+      : (result.spread ? 'Monthly budget range' : 'Monthly budget');
     const lines = [
       config.firm.name.toUpperCase(),
       config.firm.tagline,
       'ILLUSTRATIVE BUDGET. NOT A QUOTE OR AN OFFER.',
       '',
-      'Cleanable area: ' + plain(config, state.area, 8) + ' m²',
-      'Schedule: ' + state.frequency + ' visits per week, ' + pricing.weeksPerYear + ' weeks per year',
+      'Cleanable area: ' + plain(config, state.area, 8) + ' m²'
+    ].concat(scheduleLines(state), [
       'Service: ' + level.label + ' (× ' + result.factor.toFixed(2) + ')',
-      'Base rate: ' + moneyFlex(config, state.rate) + ' / m² / visit',
-      'Minimum per visit: ' + moneyFlex(config, state.minimum),
-      'Selected range: ± ' + plain(config, state.variance) + '%',
+      'Base rate: ' + moneyFlex(config, rate) + ' / m² / visit',
+      'Minimum per visit: ' + moneyFlex(config, minimum),
+      'Selected range: ± ' + plain(config, variance) + '%',
       '',
       'Per visit: ' + money(config, result.visit) + (result.minimumApplied ? ' (minimum applies)' : ''),
-      'Average visits per month: ' + formatVisits(result.visits),
-      'Monthly midpoint: ' + money(config, result.midpoint),
-      (result.spread ? 'Monthly budget range' : 'Monthly budget') + ': ' + monthlyFigure(result),
+      result.oneOff ? 'Schedule: One-off' : 'Average visits per month: ' + formatVisits(result.visits),
+      (result.oneOff ? 'Job total: ' : 'Monthly midpoint: ') + money(config, result.midpoint),
+      totalLabel + ': ' + monthlyFigure(result),
       workingsText(state, result)
-    ];
+    ]);
     if (note) lines.push(note);
+    const formulaLine = freq.oneOff
+      ? 'One-off job total = per visit.'
+      : freq.visitsPerWeek != null
+        ? 'Monthly midpoint = per visit × weekly visits × ' + pricing.weeksPerYear + ' ÷ 12.'
+        : freq.visitsPerYear != null
+          ? 'Monthly midpoint = per visit × ' + freq.visitsPerYear + ' ÷ 12.'
+          : 'Monthly midpoint = per visit × ' + freq.visitsPerMonth + '.';
     lines.push(
       '',
       config.currency.code + '. ' + config.currency.vatLabel.charAt(0).toUpperCase() + config.currency.vatLabel.slice(1) + '.',
       'Per visit = max(area × base rate × service multiplier, minimum).',
-      'Monthly midpoint = per visit × weekly visits × ' + pricing.weeksPerYear + ' ÷ 12.',
-      'The ± range applies to the monthly midpoint only, then rounds outwards to whole pounds.',
+      formulaLine,
+      result.oneOff
+        ? 'The ± range applies to the job total, then rounds outwards to whole pounds.'
+        : 'The ± range applies to the monthly midpoint only, then rounds outwards to whole pounds.',
       'At ± 0% the result is the midpoint itself, not a one-pound band.',
-      'The range is a demo setting, not a confidence interval.',
+      config.assumptions.visitorEditable
+        ? 'The range is a demo setting, not a confidence interval.'
+        : 'The range is the firm\'s configured allowance, not a confidence interval.',
       'Consumables, equipment, travel, specialist work and other extras are excluded.',
       'Holidays are not adjusted for. A survey, confirmed scope and approved rates are required for a real price.',
       '',
@@ -544,14 +702,19 @@ function createCalculator(raw) {
       figure,
       workings: result.status === 'valid' ? workingsText(state, result) : '',
       area: result.status === 'valid' ? plain(config, state.area, 8) + ' m²' : '',
-      rate: result.status === 'valid' ? moneyFlex(config, state.rate) + ' × ' + result.factor.toFixed(2) : '',
+      rate: result.status === 'valid' ? moneyFlex(config, result.usedRate != null ? result.usedRate : state.rate) + ' × ' + result.factor.toFixed(2) : '',
       perVisit: result.status === 'valid' ? money(config, result.visit) : '',
-      visits: result.status === 'valid' ? formatVisits(result.visits) : '',
+      visits: result.status === 'valid' ? (result.oneOff ? 'One-off' : formatVisits(result.visits)) : '',
       midpoint: result.status === 'valid' ? money(config, result.midpoint) : '',
       minimumNote: result.status === 'valid' ? minimumNote(state, result) : '',
-      estimateLabel: result.spread ? 'Monthly budget range' : 'Monthly budget',
+      estimateLabel: result.status === 'valid'
+        ? (result.oneOff ? (result.spread ? 'One-off job range' : 'One-off job') : (result.spread ? 'Monthly budget range' : 'Monthly budget'))
+        : '',
+      visitsLabel: result.oneOff ? 'Schedule' : 'Average visits / month',
+      midpointLabel: result.oneOff ? 'Job total' : 'Monthly midpoint',
+      mobileCaption: (result.oneOff ? 'Illustrative one-off job' : 'Illustrative monthly budget') + (config.firm.isFictional ? ' · demo' : ''),
       live: result.status === 'valid'
-        ? 'Illustrative monthly estimate ' + figure + ', excluding VAT and additional charges. Not a quote.'
+        ? 'Illustrative ' + (result.oneOff ? 'one-off job' : 'monthly') + ' estimate ' + figure + ', excluding VAT and additional charges. Not a quote.'
         : '',
       survey: surveyText(state, result),
       summary: summaryText(state, result),
@@ -561,6 +724,7 @@ function createCalculator(raw) {
   }
 
   function assumptionNotes(state) {
+    if (!config.assumptions.visitorEditable) return [];
     const notes = [];
     if (state.rate !== pricing.rate.default) notes.push('base rate ' + moneyFlex(config, state.rate) + ' (configuration ' + moneyFlex(config, pricing.rate.default) + ')');
     if (state.minimum !== pricing.minimum.default) notes.push('minimum ' + moneyFlex(config, state.minimum) + ' (configuration ' + moneyFlex(config, pricing.minimum.default) + ')');
@@ -577,17 +741,18 @@ function createCalculator(raw) {
     const survey = result.status !== 'valid';
     const notes = assumptionNotes(state);
     const indicative = 'Indicative estimate only. Not a quote or an offer.';
+    const freq = frequencyOf(state.frequency);
     const lines = [
       survey ? 'Request a site survey. No price is included.' : 'Estimate details',
       'Cleaning type: ' + (scope ? scope.label : ''),
-      'Floor area: ' + plain(config, state.area, 8) + ' m²',
-      'Visits per week: ' + state.frequency,
+      'Floor area: ' + plain(config, state.area, 8) + ' m²'
+    ].concat(scheduleLines(state), [
       'Service level: ' + (level ? level.label : '')
-    ];
+    ]);
     if (!survey) {
       const range = result.spread ? money(config, result.low, 0) + '–' + money(config, result.high, 0) : money(config, result.midpoint);
       lines.push('Per visit: ' + money(config, result.visit));
-      lines.push('Monthly range: ' + range);
+      lines.push((freq && freq.oneOff ? (result.spread ? 'One-off job range: ' : 'One-off job: ') : (result.spread ? 'Monthly range: ' : 'Monthly budget: ')) + range);
       lines.push('VAT: ' + config.currency.vatLabel);
     } else if (result.reason) lines.push(result.reason);
     lines.push(indicative);
@@ -619,6 +784,7 @@ function createCalculator(raw) {
     if (!result || result.status === 'invalid') errors.estimate = 'Correct the highlighted calculator inputs before sending an enquiry.';
     const sheet = enquirySummary(state, result);
     if (Object.keys(errors).length) return Object.assign(blank, { errors, summary: sheet.summary });
+    const freq = frequencyOf(state.frequency);
     const payload = {
       subject: (sheet.kind === 'survey' ? 'Site survey request' : 'Cleaning estimate enquiry') + ' from ' + name,
       name,
@@ -629,19 +795,23 @@ function createCalculator(raw) {
       enquiry_type: sheet.kind === 'survey' ? 'site_survey' : 'estimate',
       cleaning_type: scopeById(config, state.scope).label,
       floor_area: plain(config, state.area, 8) + ' m²',
-      visits_per_week: String(state.frequency),
+      frequency_label: freq ? freq.label : '',
+      billing: freq && freq.oneOff ? 'one-off' : 'monthly',
       service_level: levelById(config, state.level).label,
       indicative: sheet.indicative,
       assumptions_changed: sheet.assumptionsChanged ? 'yes' : 'no',
       summary: sheet.summary
     };
+    if (freq && freq.visitsPerWeek != null) payload.visits_per_week = String(freq.visitsPerWeek);
     if (fields.phone) payload.phone = phone;
     if (fields.postcode) payload.postcode = postcode;
     if (fields.preferredStart) payload.preferred_start = preferredStart;
     if (sheet.kind === 'estimate') {
+      const range = result.spread ? money(config, result.low, 0) + '–' + money(config, result.high, 0) : money(config, result.midpoint);
       payload.vat = config.currency.vatLabel;
       payload.per_visit = money(config, result.visit);
-      payload.monthly_range = result.spread ? money(config, result.low, 0) + '–' + money(config, result.high, 0) : money(config, result.midpoint);
+      if (freq && freq.oneOff) payload.job_total = range;
+      else payload.monthly_range = range;
       if (sheet.notes.length) payload.assumption_notes = sheet.notes.join('; ');
     }
     return { ok: true, spam: false, errors: {}, kind: sheet.kind, summary: sheet.summary, payload, assumptionsChanged: sheet.assumptionsChanged };
@@ -649,7 +819,7 @@ function createCalculator(raw) {
 
   return { ok: true, config, delivery, calculate, present, enquirySummary, enquiryDraft, money: (n, d) => money(config, n, d) };
 }
-const FIRM_CONFIG = {"firm":{"name":"Clearspace","mark":"C","tagline":"Fictional cleaning company","product":"MikaelTech"},"branding":{"demoLabel":"DEMO · FICTIONAL RATES","illustrativeLabel":"Illustrative estimate only","headline":"A clearer cleaning budget.","intro":"Explore a sample monthly budget for regular office cleaning. Change the space, schedule and service level below.","fictionalNotice":"Clearspace is a fictional brand. No cleaning service is being offered."},"currency":{"code":"GBP","locale":"en-GB","vatLabel":"excludes VAT and any additional charges","vatShort":"Excludes VAT · not a quote"},"enquiry":{"button":"Preview survey request","tailoredButton":"Preview tailored survey","title":"The next step would be a site survey.","tailoredTitle":"Tailored-survey preview","body":"In a live version, the cleaning firm would confirm the scope and route an enquiry to its approved contact channel.","footnote":"This prototype has no contact form, booking system or inbox connection.","destination":"Demo only. Nothing is sent or booked.","close":"Close preview","back":"Back to calculator","mode":"preview","recipientLabel":"Clearspace","privacyNote":"Clearspace is fictional. In a live setup the cleaning firm is the data controller and publishes its own privacy notice.","privacyUrl":"https://example.com/privacy","successMessage":"Thanks. The firm has the details and can reply to the email address given.","extraFields":{"phone":true,"postcode":false,"preferredStart":false},"endpoint":""},"pricing":{"weeksPerYear":52,"area":{"default":350,"min":20,"max":10000},"rate":{"default":0.12,"min":0.01,"max":5},"minimum":{"default":45,"min":1,"max":1000},"variancePercent":{"default":15,"min":0,"max":50},"frequencies":[1,2,3,5,7],"defaultFrequency":3,"levels":[{"id":"essential","label":"Essential","factor":1,"detail":"Core areas","note":"Example scope: floors and bins in core areas. Exact tasks would be agreed after a survey."},{"id":"standard","label":"Standard","factor":1.15,"detail":"Broader coverage","note":"Example scope: floors, bins, desks and shared facilities. Exact tasks would be agreed after a survey.","default":true},{"id":"enhanced","label":"Enhanced","factor":1.35,"detail":"Extra detail","note":"Example scope: standard coverage with additional routine detail. Specialist or deep cleaning is excluded."}],"scopes":[{"id":"office","label":"Routine office cleaning","priced":true},{"id":"specialist","label":"Specialist or non-standard cleaning","priced":false,"reason":"Specialist or non-standard work is outside this sample model. A site-specific scope and estimate would be needed."}]}};
+const FIRM_CONFIG = {"firm":{"name":"Clearspace","mark":"C","tagline":"Fictional cleaning company","product":"MikaelTech","isFictional":true},"assumptions":{"visitorEditable":true},"branding":{"demoLabel":"DEMO · FICTIONAL RATES","illustrativeLabel":"Illustrative estimate only","headline":"A clearer cleaning budget.","intro":"Explore a sample monthly budget for regular office cleaning. Change the space, schedule and service level below.","fictionalNotice":"Clearspace is a fictional brand. No cleaning service is being offered."},"currency":{"code":"GBP","locale":"en-GB","vatLabel":"excludes VAT and any additional charges","vatShort":"Excludes VAT · not a quote"},"enquiry":{"destination":"Demo only. Nothing is sent or booked.","mode":"preview","recipientLabel":"Clearspace","privacyNote":"Clearspace is fictional. In a live setup the cleaning firm is the data controller and publishes its own privacy notice.","privacyUrl":"https://example.com/privacy","successMessage":"Thanks. The firm has the details and can reply to the email address given.","extraFields":{"phone":true,"postcode":false,"preferredStart":false},"endpoint":""},"pricing":{"weeksPerYear":52,"area":{"default":350,"min":20,"max":10000},"rate":{"default":0.12,"min":0.01,"max":5},"minimum":{"default":45,"min":1,"max":1000},"variancePercent":{"default":15,"min":0,"max":50},"frequencies":[{"id":"1","label":"1 visit a week","visitsPerWeek":1},{"id":"2","label":"2 visits a week","visitsPerWeek":2},{"id":"3","label":"3 visits a week","visitsPerWeek":3},{"id":"5","label":"5 visits a week","visitsPerWeek":5},{"id":"7","label":"7 visits a week","visitsPerWeek":7},{"id":"fortnightly","label":"Fortnightly","visitsPerYear":26},{"id":"monthly","label":"Monthly","visitsPerMonth":1},{"id":"one-off","label":"One-off","oneOff":true}],"defaultFrequency":"3","levels":[{"id":"essential","label":"Essential","factor":1,"detail":"Core areas","note":"Example scope: floors and bins in core areas. Exact tasks would be agreed after a survey."},{"id":"standard","label":"Standard","factor":1.15,"detail":"Broader coverage","note":"Example scope: floors, bins, desks and shared facilities. Exact tasks would be agreed after a survey.","default":true},{"id":"enhanced","label":"Enhanced","factor":1.35,"detail":"Extra detail","note":"Example scope: standard coverage with additional routine detail. Specialist or deep cleaning is excluded."}],"scopes":[{"id":"office","label":"Routine office cleaning","priced":true},{"id":"specialist","label":"Specialist or non-standard cleaning","priced":false,"reason":"Specialist or non-standard work is outside this sample model. A site-specific scope and estimate would be needed."}]}};
 // DOM behaviour for the built page. Firm settings arrive as FIRM_CONFIG.
 // Preview mode does not send the form. Live mode posts the enquiry JSON to the
 // configured HTTPS endpoint and nowhere else. This file does not use storage or cookies.
@@ -689,13 +859,34 @@ function boot(rawConfig) {
 
   function calculate(s) { return engine.calculate(s); }
 
+  function readNumber(id) {
+    const field = byId(id);
+    if (!field || typeof field.value !== 'string') return NaN;
+    const raw = field.value.trim();
+    return raw === '' ? NaN : Number(raw);
+  }
+
+  function readFrequency(raw) {
+    const text = String(raw == null ? '' : raw).trim();
+    if (/^-?\d+$/.test(text)) return Number(text);
+    return text;
+  }
+
   function readState() {
     const s = {};
-    for (const id of ['area', 'rate', 'minimum', 'variance']) {
-      const raw = byId(id).value.trim();
-      s[id] = raw === '' ? NaN : Number(raw);
+    s.area = readNumber('area');
+    // A locked firm always uses its configured rate, minimum and range.
+    // The address bar is not read, so a query string cannot override them.
+    if (config.assumptions.visitorEditable) {
+      s.rate = readNumber('rate');
+      s.minimum = readNumber('minimum');
+      s.variance = readNumber('variance');
+    } else {
+      s.rate = config.pricing.rate.default;
+      s.minimum = config.pricing.minimum.default;
+      s.variance = config.pricing.variancePercent.default;
     }
-    s.frequency = Number(byId('frequency').value);
+    s.frequency = readFrequency(byId('frequency').value);
     s.scope = byId('scope').value;
     s.level = document.querySelector('input[name="level"]:checked')?.value;
     return s;
@@ -710,10 +901,13 @@ function boot(rawConfig) {
     state = readState();
     result = calculate(state);
     for (const id of ['area', 'rate', 'minimum', 'variance']) {
+      const field = byId(id);
+      const errorNode = byId(id + '-error');
+      if (!field || !errorNode) continue;
       const message = result.errors[id] || '';
-      byId(id + '-error').textContent = message;
-      byId(id).setAttribute('aria-invalid', message ? 'true' : 'false');
-      byId(id).setCustomValidity(message);
+      errorNode.textContent = message;
+      field.setAttribute('aria-invalid', message ? 'true' : 'false');
+      field.setCustomValidity(message);
     }
     for (const id of ['frequency', 'scope']) {
       byId(id).setCustomValidity(result.errors[id] || '');
@@ -726,12 +920,14 @@ function boot(rawConfig) {
     byId('result-invalid').hidden = valid;
     byId('download').disabled = !valid;
     byId('print').disabled = !valid;
-    byId('survey').disabled = result.status === 'invalid';
-    byId('survey').textContent = result.status === 'tailored' ? config.enquiry.tailoredButton : config.enquiry.button;
-    byId('dialog-title').textContent = result.status === 'tailored' ? config.enquiry.tailoredTitle : config.enquiry.title;
-    byId('survey-summary').textContent = view.survey;
-    if (result.status === 'invalid' && byId('survey-dialog').open) byId('survey-dialog').close();
     byId('service-note').textContent = view.serviceNote;
+    const enquiryForm = byId('enquiry-form');
+    if (result.status === 'invalid' && enquiryForm && !enquiryForm.hidden) {
+      enquiryForm.hidden = true;
+      byId('enquiry-open').setAttribute('aria-expanded', 'false');
+      const invalidField = document.querySelector('[aria-invalid="true"]');
+      if (invalidField) invalidField.focus();
+    }
     if (valid) {
       byId('estimate-label').textContent = view.estimateLabel;
       byId('monthly-range').textContent = view.figure;
@@ -744,6 +940,9 @@ function boot(rawConfig) {
       byId('per-visit').textContent = view.perVisit;
       byId('monthly-visits').textContent = view.visits;
       byId('midpoint').textContent = view.midpoint;
+      if (byId('visits-label')) byId('visits-label').textContent = view.visitsLabel;
+      if (byId('midpoint-label')) byId('midpoint-label').textContent = view.midpointLabel;
+      if (byId('mobile-caption')) byId('mobile-caption').textContent = view.mobileCaption;
       byId('minimum-note').hidden = !view.minimumNote;
       byId('minimum-note').textContent = view.minimumNote;
       byId('print-summary').textContent = summary();
@@ -938,39 +1137,12 @@ function boot(rawConfig) {
   byId('calculator').addEventListener('change', render);
   byId('calculator').addEventListener('reset', () => setTimeout(() => {
     render();
-    toast('Sample office and fictional rates restored.');
+    toast(config.firm.isFictional ? 'Sample office and fictional rates restored.' : 'Sample office restored.');
   }, 0));
-  byId('survey').addEventListener('click', () => {
-    render();
-    if (result.status === 'invalid') return;
-    byId('survey-dialog').showModal();
-  });
-  byId('survey-dialog').addEventListener('close', () => {
-    if (!byId('survey').disabled) byId('survey').focus();
-    else document.querySelector('[aria-invalid="true"]')?.focus();
-  });
-  byId('survey-dialog').addEventListener('keydown', event => {
-    if (event.key !== 'Tab' || event.altKey || event.ctrlKey || event.metaKey) return;
-    const controls = [...event.currentTarget.querySelectorAll('button:not(:disabled)')].filter(control => control.getClientRects().length);
-    const first = controls[0];
-    const last = controls[controls.length - 1];
-    if (!first) return;
-    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-  });
   window.addEventListener('beforeprint', render);
-  byId('close-dialog').addEventListener('click', () => byId('survey-dialog').close());
-  byId('simulate').addEventListener('click', () => {
-    byId('survey-dialog').close();
-    toast('Preview closed. Nothing was sent or booked.');
-  });
-  byId('survey-dialog').addEventListener('click', event => {
-    if (event.target === byId('survey-dialog')) {
-      const rect = event.target.getBoundingClientRect();
-      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) event.target.close();
-    }
-  });
   byId('print').addEventListener('click', () => { if (render().status === 'valid') window.print(); });
+  byId('enquiry-form').hidden = true;
+  byId('enquiry-open').setAttribute('aria-expanded', 'false');
   byId('enquiry-status').tabIndex = -1;
   const fallback = byId('enquiry-fallback');
   if (fallback && delivery.fallbackNote) {
@@ -978,6 +1150,7 @@ function boot(rawConfig) {
     fallback.textContent = delivery.fallbackNote;
   }
   byId('enquiry-open').addEventListener('click', () => {
+    render();
     if (result.status === 'invalid') return;
     byId('enquiry-form').hidden = false;
     byId('enquiry-open').setAttribute('aria-expanded', 'true');
@@ -994,12 +1167,12 @@ function boot(rawConfig) {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
     anchor.href = url;
-    anchor.download = config.firm.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '-fictional-budget-summary.txt';
+    anchor.download = config.firm.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + (config.firm.isFictional ? '-fictional-budget-summary.txt' : '-budget-summary.txt');
     document.body.appendChild(anchor);
     anchor.click();
     anchor.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    toast('Fictional budget summary prepared for download.');
+    toast(config.firm.isFictional ? 'Fictional budget summary prepared for download.' : 'Budget summary prepared for download.');
   });
   render();
   window.addEventListener('resize', publishHeight);
@@ -1016,7 +1189,7 @@ function boot(rawConfig) {
           type: 'object',
           properties: {
             area: { type: 'number', minimum: config.pricing.area.min, maximum: config.pricing.area.max },
-            frequency: { type: 'number', enum: config.pricing.frequencies },
+            frequency: { type: 'string', enum: config.pricing.frequencies.map(item => item.id) },
             level: { type: 'string', enum: config.pricing.levels.map(level => level.id) }
           },
           required: ['area', 'frequency', 'level'],
@@ -1029,7 +1202,7 @@ function boot(rawConfig) {
           const checked = calculate(next);
           if (checked.status !== 'valid') throw new Error('Invalid demo inputs. Choose an area inside the priced range, a listed frequency and a service level.');
           byId('area').value = input.area;
-          byId('frequency').value = input.frequency;
+          byId('frequency').value = String(input.frequency);
           byId('scope').value = next.scope;
           document.querySelector('input[name="level"][value="' + input.level + '"]').checked = true;
           const updated = render();
