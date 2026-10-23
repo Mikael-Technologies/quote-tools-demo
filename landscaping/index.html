@@ -8,38 +8,60 @@
 <meta name="description" content="Private demonstration of a garden quote calculator for Greenway Gardens. Fictional rates, illustrative estimates only.">
 <title>Greenway Gardens · Garden quote demo</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2316352b'/%3E%3Cpath d='M8 22c6-1 8-8 8-14 0 6 2 13 8 14-6 1-8 4-8 8 0-4-2-7-8-8z' fill='%23dff56e'/%3E%3C/svg%3E">
-<!-- Embed this single file in an iframe. It sets no cookies and uses no storage. Preview mode submits nothing. Live mode posts the enquiry to the configured HTTPS form address only. See README. -->
+<!-- Embed this single file in an iframe. Fixed embed height: 1400 pixels. The open-full links below work with no script. Auto-resize is a bonus and fails safe inside a nested frame. See docs/embedding.md. -->
 <style>
 :root{--ink:#16352b;--muted:#52635a;--line:#d5e0d8;--paper:#f2f5f0;--lime:#dff56e;--card-muted:#d3e2d8;--error:#a92727;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);font-size:16px;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:var(--paper);line-height:1.5}button,input,select,textarea{font:inherit}button,a,input,select,summary,textarea{touch-action:manipulation}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #3177c8;outline-offset:4px}a{color:inherit}header{background:#fff;border-bottom:1px solid var(--line)}.header-inner{max-width:1184px;margin:auto;padding:22px 32px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;gap:12px;align-items:center}.mark{width:38px;height:38px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-size:24px;font-weight:750;border-radius:11px}.brand-name{font-size:21px;letter-spacing:-.7px;font-weight:740;line-height:1.2}.micro{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}.brand .micro{font-size:10px;letter-spacing:.1em;color:var(--muted);margin-top:5px}.demo-badge{background:#f1f5e7;border:1px solid #c9d6ae;border-radius:30px;padding:7px 12px;font-size:12px;font-weight:750;white-space:nowrap}.wrap{max-width:1184px;margin:auto;padding:32px}.intro{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:25px}.intro h1{font-size:clamp(28px,4vw,39px);line-height:1.15;letter-spacing:-1.4px;margin:0 0 10px}.intro p{margin:0;color:var(--muted);max-width:62ch}.tag{font-size:13px;color:var(--muted);white-space:nowrap}.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:start}.input-panel{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden}.section{padding:25px 28px}.section+.section{border-top:1px solid var(--line)}.section-heading{display:flex;align-items:center;gap:10px;margin-bottom:20px}.step{font-size:12px;font-weight:750;border:1px solid var(--line);border-radius:7px;padding:3px 7px}.section-heading h2{font-size:18px;margin:0;letter-spacing:-.35px}.field-label,legend{display:block;font-size:14px;font-weight:700;margin-bottom:8px}.two-up{display:grid;grid-template-columns:1fr 1fr;gap:18px}.input-wrap{position:relative}.unit{position:absolute;right:14px;top:13px;font-size:14px;color:var(--muted);pointer-events:none}input[type=number],input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;min-width:0;min-height:50px;border:1px solid #8ea396;border-radius:9px;background:#fff;color:var(--ink);padding:11px 13px}input[type=number]{padding-right:48px}input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--error);background:#fff7f7}select{padding-right:25px}.hint,.choice-note{font-size:13px;color:var(--muted);margin:7px 0 0}.choice-note p{margin:0}.field-error{font-size:13px;color:var(--error);margin:5px 0 0;min-height:0}.field-error:empty{display:none}.scope-field{margin-bottom:18px}#hedge-fields,#tidy-fields{margin-top:18px}fieldset{margin:0;padding:0;border:0;min-width:0}legend{padding:0}.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.level{position:relative;display:flex;flex-direction:column;align-items:flex-start;border:1px solid var(--line);border-radius:11px;padding:12px;cursor:pointer;line-height:1.35;min-width:0;min-height:44px}.level:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);background:#f3f8e7}.level input{accent-color:var(--ink);width:20px;height:20px;margin:0 0 9px}.level strong{font-size:14px}.level small{font-size:12px;color:var(--muted);margin-top:4px}.service-note{font-size:13px;color:var(--muted);margin:16px 0 0}.check-row{display:flex;gap:12px;align-items:center;min-height:48px;font-weight:700}.check-row input{width:22px;height:22px;margin:0;flex:none;accent-color:var(--ink)}.result-card{background:var(--ink);color:white;border-radius:20px;padding:28px;position:sticky;top:22px}.result-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:22px}.eyebrow{color:var(--card-muted);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.sample-label{font-size:11px;line-height:1.2;padding:6px 9px;background:#24483a;border:1px solid #5d7a4e;border-radius:6px;color:var(--lime);font-weight:700}.estimate-label{font-size:14px;color:var(--card-muted);margin:0 0 5px}.price{font-size:clamp(36px,4vw,49px);letter-spacing:-2px;line-height:1.2;font-weight:730;overflow-wrap:anywhere}.price-note{font-size:13px;color:var(--card-muted);margin:8px 0 8px}.workings{font-size:13px;color:var(--card-muted);margin:0 0 16px;line-height:1.45}.price.price-long{font-size:clamp(22px,3.2vw,34px);letter-spacing:-.8px;line-height:1.15}.range-track{height:5px;border-radius:5px;background:#3d5c4c;position:relative;margin:22px 0}.range-track:before{content:"";position:absolute;left:12%;right:12%;height:5px;background:var(--lime);border-radius:5px}.breakdown{margin:0}.breakdown div{display:flex;justify-content:space-between;gap:20px;margin:11px 0;font-size:14px}.breakdown dt{color:var(--card-muted)}.breakdown dd{margin:0;font-variant-numeric:tabular-nums;text-align:right}.breakdown .total-row{padding-top:15px;border-top:1px solid #3f5e4e;margin-top:16px}.total-row dt,.total-row dd{color:white;font-weight:700}.disclaimer{font-size:12px;color:var(--card-muted);border-left:2px solid var(--lime);padding-left:12px;margin:24px 0;line-height:1.55}.primary{display:block;width:100%;border:0;border-radius:10px;padding:14px 18px;background:var(--lime);color:var(--ink);font-weight:750;font-size:15px;min-height:50px}.secondary-actions{display:flex;gap:10px;margin-top:11px}.secondary-actions button{flex:1;background:transparent;color:white;border:1px solid #6d8a78;border-radius:9px;padding:10px;font-size:13px;min-height:44px}.privacy-note{font-size:12px;color:var(--card-muted);text-align:center;margin:13px 0 0}.result-invalid h2{font-size:28px;letter-spacing:-.6px;margin:0 0 10px}.result-invalid p{color:var(--card-muted);font-size:14px}.result-invalid{padding:15px 0 25px}.result-invalid[hidden],[hidden]{display:none!important}.assumptions summary{font-size:15px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:15px;align-items:center;min-height:44px}.assumptions summary::-webkit-details-marker{display:none}.assumptions summary::after{content:"+";font-size:23px;font-weight:400}.assumptions[open] summary::after{content:"−"}.assumptions-intro{font-size:13px;color:var(--muted);margin:12px 0 18px}.assumption-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.assumption-grid label{font-size:12px;line-height:1.4;min-height:34px}.assumption-grid input{font-size:14px;padding:9px;min-height:45px}.formula{background:#f3f6f8;border:1px solid var(--line);padding:13px;border-radius:8px;font-size:12px;color:var(--muted);margin-top:18px}.formula strong{display:block;color:var(--ink);margin-bottom:5px}.reset{display:block;border:0;padding:0;background:transparent;text-decoration:underline;text-underline-offset:4px;color:var(--muted);font-size:13px;margin:18px 0 0;min-height:44px}.below-note{margin-top:18px;font-size:13px;color:var(--muted)}footer{max-width:1120px;margin:6px auto 0;padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}footer strong{color:var(--ink)}.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px;max-width:calc(100% - 32px);z-index:5}.print-only{display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.mobile-edit,.mobile-budget{display:none}.skip{position:absolute;left:16px;top:-80px;z-index:20;background:#fff;color:var(--ink);padding:10px 14px;border-radius:8px;border:2px solid var(--ink);font-weight:700;text-decoration:none}.skip:focus{top:12px}.config-error{max-width:720px;margin:28px auto;padding:22px 24px;background:#fff7f7;border:1px solid #e7b4b4;border-radius:16px;color:var(--error)}.enquiry{margin-top:18px}.enquiry-fallback{font-size:13px;line-height:1.45;color:#16352b;background:#fff7f7;border:1px solid #e7b4b4;border-radius:10px;padding:10px 12px;margin:0 0 12px}.enquiry-form{margin-top:14px;background:#fff;color:#16352b;border-radius:14px;padding:16px}.enquiry-form h3{margin:0 0 8px;font-size:18px;color:#16352b}.enquiry-summary{white-space:pre-line;background:#f3f6f8;color:#16352b;border-radius:10px;padding:12px;margin:0 0 14px;font-size:14px}.enquiry-form .field-label,.enquiry-form label{color:#16352b}.enquiry-form textarea{min-height:88px;resize:vertical}.enquiry-check{display:flex;gap:10px;align-items:flex-start;margin:14px 0 6px;font-size:14px;color:#16352b}.enquiry-check input{width:22px;height:22px;margin:2px 0 0;flex:none}.enquiry-privacy{font-size:13px;color:#52635a;margin:8px 0 12px}.enquiry-privacy a{color:#16352b}.enquiry-status{margin-top:12px;padding:12px;border-radius:10px;background:#f3f6f8;color:#16352b}.enquiry-payload,.enquiry-copy{display:block;width:100%;box-sizing:border-box;margin-top:8px;white-space:pre-wrap;font:12px/1.45 ui-monospace,SFMono-Regular,monospace;background:#fff;color:#16352b;border:1px solid #d5e0d8;border-radius:8px;padding:10px}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media(max-width:800px){.wrap{padding:24px}.header-inner{padding:18px 24px}.layout{gap:18px;grid-template-columns:1fr 1fr}.section{padding:21px}.result-card{padding:24px}.two-up{grid-template-columns:1fr}.levels{gap:7px}.level{padding:9px}.intro{display:block}.tag{display:block;margin-top:10px;white-space:normal}footer{margin:0 24px}.assumption-grid{grid-template-columns:1fr}.assumption-grid label{min-height:0}.price{font-size:36px;letter-spacing:-1.5px}}
 @media(max-width:620px){.header-inner{padding:16px 20px;flex-wrap:wrap;row-gap:8px}.brand-name{font-size:19px}.brand .micro{font-size:12px}.mark{width:34px;height:34px;font-size:22px}.demo-badge{font-size:12px;padding:6px 10px}.wrap{padding:24px 16px}.intro{margin-bottom:20px}.intro h1{font-size:29px;letter-spacing:-1px}.intro p{font-size:14px}.layout{display:flex;flex-direction:column;gap:16px}.input-panel,.result-card{width:100%}.result-card{position:static;padding:22px}.mobile-budget{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);color:white;border-radius:12px;padding:14px 17px;margin-bottom:16px}.mobile-budget span{font-size:12px;color:#d3e2d8}.mobile-budget strong{display:block;font-size:24px;letter-spacing:-.8px;line-height:1.25}.mobile-budget a{font-size:12px;color:var(--lime);text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}.result-top{margin-bottom:13px}.price{font-size:40px}.range-track{margin:16px 0}.breakdown div{margin:8px 0}.disclaimer{margin:17px 0}.price-note{margin:8px 0 12px}.section{padding:21px}.two-up{grid-template-columns:1fr;gap:14px}.levels{grid-template-columns:1fr}.result-card .secondary-actions{margin-top:9px;flex-direction:column}.below-note{font-size:12px}.section-heading{margin-bottom:16px}footer{margin:0 16px;flex-direction:column;gap:6px;padding-top:18px}.mobile-edit{display:inline-block!important;margin:10px 0 0;color:var(--lime);font-size:13px;text-underline-offset:4px;min-height:44px}.assumption-grid{grid-template-columns:1fr}.assumption-grid label{min-height:0}}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}.primary:hover{background:#d0ea62}.level{transition:background .15s,border-color .15s}}
 @page{margin:14mm}@media print{body{background:white;color:black;font-size:11pt}.header-inner{padding:0 0 15px}.demo-badge{border:1px solid #333}.wrap{padding:20px 0}.intro h1{font-size:25px}.layout{display:block}.skip,.config-error,.input-panel,.enquiry,.mobile-budget,.secondary-actions,.primary,.privacy-note,.mobile-edit,footer,.below-note,.toast,.range-track{display:none!important}.print-only{font-size:11pt;line-height:1.45}.result-card{position:static;background:white;color:black;border:1px solid #333;padding:22px}.result-card *{color:black!important}.breakdown .total-row{border-color:#aaa}.sample-label{background:white;border-color:#777}.disclaimer{border-color:#333}.print-only{display:block;white-space:pre-line;border-top:1px solid #aaa;margin-top:20px;padding-top:16px}.result-card{break-inside:avoid}.price{font-size:35px}}
+.header-tools{display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:wrap}.open-link{font-size:14px;font-weight:750;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}.price-line{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}.vat-tag{flex:none;font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:var(--lime);border:1px solid #5d7a4e;border-radius:6px;padding:4px 8px;margin:0 0 6px}.next-step,.reply-promise{margin:0 0 8px;font-size:15px;line-height:1.4}.reply-promise{color:var(--lime);font-weight:750}.next-step{color:#fff;font-weight:700}.result-summary{white-space:pre-line;background:#24483a;border-radius:12px;padding:12px 14px;margin:8px 0 16px;font-size:14px;line-height:1.45;color:#fff}.availability{background:#fff;border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:12px;padding:12px 14px;margin:0 0 18px;font-weight:700}a.primary{display:flex;align-items:center;justify-content:center;text-decoration:none;margin-top:11px;box-sizing:border-box}.whatsapp-panel{margin-top:12px}.whatsapp-panel button{width:100%;background:transparent;color:#fff;border:1px solid #6d8a78;border-radius:9px;padding:10px;min-height:44px;font-weight:700}.whatsapp-draft{margin-top:10px;background:#fff;color:#16352b;border-radius:10px;padding:12px}.whatsapp-draft p{margin:0 0 8px;font-size:13px;overflow-wrap:anywhere}.whatsapp-draft textarea{width:100%;min-height:88px;color:#16352b}.included-list{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13px}#factors-section .two-up{margin-bottom:14px}body.layout-compact .wrap{padding:12px}body.layout-compact .result-card{position:static}body.layout-compact .section{padding:16px}
 </style>
 </head>
 <body>
 <a class="skip" href="#budget-result">Skip to the sample budget</a>
-<header><div class="header-inner"><div class="brand"><span class="mark" aria-hidden="true">G</span><div><div class="brand-name">Greenway Gardens</div><div class="micro">Fictional landscaping firm</div></div></div><span class="demo-badge">DEMO · FICTIONAL RATES</span></div></header>
+<header><div class="header-inner"><div class="brand"><span class="mark" aria-hidden="true">G</span><div><div class="brand-name">Greenway Gardens</div><div class="micro">Fictional landscaping firm</div></div></div><div class="header-tools"><span class="demo-badge">DEMO · FICTIONAL RATES</span><a class="open-link" id="open-full-link" href="index.html" target="_blank" rel="noopener noreferrer">Open full calculator</a></div></div></header>
 <div id="config-error" class="config-error" role="alert" hidden></div>
-<main class="wrap" id="app"><div class="intro"><div><h1>A clearer garden budget.</h1><p>Explore a sample price for lawn mowing, hedge trimming or a one-off garden tidy. Patios, turfing, fencing and tree work are not priced here.</p></div><span class="tag">Illustrative estimate only</span></div>
-<div class="mobile-budget"><div><span id="mobile-caption">Illustrative cutting-season total · demo</span><strong id="mobile-range">£408–£552</strong><span>Excludes VAT · not a quote</span></div><a href="#budget-result">Details</a></div>
+<main class="wrap" id="app"><div class="intro"><div><h1>A clearer garden budget.</h1><p>Explore a sample price for lawn mowing, hedge trimming, a one-off garden tidy or regular garden maintenance. Patios, turfing, fencing and tree work are not priced here.</p></div><span class="tag">Illustrative estimate only</span></div>
+<p class="availability" id="availability-banner">Booking now for spring.</p>
+<div class="mobile-budget"><div><span id="mobile-caption">Illustrative cutting-season total · demo</span><strong id="mobile-range">£714–£966</strong><span>Excludes VAT · not a quote · ex VAT</span></div><a href="#budget-result">Details</a></div>
 <div class="layout">
 <form class="input-panel" id="calculator" novalidate autocomplete="off">
 <section class="section" id="inputs"><div class="section-heading"><span class="step">01</span><h2>The job</h2></div>
-<div class="scope-field"><label class="field-label" for="service">Service</label><select id="service" name="service" required aria-describedby="service-hint service-error"><option value="lawn" selected>Lawn mowing</option><option value="hedge">Hedge trimming</option><option value="tidy">Garden tidy</option><option value="specialist">Patios, turfing, fencing or tree work</option></select><p class="hint" id="service-hint">Lawn, hedge and tidy have a sample price. Patios, turfing, fencing and tree work ask for a site visit.</p><p class="field-error" id="service-error"></p></div>
-<div id="lawn-fields"><div class="two-up"><div><label class="field-label" for="area">Lawn area</label><div class="input-wrap"><input id="area" name="area" type="number" inputmode="decimal" min="0" step="any" required value="80" aria-describedby="area-hint area-error"><span class="unit">m²</span></div><p class="hint" id="area-hint">The grass only, not the whole garden</p><p class="field-error" id="area-error"></p></div><div><label class="field-label" for="frequency">How often</label><select id="frequency" name="frequency" required aria-describedby="frequency-hint season-hint"><option value="weekly">Weekly</option><option value="fortnightly" selected>Fortnightly</option><option value="monthly">Monthly</option><option value="one-off">One-off</option></select><p class="hint" id="frequency-hint">Weekly, fortnightly or monthly through the cutting season, or a single cut</p></div></div><p class="hint" id="season-hint">Cutting season: 30 weeks, shown as a monthly average over 8 months. Weekly is one visit a week. Fortnightly divides the weeks by two. Monthly is one visit a month.</p></div>
+<div class="scope-field"><label class="field-label" for="service">Service</label><select id="service" name="service" required aria-describedby="service-hint service-error"><option value="lawn" selected>Lawn mowing</option><option value="hedge">Hedge trimming</option><option value="tidy">Garden tidy</option><option value="specialist">Patios, turfing, fencing or tree work</option><option value="maintenance">Regular garden maintenance</option></select><p class="hint" id="service-hint">Lawn, hedge, tidy and regular maintenance have a sample price. Patios, turfing, fencing and tree work ask for a site visit.</p><p class="field-error" id="service-error"></p></div>
+<div id="lawn-fields"><label class="field-label" for="area">Lawn area</label><div class="input-wrap"><input id="area" name="area" type="number" inputmode="decimal" min="0" step="any" required value="80" aria-describedby="area-hint area-error"><span class="unit">m²</span></div><p class="hint" id="area-hint">The grass only, not the whole garden</p><p class="field-error" id="area-error"></p></div>
+<div id="schedule-fields"><label class="field-label" for="frequency">How often</label><select id="frequency" name="frequency" required aria-describedby="frequency-hint season-hint"><option value="weekly">Weekly</option><option value="fortnightly" selected>Fortnightly</option><option value="monthly">Monthly</option><option value="one-off">One-off</option></select><p class="hint" id="frequency-hint">Weekly, fortnightly or monthly through the cutting season, or a single visit</p><p class="hint" id="season-hint">Cutting season: 30 weeks, shown as a monthly average over 8 months. 4 winter visits are shown as well, and the year is also spread over 12 months. Weekly is one visit a week. Fortnightly divides the weeks by two. Monthly is one visit a month.</p></div>
 <div id="hedge-fields" hidden><label class="field-label" for="length">Hedge length</label><div class="input-wrap"><input id="length" name="length" type="number" inputmode="decimal" min="0" step="any" required value="12" aria-describedby="length-hint length-error"><span class="unit">m</span></div><p class="hint" id="length-hint">Total length to be trimmed</p><p class="field-error" id="length-error"></p></div>
 <div id="tidy-fields" hidden><div class="two-up"><div><label class="field-label" for="tidy-size">Garden size</label><select id="tidy-size" name="tidy-size" aria-describedby="tidy-size-hint"><option value="small">Small tidy (2 hours)</option><option value="medium" selected>Medium tidy (4 hours)</option><option value="large">Large tidy (7 hours)</option></select><p class="hint" id="tidy-size-hint">A starting point. Change the hours if the garden needs more or less.</p></div><div><label class="field-label" for="hours">Estimated hours</label><div class="input-wrap"><input id="hours" name="hours" type="number" inputmode="decimal" min="0" step="any" required value="4" aria-describedby="hours-hint hours-error"><span class="unit">hrs</span></div><p class="hint" id="hours-hint">The hours are what gets priced</p><p class="field-error" id="hours-error"></p></div></div></div>
+<div id="maintenance-fields" hidden><label class="field-label" for="maintenance-size">Garden size</label><select id="maintenance-size" name="maintenance-size" aria-describedby="maintenance-size-hint maintenance-size-error"><option value="small">Small garden (2 hours)</option><option value="medium" selected>Medium garden (2 hours)</option><option value="large">Large garden (3 hours)</option></select><p class="hint" id="maintenance-size-hint">Sets the hours on each visit. The two-hour minimum still applies.</p><p class="field-error" id="maintenance-size-error"></p><ul class="included-list"><li>Mowing</li><li>Edging</li><li>Weeding</li></ul><div class="check-row"><input id="extra-hedge" name="extra-hedge" type="checkbox" checked><label for="extra-hedge">Occasional hedge trim</label></div></div>
 <div id="specialist-note" class="choice-note" hidden><p>Patios, new turf, fencing and tree work depend on the ground, access and materials. This page does not invent a price for them.</p></div>
 <p class="service-note" id="service-note">Regular cut of the lawn area only. Edging, strimming and taking the clippings away are not included.</p>
 </section>
-<section class="section" id="options-section" hidden><div class="section-heading"><span class="step">02</span><h2>Options</h2></div>
+<section class="section" id="factors-section"><div class="section-heading"><span class="step">02</span><h2>The garden</h2></div>
+<div class="two-up"><div><label class="field-label" for="condition">Condition</label><select id="condition" name="condition" aria-describedby="condition-error"><option value="regular" selected>Regular cut</option><option value="long">Longer than usual</option><option value="overgrown">Overgrown or neglected</option></select><p class="field-error" id="condition-error"></p></div><div><label class="field-label" for="access">Access</label><select id="access" name="access" aria-describedby="access-error"><option value="side" selected>Side access</option><option value="steps">Steps or slopes</option><option value="house">Access through the house only</option><option value="noside">No side access</option></select><p class="field-error" id="access-error"></p></div></div>
+<div><label class="field-label" for="coverage-postcode">Postcode</label><input id="coverage-postcode" name="coverage-postcode" type="text" maxlength="10" autocomplete="postal-code" value="" aria-describedby="coverage-hint coverage-error"><p class="hint" id="coverage-hint">Used only to check this firm's area. It is separate from the postcode on the enquiry. Leave it blank to skip the check.</p><p class="field-error" id="coverage-error"></p></div>
+</section>
+<section class="section" id="options-section" hidden><div class="section-heading"><span class="step">03</span><h2>Options</h2></div>
 <div id="height-section" hidden><fieldset aria-describedby="height-error"><legend>Hedge height</legend><div class="levels"><label class="level"><input type="radio" name="height" value="low" required><strong>Up to 1.2 m</strong><small>Trimmed from the ground</small></label><label class="level"><input type="radio" name="height" value="medium" checked><strong>1.2 to 2 m</strong><small>A short reach</small></label><label class="level"><input type="radio" name="height" value="tall"><strong>2 to 3 m</strong><small>Taller, still from the ground</small></label></div></fieldset><p class="field-error" id="height-error"></p></div>
 <div class="check-row" id="waste-field" hidden><input id="waste" name="waste" type="checkbox" aria-describedby="waste-hint"><label for="waste">Take the waste away</label></div><p class="hint" id="waste-hint">Adds the firm's waste-removal fee. Leave this unticked if the cuttings can stay on site.</p>
 </section>
-<section class="section"><details class="assumptions" id="assumptions"><summary>Edit the fictional rate assumptions</summary><p class="assumptions-intro">Demo values, not a quote. A live firm would use its own approved rates and would not let a visitor change them. Job choices, such as lawn size and whether waste is taken away, stay available either way.</p><div class="assumption-grid"><div><label class="field-label" for="lawn-rate">Lawn £ / m²</label><input id="lawn-rate" name="lawn-rate" type="number" inputmode="decimal" min="0.05" max="2" step="any" required value="0.4" aria-describedby="lawn-rate-error"><p class="field-error" id="lawn-rate-error"></p></div><div><label class="field-label" for="lawn-minimum">Lawn minimum £ / visit</label><input id="lawn-minimum" name="lawn-minimum" type="number" inputmode="decimal" min="5" max="200" step="any" required value="25" aria-describedby="lawn-minimum-error"><p class="field-error" id="lawn-minimum-error"></p></div><div><label class="field-label" for="hedge-rate-low">Hedge Up to 1.2 m £ / m</label><input id="hedge-rate-low" name="hedge-rate-low" type="number" inputmode="decimal" min="0.5" max="20" step="any" required value="3" aria-describedby="hedge-rate-low-error"><p class="field-error" id="hedge-rate-low-error"></p></div><div><label class="field-label" for="hedge-rate-medium">Hedge 1.2 to 2 m £ / m</label><input id="hedge-rate-medium" name="hedge-rate-medium" type="number" inputmode="decimal" min="0.5" max="20" step="any" required value="5" aria-describedby="hedge-rate-medium-error"><p class="field-error" id="hedge-rate-medium-error"></p></div><div><label class="field-label" for="hedge-rate-tall">Hedge 2 to 3 m £ / m</label><input id="hedge-rate-tall" name="hedge-rate-tall" type="number" inputmode="decimal" min="0.5" max="20" step="any" required value="8" aria-describedby="hedge-rate-tall-error"><p class="field-error" id="hedge-rate-tall-error"></p></div><div><label class="field-label" for="hedge-minimum">Hedge minimum £</label><input id="hedge-minimum" name="hedge-minimum" type="number" inputmode="decimal" min="10" max="300" step="any" required value="40" aria-describedby="hedge-minimum-error"><p class="field-error" id="hedge-minimum-error"></p></div><div><label class="field-label" for="hedge-waste">Hedge waste £</label><input id="hedge-waste" name="hedge-waste" type="number" inputmode="decimal" min="0" max="150" step="any" required value="35" aria-describedby="hedge-waste-error"><p class="field-error" id="hedge-waste-error"></p></div><div><label class="field-label" for="tidy-rate">Tidy £ / hour</label><input id="tidy-rate" name="tidy-rate" type="number" inputmode="decimal" min="15" max="80" step="any" required value="30" aria-describedby="tidy-rate-error"><p class="field-error" id="tidy-rate-error"></p></div><div><label class="field-label" for="tidy-minimum">Tidy minimum £</label><input id="tidy-minimum" name="tidy-minimum" type="number" inputmode="decimal" min="20" max="300" step="any" required value="60" aria-describedby="tidy-minimum-error"><p class="field-error" id="tidy-minimum-error"></p></div><div><label class="field-label" for="tidy-waste">Tidy waste £</label><input id="tidy-waste" name="tidy-waste" type="number" inputmode="decimal" min="0" max="200" step="any" required value="40" aria-describedby="tidy-waste-error"><p class="field-error" id="tidy-waste-error"></p></div><div><label class="field-label" for="variance">Budget range ± %</label><input id="variance" name="variance" type="number" inputmode="decimal" min="0" max="50" step="any" required value="15" aria-describedby="variance-error"><p class="field-error" id="variance-error"></p></div></div><div class="formula"><strong>The calculation, in plain sight</strong>Lawn: per visit is the higher of (area × £ / m²) or the minimum, to the nearest penny. Weekly visits = season weeks. Fortnightly visits = season weeks ÷ 2. Monthly visits = season months. Season total = per visit × visits. Monthly average = season total ÷ season months. A one-off is the visit charge alone.<br>Hedge: length × the height-band £ / m, or the minimum, then the optional waste fee.<br>Tidy: hours × the hourly rate, or the minimum, then the optional waste fee.<br>Range = that season total, monthly average or job total ± the selected percentage, rounded outwards to whole pounds. At ± 0% the figure itself is shown, with no band. This range is a demo setting, not a confidence interval.</div></details><button class="reset" type="reset">Reset to the sample garden</button></section>
+<section class="section"><details class="assumptions" id="assumptions"><summary>Edit the fictional rate assumptions</summary><p class="assumptions-intro">Demo values, not a quote. A live firm would use its own approved rates and would not let a visitor change them. Job choices, such as lawn size and whether waste is taken away, stay available either way.</p><div class="assumption-grid"><div><label class="field-label" for="lawn-rate">Lawn £ / m²</label><input id="lawn-rate" name="lawn-rate" type="number" inputmode="decimal" min="0.05" max="2" step="any" required value="0.7" aria-describedby="lawn-rate-error"><p class="field-error" id="lawn-rate-error"></p></div><div><label class="field-label" for="lawn-minimum">Lawn minimum £ / visit</label><input id="lawn-minimum" name="lawn-minimum" type="number" inputmode="decimal" min="5" max="200" step="any" required value="45" aria-describedby="lawn-minimum-error"><p class="field-error" id="lawn-minimum-error"></p></div><div><label class="field-label" for="hedge-rate-low">Hedge Up to 1.2 m £ / m</label><input id="hedge-rate-low" name="hedge-rate-low" type="number" inputmode="decimal" min="0.5" max="20" step="any" required value="6" aria-describedby="hedge-rate-low-error"><p class="field-error" id="hedge-rate-low-error"></p></div><div><label class="field-label" for="hedge-rate-medium">Hedge 1.2 to 2 m £ / m</label><input id="hedge-rate-medium" name="hedge-rate-medium" type="number" inputmode="decimal" min="0.5" max="20" step="any" required value="8" aria-describedby="hedge-rate-medium-error"><p class="field-error" id="hedge-rate-medium-error"></p></div><div><label class="field-label" for="hedge-rate-tall">Hedge 2 to 3 m £ / m</label><input id="hedge-rate-tall" name="hedge-rate-tall" type="number" inputmode="decimal" min="0.5" max="20" step="any" required value="12" aria-describedby="hedge-rate-tall-error"><p class="field-error" id="hedge-rate-tall-error"></p></div><div><label class="field-label" for="hedge-minimum">Hedge minimum £</label><input id="hedge-minimum" name="hedge-minimum" type="number" inputmode="decimal" min="10" max="300" step="any" required value="110" aria-describedby="hedge-minimum-error"><p class="field-error" id="hedge-minimum-error"></p></div><div><label class="field-label" for="hedge-waste">Hedge waste £</label><input id="hedge-waste" name="hedge-waste" type="number" inputmode="decimal" min="0" max="150" step="any" required value="45" aria-describedby="hedge-waste-error"><p class="field-error" id="hedge-waste-error"></p></div><div><label class="field-label" for="tidy-rate">Tidy £ / hour</label><input id="tidy-rate" name="tidy-rate" type="number" inputmode="decimal" min="15" max="80" step="any" required value="50" aria-describedby="tidy-rate-error"><p class="field-error" id="tidy-rate-error"></p></div><div><label class="field-label" for="tidy-minimum">Tidy minimum £</label><input id="tidy-minimum" name="tidy-minimum" type="number" inputmode="decimal" min="20" max="300" step="any" required value="100" aria-describedby="tidy-minimum-error"><p class="field-error" id="tidy-minimum-error"></p></div><div><label class="field-label" for="tidy-waste">Tidy waste £</label><input id="tidy-waste" name="tidy-waste" type="number" inputmode="decimal" min="0" max="200" step="any" required value="45" aria-describedby="tidy-waste-error"><p class="field-error" id="tidy-waste-error"></p></div><div><label class="field-label" for="maintenance-rate">Maintenance £ / hour</label><input id="maintenance-rate" name="maintenance-rate" type="number" inputmode="decimal" min="15" max="80" step="any" required value="50" aria-describedby="maintenance-rate-error"><p class="field-error" id="maintenance-rate-error"></p></div><div><label class="field-label" for="maintenance-minimum">Maintenance minimum hours</label><input id="maintenance-minimum" name="maintenance-minimum" type="number" inputmode="decimal" min="0.5" max="8" step="0.5" required value="2" aria-describedby="maintenance-minimum-error"><p class="field-error" id="maintenance-minimum-error"></p></div><div><label class="field-label" for="variance">Budget range ± %</label><input id="variance" name="variance" type="number" inputmode="decimal" min="0" max="50" step="any" required value="15" aria-describedby="variance-error"><p class="field-error" id="variance-error"></p></div></div><div class="formula"><strong>The calculation, in plain sight</strong>Lawn: per visit is the higher of (area × £ / m²) or the minimum, to the nearest penny. Weekly visits = season weeks. Fortnightly visits = season weeks ÷ 2. Monthly visits = season months. Season total = per visit × visits. Monthly average = season total ÷ season months. A one-off is the visit charge alone. Where winter visits are set, they are added beside the season and the year is divided by the spread months.<br>Hedge: length × the height-band £ / m, or the minimum, then the optional waste fee.<br>Tidy: hours × the hourly rate, or the minimum, then the optional waste fee.<br>Regular maintenance: hours on the visit × the hourly rate, or the minimum hours, then optional yearly extras added once to the season.<br>Condition and access apply only when a listed adjustment is chosen. A travel surcharge is added per visit when the postcode is in a surcharge band.<br>Range = that season total, monthly average or job total ± the selected percentage, rounded outwards to whole pounds. At ± 0% the figure itself is shown, with no band. This range is a demo setting, not a confidence interval.</div></details><button class="reset" type="reset">Reset to the sample garden</button></section>
 </form>
-<aside id="budget-result" class="result-card" aria-label="Illustrative budget result"><div class="result-top"><span class="eyebrow">Your sample budget</span><span class="sample-label">FICTIONAL RATES</span></div><div id="result-valid"><p class="estimate-label" id="estimate-label">Cutting-season range</p><div class="price" id="monthly-range">£408–£552</div><p class="price-note">GBP · excludes VAT and any additional charges</p><p class="workings" id="workings">80 m² × £0.40 = £32.00 a visit, above the £25.00 minimum. £32.00 × 15 visits (30 weeks ÷ 2) = £480.00 for the season. £480.00 ÷ 8 = £60.00 a month. The season range is £480.00 ± 15%, rounded outwards to whole pounds. The monthly average range is £60.00 ± 15%, rounded outwards to whole pounds.</p><div class="range-track" id="range-track" aria-hidden="true"></div><dl class="breakdown"><div><dt id="measure-label">Lawn area</dt><dd id="result-measure">80 m²</dd></div><div><dt id="rate-label">Rate</dt><dd id="result-rate">£0.40 / m²</dd></div><div><dt id="per-visit-label">Per visit</dt><dd id="per-visit">£32.00</dd></div><div id="waste-row" hidden><dt id="waste-label">Waste removal</dt><dd id="waste-amount"></dd></div><div id="visits-row"><dt id="visits-label">Visits in the season</dt><dd id="season-visits">15</dd></div><div class="total-row"><dt id="midpoint-label">Season total</dt><dd id="midpoint">£480.00</dd></div><div id="monthly-row"><dt id="monthly-label">Monthly average range</dt><dd id="monthly-average">£51–£69</dd></div></dl><p id="minimum-note" class="price-note" hidden></p></div><div id="result-invalid" class="result-invalid" hidden><h2 id="invalid-heading">Check your inputs</h2><p id="invalid-detail"></p></div><p class="disclaimer"><strong>Illustrative estimate only.</strong> These invented figures are for testing the calculator. They are not a quote or an offer. A site visit, confirmed scope and approved rates are needed before any real price.</p>
+<aside id="budget-result" class="result-card" aria-label="Illustrative budget result"><div class="result-top"><span class="eyebrow">Your sample budget</span><span class="sample-label">FICTIONAL RATES</span></div><p class="next-step" id="next-step">Price confirmed after a free visit.</p><p class="reply-promise" id="reply-promise">We reply within 1 working day.</p><div id="result-valid"><p class="estimate-label" id="estimate-label">Cutting-season range</p><div class="price-line"><div class="price" id="monthly-range">£714–£966</div><span class="vat-tag" id="vat-tag">ex VAT</span></div><p class="price-note">GBP · excludes VAT and any additional charges</p><p class="workings" id="workings">80 m² × £0.70 = £56.00 a visit, above the £45.00 minimum. £56.00 × 15 visits (30 weeks ÷ 2) = £840.00 for the season. £840.00 ÷ 8 = £105.00 a month. The season range is £840.00 ± 15%, rounded outwards to whole pounds. The monthly average range is £105.00 ± 15%, rounded outwards to whole pounds. 4 winter visits × £56.00 = £224.00. Year total £1,064.00. £1,064.00 ÷ 12 = £88.67 a month, spread over the year.</p><div class="range-track" id="range-track" aria-hidden="true"></div><dl class="breakdown"><div><dt id="measure-label">Lawn area</dt><dd id="result-measure">80 m²</dd></div><div><dt id="rate-label">Rate</dt><dd id="result-rate">£0.70 / m²</dd></div><div><dt id="per-visit-label">Per visit</dt><dd id="per-visit">£56.00</dd></div><div id="waste-row" hidden><dt id="waste-label">Waste removal</dt><dd id="waste-amount"></dd></div><div id="visits-row"><dt id="visits-label">Visits in the season</dt><dd id="season-visits">15</dd></div><div class="total-row"><dt id="midpoint-label">Season total</dt><dd id="midpoint">£840.00</dd></div><div id="monthly-row"><dt id="monthly-label">In-season monthly range</dt><dd id="monthly-average">£89–£121</dd></div><div id="year-row"><dt id="year-label">Over 12 months</dt><dd id="year-total">£904–£1,224</dd></div><div id="year-monthly-row"><dt id="year-monthly-label">Monthly, spread over the year</dt><dd id="year-monthly">£75–£102</dd></div></dl><p id="minimum-note" class="price-note" hidden></p></div><div id="result-invalid" class="result-invalid" hidden><h2 id="invalid-heading">Check your inputs</h2><p id="invalid-detail"></p></div><div id="result-summary" class="result-summary" aria-live="polite" aria-label="Enquiry summary">Estimate details
+Service: Lawn mowing
+Lawn area: 80 m²
+Frequency: Fortnightly, 15 visits over 30 weeks
+Billing: Cutting season
+Per visit: £56.00
+Season range: £714–£966
+Monthly average range: £89–£121
+VAT: excludes VAT and any additional charges
+Year total, with winter visits: £904–£1,224
+Spread over 12 months: £75–£102
+Indicative estimate only. Not a quote or an offer.
+Price confirmed after a free visit.
+We reply within 1 working day.
+Booking now for spring.</div><p class="disclaimer"><strong>Illustrative estimate only.</strong> These invented figures are for testing the calculator. They are not a quote or an offer. A site visit, confirmed scope and approved rates are needed before any real price.</p>
 <div class="enquiry" id="enquiry">
 <p id="enquiry-fallback" class="enquiry-fallback" hidden></p>
 <button type="button" class="primary" id="enquiry-open" aria-expanded="false" aria-controls="enquiry-form">Send this estimate to Greenway Gardens</button>
@@ -52,6 +74,8 @@
 <div id="enquiry-phone-field"><label class="field-label" for="enquiry-phone">Phone (optional)</label><input id="enquiry-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" aria-describedby="enquiry-phone-error"><p class="field-error" id="enquiry-phone-error"></p></div>
 <div id="enquiry-postcode-field"><label class="field-label" for="enquiry-postcode">Postcode (optional)</label><input id="enquiry-postcode" name="postcode" type="text" autocomplete="postal-code" maxlength="10" aria-describedby="enquiry-postcode-error"><p class="field-error" id="enquiry-postcode-error"></p></div>
 <div id="enquiry-start-field" hidden><label class="field-label" for="enquiry-start">Preferred start (optional)</label><input id="enquiry-start" name="preferred_start" type="text" maxlength="80" aria-describedby="enquiry-start-error"><p class="field-error" id="enquiry-start-error"></p></div>
+<div id="visit-questions" hidden><label class="field-label" for="enquiry-timeframe">When would you like a visit?</label><select id="enquiry-timeframe" name="timeframe"><option value="">No preference</option><option value="asap">As soon as you can</option><option value="month">Within a month</option><option value="season">Next season</option></select><label class="field-label" for="enquiry-budget">Rough budget</label><select id="enquiry-budget" name="budget"><option value="">No preference</option><option value="unsure">Not sure yet</option><option value="small">A small regular visit</option><option value="project">A larger one-off project</option></select><label class="field-label" for="enquiry-contact">How should we reply?</label><select id="enquiry-contact" name="contact_pref"><option value="">No preference</option><option value="email">Email</option><option value="phone">Phone</option><option value="whatsapp">WhatsApp</option></select></div>
+<div id="enquiry-photos-field" hidden><label class="field-label" for="enquiry-photos">Photos (optional)</label><input id="enquiry-photos" name="photos" type="file" accept="image/*" multiple aria-describedby="photos-hint"><p class="hint" id="photos-hint">Up to 3 photos, 5 MB each. Larger files are left out. This demo does not upload them.</p></div>
 <div><label class="field-label" for="enquiry-message">Message (optional)</label><textarea id="enquiry-message" name="message" maxlength="1000" aria-describedby="enquiry-message-error"></textarea><p class="field-error" id="enquiry-message-error"></p></div>
 <div class="enquiry-check"><input id="enquiry-consent" name="consent" type="checkbox" required aria-describedby="enquiry-consent-error"><label for="enquiry-consent">I agree to Greenway Gardens contacting me about this enquiry</label></div>
 <p class="field-error" id="enquiry-consent-error"></p>
@@ -63,37 +87,55 @@
 <div id="enquiry-copy-wrap" hidden><p id="enquiry-copy-label">The message was not sent. Copy this summary if you want to keep it.</p><textarea id="enquiry-copy" class="enquiry-copy" readonly aria-labelledby="enquiry-copy-label"></textarea></div>
 </form>
 </div>
-<div class="secondary-actions"><button type="button" id="download">Download summary</button><button type="button" id="print">Print / save PDF</button></div><p class="privacy-note">Nothing is stored in this browser. This preview does not send the form.</p>
+<div class="whatsapp-panel" id="whatsapp-panel"><button type="button" id="whatsapp-preview">Preview the WhatsApp message</button><div id="whatsapp-draft" hidden><p>Demo only. This does not open WhatsApp, and nothing is sent.</p><p id="whatsapp-url"></p><textarea id="whatsapp-text" readonly aria-label="WhatsApp message that would be sent"></textarea></div></div>
+<div class="secondary-actions"><button type="button" id="download">Download summary</button><button type="button" id="print">Print / save PDF</button></div>
+<a class="primary open-full" id="open-full-button" href="index.html" target="_blank" rel="noopener noreferrer">Open full calculator</a>
+<p class="privacy-note">Nothing is stored in this browser. This preview does not send the form.</p>
 <a class="mobile-edit" href="#inputs">Change the sample inputs</a><div class="print-only" id="print-summary"></div><div class="sr-only" role="status" aria-live="polite" id="live-result"></div></aside>
-</div><p class="below-note">Priced here: Lawn mowing, Hedge trimming, Garden tidy. Lawns 10–400 m² over a 30-week season (8 months). Hedges 2–40 m. Tidy-ups 1–8 hours. Patios, turfing, fencing, tree work and anything outside those limits need a site visit. Travel and how overgrown the garden is are not included.</p></main>
+</div><p class="below-note">Priced here: Lawn mowing, Hedge trimming, Garden tidy, Regular garden maintenance. Lawns 10–400 m² over a 30-week season (8 months). Hedges 2–40 m. Tidy-ups 1–8 hours. Patios, turfing, fencing, tree work and anything outside those limits need a site visit. Condition, access and the coverage postcode can change the figure or send the job to a site visit.</p></main>
 <footer><span>Demo experience by <strong>MikaelTech</strong></span><span>Greenway Gardens is a fictional firm. No gardening service is being offered.</span></footer>
 <div id="toast" class="toast" role="status" hidden></div>
-<noscript><p style="padding:24px">JavaScript is required for this calculator. The figures displayed are a fictional sample, not a quote.</p></noscript>
+<noscript><p style="padding:24px">JavaScript is off, so the figures above stay on the sample garden. <a href="index.html">Open full calculator</a></p></noscript>
 <script>
 'use strict';
 // Garden quote calculator and firm-config checks. No DOM, network, storage or dependencies.
 // Ported from the earlier quote calculator. Trade-specific pricing for gardens replaces it.
 // Node loads this file directly. The page build inlines it into dist/index.html.
 
-const TOP_KEYS = ['firm', 'branding', 'currency', 'enquiry', 'assumptions', 'pricing'];
+const TOP_KEYS = ['firm', 'branding', 'currency', 'enquiry', 'assumptions', 'pricing', 'availability', 'embed'];
 const FIRM_KEYS = ['name', 'mark', 'tagline', 'product', 'isFictional'];
-const BRAND_KEYS = ['demoLabel', 'illustrativeLabel', 'headline', 'intro', 'fictionalNotice'];
-const CURRENCY_KEYS = ['code', 'locale', 'vatLabel', 'vatShort'];
-const ENQUIRY_KEYS = ['destination', 'mode', 'endpoint', 'recipientLabel', 'privacyNote', 'privacyUrl', 'successMessage', 'extraFields'];
+const BRAND_KEYS = ['demoLabel', 'illustrativeLabel', 'headline', 'intro', 'fictionalNotice', 'nextStep', 'replyTime'];
+const CURRENCY_KEYS = ['code', 'locale', 'vatLabel', 'vatShort', 'vat'];
+const VAT_KEYS = ['mode', 'rate'];
+const ENQUIRY_KEYS = ['destination', 'mode', 'endpoint', 'recipientLabel', 'privacyNote', 'privacyUrl', 'successMessage', 'extraFields', 'whatsapp', 'photos', 'budgetBands'];
 const EXTRA_FIELD_KEYS = ['phone', 'postcode', 'preferredStart'];
+const PHOTO_KEYS = ['enabled', 'max', 'maxMB'];
 const ASSUMPTION_KEYS = ['visitorEditable'];
-const PRICING_KEYS = ['variancePercent', 'season', 'services'];
-const SEASON_KEYS = ['weeks', 'months'];
+const PRICING_KEYS = ['variancePercent', 'season', 'services', 'billing', 'modifiers', 'serviceArea'];
+const SEASON_KEYS = ['weeks', 'months', 'winterVisits'];
+const BILLING_KEYS = ['spreadMonths'];
+const AVAILABILITY_KEYS = ['mode', 'message'];
+const EMBED_KEYS = ['fullUrl', 'fixedHeight'];
 const BOUND_KEYS = ['default', 'min', 'max'];
 const SERVICE_KEYS = {
-  lawn: ['id', 'label', 'priced', 'kind', 'default', 'note', 'area', 'ratePerM2', 'minimumVisit', 'frequencies', 'defaultFrequency'],
+  lawn: ['id', 'label', 'priced', 'kind', 'default', 'note', 'method', 'area', 'ratePerM2', 'minimumVisit', 'sizeBands', 'visitHours', 'frequencies', 'defaultFrequency'],
   hedge: ['id', 'label', 'priced', 'kind', 'default', 'note', 'length', 'minimumVisit', 'wasteRemoval', 'heights'],
   tidy: ['id', 'label', 'priced', 'kind', 'default', 'note', 'hours', 'hourlyRate', 'minimumCharge', 'wasteRemoval', 'sizes'],
+  maintenance: ['id', 'label', 'priced', 'kind', 'default', 'note', 'method', 'hourlyRate', 'minimumHours', 'sizes', 'extras', 'frequencies', 'defaultFrequency'],
   specialist: ['id', 'label', 'priced', 'kind', 'reason']
 };
 const HEIGHT_KEYS = ['id', 'label', 'detail', 'ratePerMetre', 'default'];
 const SIZE_KEYS = ['id', 'label', 'hours', 'default'];
+const BAND_KEYS = ['id', 'label', 'maxM2', 'price', 'default'];
+const VISIT_HOUR_KEYS = ['rate', 'minimumHours', 'presets'];
+const PRESET_KEYS = ['id', 'label', 'hours', 'default'];
+const EXTRA_KEYS = ['id', 'label', 'hours', 'timesPerYear', 'hoursEach', 'included', 'default'];
+const MODIFIER_KEYS = ['id', 'label', 'multiplier', 'survey', 'default'];
+const AREA_KEYS = ['core', 'outer', 'outsideMessage'];
+const OUTER_KEYS = ['prefixes', 'surcharge', 'survey'];
+const BUDGET_KEYS = ['id', 'label'];
 const FREQUENCY_KEYS = ['id', 'label', 'everyWeeks', 'monthly', 'oneOff'];
+const OUTWARD_PATTERN = /^[A-Z]{1,2}\d[A-Z\d]?$/;
 const ID_PATTERN = /^[a-z][a-z0-9-]{0,40}$/;
 const ENQUIRY_FALLBACK = 'Enquiry preview only. The live endpoint is missing or is not an HTTPS address, so this form will not send your message.';
 
@@ -170,7 +212,7 @@ function validateConfig(raw) {
   if (!isObject(raw)) return failure(['Configuration must be a JSON object.']);
   unknownKeys(raw, TOP_KEYS, 'config', errors);
   for (const key of TOP_KEYS) {
-    if (key === 'assumptions' || key === 'pricing') continue;
+    if (key === 'assumptions' || key === 'pricing' || key === 'availability' || key === 'embed') continue;
     if (!isObject(raw[key])) push(errors, key, 'is required.');
   }
   if (!isObject(raw.pricing)) push(errors, 'pricing', 'is required.');
@@ -201,8 +243,10 @@ function validateConfig(raw) {
   text(branding.demoLabel, 'branding.demoLabel', errors, 40);
   text(branding.illustrativeLabel, 'branding.illustrativeLabel', errors, 60);
   text(branding.headline, 'branding.headline', errors, 80);
-  text(branding.intro, 'branding.intro', errors, 320);
+  text(branding.intro, 'branding.intro', errors, 400);
   text(branding.fictionalNotice, 'branding.fictionalNotice', errors, 180);
+  if (branding.nextStep !== undefined) text(branding.nextStep, 'branding.nextStep', errors, 160);
+  if (branding.replyTime !== undefined) text(branding.replyTime, 'branding.replyTime', errors, 120);
 
   const currency = isObject(raw.currency) ? raw.currency : {};
   unknownKeys(raw.currency, CURRENCY_KEYS, 'currency', errors);
@@ -214,6 +258,7 @@ function validateConfig(raw) {
   }
   text(currency.vatLabel, 'currency.vatLabel', errors, 80);
   text(currency.vatShort, 'currency.vatShort', errors, 60);
+  const vatMode = readVat(currency.vat, errors);
   if (typeof currency.code === 'string' && typeof currency.locale === 'string') {
     try {
       new Intl.NumberFormat(currency.locale, { style: 'currency', currency: currency.code }).format(1);
@@ -247,6 +292,30 @@ function validateConfig(raw) {
       }
     }
   }
+  let whatsapp = '';
+  if (enquiry.whatsapp !== undefined && enquiry.whatsapp !== '') {
+    if (typeof enquiry.whatsapp !== 'string' || !/^\+[1-9]\d{7,14}$/.test(enquiry.whatsapp)) {
+      push(errors, 'enquiry.whatsapp', 'must be a fictional or real number in international form, such as +447700900123, or omitted.');
+    } else whatsapp = enquiry.whatsapp;
+  }
+  const photos = { enabled: false, max: 3, maxMB: 5 };
+  if (enquiry.photos !== undefined) {
+    if (!isObject(enquiry.photos)) push(errors, 'enquiry.photos', 'must be an object.');
+    else {
+      unknownKeys(enquiry.photos, PHOTO_KEYS, 'enquiry.photos', errors);
+      if (typeof enquiry.photos.enabled !== 'boolean') push(errors, 'enquiry.photos.enabled', 'must be true or false.');
+      else photos.enabled = enquiry.photos.enabled;
+      if (enquiry.photos.max !== undefined) {
+        if (!Number.isInteger(enquiry.photos.max) || enquiry.photos.max < 1 || enquiry.photos.max > 3) push(errors, 'enquiry.photos.max', 'must be a whole number from 1 to 3.');
+        else photos.max = enquiry.photos.max;
+      }
+      if (enquiry.photos.maxMB !== undefined) {
+        if (typeof enquiry.photos.maxMB !== 'number' || enquiry.photos.maxMB <= 0 || enquiry.photos.maxMB > 5) push(errors, 'enquiry.photos.maxMB', 'must be from just above 0 to 5.');
+        else photos.maxMB = enquiry.photos.maxMB;
+      }
+    }
+  }
+  const budgetBands = readBudgetBands(enquiry.budgetBands, errors);
   let delivery = { mode: 'preview', endpoint: '', fallbackNote: '' };
   if (mode === 'preview' || mode === 'live') {
     const endpoint = enquiry.endpoint;
@@ -264,17 +333,140 @@ function validateConfig(raw) {
   unknownKeys(raw.pricing, PRICING_KEYS, 'pricing', errors);
   bounds(pricing.variancePercent, 'pricing.variancePercent', errors, { minAllowed: 0, maxAllowed: 100, allowMinEqualMax: true });
   const season = readSeason(pricing.season, errors);
+  const billing = readBilling(pricing.billing, season, errors);
+  const modifiers = readModifiers(pricing.modifiers, errors);
+  const serviceArea = readServiceArea(pricing.serviceArea, errors);
   const services = readServices(pricing.services, errors);
+  const availability = readAvailability(raw.availability, errors);
+  const embed = readEmbed(raw.embed, errors);
 
-  if (errors.length || !season || !services) return failure(errors.length ? errors : ['pricing could not be read.']);
+  if (errors.length || !season || !services || !billing) return failure(errors.length ? errors : ['pricing could not be read.']);
   const config = JSON.parse(JSON.stringify(raw));
   config.enquiry.extraFields = extra;
+  config.enquiry.whatsapp = whatsapp;
+  config.enquiry.photos = photos;
+  config.enquiry.budgetBands = budgetBands;
   if (typeof config.enquiry.endpoint !== 'string') config.enquiry.endpoint = '';
   if (config.enquiry.privacyUrl === undefined || config.enquiry.privacyUrl === '') delete config.enquiry.privacyUrl;
   config.assumptions = { visitorEditable };
+  config.currency.vat = vatMode;
   config.pricing.season = season;
+  config.pricing.billing = billing;
+  if (modifiers) config.pricing.modifiers = modifiers;
+  else delete config.pricing.modifiers;
+  if (serviceArea) config.pricing.serviceArea = serviceArea;
+  else delete config.pricing.serviceArea;
   config.pricing.services = services;
+  config.availability = availability;
+  config.embed = embed;
+  if (!config.branding.nextStep) delete config.branding.nextStep;
+  if (!config.branding.replyTime) delete config.branding.replyTime;
   return { ok: true, config, delivery, errors: [] };
+}
+
+function readVat(value, errors) {
+  if (value === undefined) return { mode: 'exclusive', rate: 20 };
+  if (!isObject(value)) {
+    push(errors, 'currency.vat', 'must be an object.');
+    return { mode: 'exclusive', rate: 20 };
+  }
+  unknownKeys(value, VAT_KEYS, 'currency.vat', errors);
+  const mode = value.mode;
+  if (mode !== 'exclusive' && mode !== 'inclusive' && mode !== 'notRegistered') {
+    push(errors, 'currency.vat.mode', 'must be exclusive, inclusive or notRegistered.');
+  }
+  let rate = 20;
+  if (value.rate !== undefined) {
+    if (typeof value.rate !== 'number' || !Number.isFinite(value.rate) || value.rate < 0 || value.rate > 30) {
+      push(errors, 'currency.vat.rate', 'must be a percentage from 0 to 30.');
+    } else rate = value.rate;
+  }
+  return { mode: mode === 'inclusive' || mode === 'notRegistered' ? mode : 'exclusive', rate };
+}
+
+function readBudgetBands(list, errors) {
+  if (list === undefined) {
+    return [
+      { id: 'unsure', label: 'Not sure yet' },
+      { id: 'small', label: 'A small regular visit' },
+      { id: 'project', label: 'A larger one-off project' }
+    ];
+  }
+  if (!Array.isArray(list) || list.length < 1 || list.length > 6) {
+    push(errors, 'enquiry.budgetBands', 'must list between 1 and 6 bands.');
+    return [];
+  }
+  const ids = new Set();
+  const bands = [];
+  list.forEach((band, index) => {
+    const at = 'enquiry.budgetBands[' + index + ']';
+    if (!isObject(band)) {
+      push(errors, at, 'must be an object.');
+      return;
+    }
+    unknownKeys(band, BUDGET_KEYS, at, errors);
+    if (typeof band.id !== 'string' || !ID_PATTERN.test(band.id)) push(errors, at + '.id', 'must be a short lowercase id.');
+    else if (ids.has(band.id)) push(errors, at + '.id', 'is duplicated.');
+    else ids.add(band.id);
+    text(band.label, at + '.label', errors, 60);
+    bands.push({ id: band.id, label: band.label });
+  });
+  return bands;
+}
+
+function readAvailability(value, errors) {
+  if (value === undefined) return { mode: 'open', message: '' };
+  if (!isObject(value)) {
+    push(errors, 'availability', 'must be an object.');
+    return { mode: 'open', message: '' };
+  }
+  unknownKeys(value, AVAILABILITY_KEYS, 'availability', errors);
+  if (value.mode !== 'open' && value.mode !== 'preSeason' && value.mode !== 'waitingList') {
+    push(errors, 'availability.mode', 'must be open, preSeason or waitingList.');
+  }
+  const message = value.message === undefined ? '' : value.message;
+  if (value.mode !== 'open' && value.message !== undefined) text(value.message, 'availability.message', errors, 180);
+  if (value.mode !== 'open' && (typeof message !== 'string' || message.trim() === '')) {
+    push(errors, 'availability.message', 'must explain the pre-season or waiting-list mode.');
+  }
+  return { mode: value.mode === 'preSeason' || value.mode === 'waitingList' ? value.mode : 'open', message: typeof message === 'string' ? message : '' };
+}
+
+function readEmbed(value, errors) {
+  if (value === undefined) return { fullUrl: '', fixedHeight: 1400 };
+  if (!isObject(value)) {
+    push(errors, 'embed', 'must be an object.');
+    return { fullUrl: '', fixedHeight: 1400 };
+  }
+  unknownKeys(value, EMBED_KEYS, 'embed', errors);
+  let fullUrl = '';
+  if (value.fullUrl !== undefined && value.fullUrl !== '') {
+    if (typeof value.fullUrl !== 'string' || value.fullUrl.length > 300 || /[\s<>"]/.test(value.fullUrl)) {
+      push(errors, 'embed.fullUrl', 'must be a short address without spaces.');
+    } else fullUrl = value.fullUrl;
+  }
+  let fixedHeight = 1400;
+  if (value.fixedHeight !== undefined) {
+    if (!Number.isInteger(value.fixedHeight) || value.fixedHeight < 800 || value.fixedHeight > 4000) {
+      push(errors, 'embed.fixedHeight', 'must be a whole number of pixels from 800 to 4000.');
+    } else fixedHeight = value.fixedHeight;
+  }
+  return { fullUrl, fixedHeight };
+}
+
+function readBilling(value, season, errors) {
+  const fallback = season && season.months ? season.months : 8;
+  if (value === undefined) return { spreadMonths: fallback };
+  if (!isObject(value)) {
+    push(errors, 'pricing.billing', 'must be an object.');
+    return null;
+  }
+  unknownKeys(value, BILLING_KEYS, 'pricing.billing', errors);
+  if (!Number.isInteger(value.spreadMonths) || value.spreadMonths < 1 || value.spreadMonths > 12) {
+    push(errors, 'pricing.billing.spreadMonths', 'must be a whole number from 1 to 12.');
+    return null;
+  }
+  return { spreadMonths: value.spreadMonths };
 }
 
 function readSeason(value, errors) {
@@ -292,12 +484,19 @@ function readSeason(value, errors) {
     push(errors, 'pricing.season.months', 'must be a whole number from 1 to 12.');
     ok = false;
   }
-  return ok ? { weeks: value.weeks, months: value.months } : null;
+  let winterVisits = 0;
+  if (value.winterVisits !== undefined) {
+    if (!Number.isInteger(value.winterVisits) || value.winterVisits < 0 || value.winterVisits > 40) {
+      push(errors, 'pricing.season.winterVisits', 'must be a whole number from 0 to 40.');
+      ok = false;
+    } else winterVisits = value.winterVisits;
+  }
+  return ok ? { weeks: value.weeks, months: value.months, winterVisits } : null;
 }
 
 function readServices(list, errors) {
-  if (!Array.isArray(list) || list.length < 1 || list.length > 6) {
-    push(errors, 'pricing.services', 'must list between 1 and 6 services.');
+  if (!Array.isArray(list) || list.length < 1 || list.length > 8) {
+    push(errors, 'pricing.services', 'must list between 1 and 8 services.');
     return null;
   }
   const ids = new Set();
@@ -315,7 +514,7 @@ function readServices(list, errors) {
     }
     const kind = service.kind;
     if (!SERVICE_KEYS[kind]) {
-      push(errors, path + '.kind', 'must be lawn, hedge, tidy or specialist.');
+      push(errors, path + '.kind', 'must be lawn, hedge, tidy, maintenance or specialist.');
       ok = false;
       return;
     }
@@ -345,6 +544,7 @@ function readServices(list, errors) {
     if (kind === 'lawn') normalized.push(readLawn(service, path, errors) || (ok = false));
     if (kind === 'hedge') normalized.push(readHedge(service, path, errors) || (ok = false));
     if (kind === 'tidy') normalized.push(readTidy(service, path, errors) || (ok = false));
+    if (kind === 'maintenance') normalized.push(readMaintenance(service, path, errors) || (ok = false));
   });
   if (priced < 1) push(errors, 'pricing.services', 'must include at least one priced service.');
   if (defaults !== 1) push(errors, 'pricing.services', 'must mark exactly one priced service as the default.');
@@ -357,24 +557,292 @@ function readServices(list, errors) {
 }
 
 function readLawn(service, path, errors) {
-  bounds(service.area, path + '.area', errors, { minAllowed: 1, maxAllowed: 1000000 });
-  bounds(service.ratePerM2, path + '.ratePerM2', errors, { minAllowed: 0.01, maxAllowed: 1000 });
-  bounds(service.minimumVisit, path + '.minimumVisit', errors, { minAllowed: 0.01, maxAllowed: 1000000 });
+  const method = service.method === undefined ? 'perM2' : service.method;
+  if (method !== 'perM2' && method !== 'sizeBands' && method !== 'hours') {
+    push(errors, path + '.method', 'must be perM2, sizeBands or hours.');
+    return null;
+  }
   const frequencies = readFrequencies(service, path, errors);
   if (!frequencies) return null;
-  return {
+  const base = {
     id: service.id,
     label: service.label,
     priced: true,
     kind: 'lawn',
     default: service.default === true,
     note: service.note,
-    area: service.area,
-    ratePerM2: service.ratePerM2,
-    minimumVisit: service.minimumVisit,
+    method,
     frequencies,
     defaultFrequency: String(service.defaultFrequency)
   };
+  if (method === 'perM2') {
+    bounds(service.area, path + '.area', errors, { minAllowed: 1, maxAllowed: 1000000 });
+    bounds(service.ratePerM2, path + '.ratePerM2', errors, { minAllowed: 0.01, maxAllowed: 1000 });
+    bounds(service.minimumVisit, path + '.minimumVisit', errors, { minAllowed: 0.01, maxAllowed: 1000000 });
+    return Object.assign(base, { area: service.area, ratePerM2: service.ratePerM2, minimumVisit: service.minimumVisit });
+  }
+  if (method === 'sizeBands') {
+    const sizeBands = readSizeBands(service.sizeBands, path, errors);
+    if (!sizeBands) return null;
+    bounds(service.minimumVisit, path + '.minimumVisit', errors, { minAllowed: 0, maxAllowed: 1000000, allowMinEqualMax: true });
+    return Object.assign(base, { sizeBands, minimumVisit: service.minimumVisit, area: { min: 0, max: 0, default: 0 } });
+  }
+  const visitHours = readVisitHours(service.visitHours, path, errors);
+  if (!visitHours) return null;
+  return Object.assign(base, { visitHours });
+}
+
+function readSizeBands(list, path, errors) {
+  if (!Array.isArray(list) || list.length < 1 || list.length > 6) {
+    push(errors, path + '.sizeBands', 'must list between 1 and 6 size bands.');
+    return null;
+  }
+  const ids = new Set();
+  let defaults = 0;
+  const bands = [];
+  let ok = true;
+  list.forEach((band, index) => {
+    const at = path + '.sizeBands[' + index + ']';
+    if (!isObject(band)) {
+      push(errors, at, 'must be an object.');
+      ok = false;
+      return;
+    }
+    unknownKeys(band, BAND_KEYS, at, errors);
+    if (typeof band.id !== 'string' || !ID_PATTERN.test(band.id)) push(errors, at + '.id', 'must be a short lowercase id.');
+    else if (ids.has(band.id)) push(errors, at + '.id', 'is duplicated.');
+    else ids.add(band.id);
+    text(band.label, at + '.label', errors, 60);
+    if (band.maxM2 !== undefined && (typeof band.maxM2 !== 'number' || band.maxM2 <= 0)) push(errors, at + '.maxM2', 'must be greater than zero.');
+    if (!finiteNumber(band.price, at + '.price', errors) || band.price < 0) {
+      if (typeof band.price === 'number') push(errors, at + '.price', 'must be zero or more.');
+      ok = false;
+    }
+    if (band.default !== undefined && typeof band.default !== 'boolean') push(errors, at + '.default', 'must be true or false.');
+    if (band.default === true) defaults += 1;
+    bands.push({ id: band.id, label: band.label, maxM2: band.maxM2, price: band.price, default: band.default === true });
+  });
+  if (defaults !== 1) push(errors, path + '.sizeBands', 'must mark exactly one band as the default.');
+  return ok ? bands : null;
+}
+
+function readVisitHours(value, path, errors) {
+  const at = path + '.visitHours';
+  if (!isObject(value)) {
+    push(errors, at, 'must set the hourly rate, the minimum hours and the presets.');
+    return null;
+  }
+  unknownKeys(value, VISIT_HOUR_KEYS, at, errors);
+  bounds(value.rate, at + '.rate', errors, { minAllowed: 1, maxAllowed: 1000 });
+  bounds(value.minimumHours, at + '.minimumHours', errors, { minAllowed: 0.5, maxAllowed: 24 });
+  const presets = readHourPresets(value.presets, at + '.presets', value.minimumHours, errors);
+  if (!presets) return null;
+  return { rate: value.rate, minimumHours: value.minimumHours, presets };
+}
+
+function readHourPresets(list, path, minimumHours, errors) {
+  if (!Array.isArray(list) || list.length < 1 || list.length > 6) {
+    push(errors, path, 'must list between 1 and 6 hour presets.');
+    return null;
+  }
+  const ids = new Set();
+  let defaults = 0;
+  const presets = [];
+  let ok = true;
+  list.forEach((preset, index) => {
+    const at = path + '[' + index + ']';
+    if (!isObject(preset)) {
+      push(errors, at, 'must be an object.');
+      ok = false;
+      return;
+    }
+    unknownKeys(preset, PRESET_KEYS, at, errors);
+    if (typeof preset.id !== 'string' || !ID_PATTERN.test(preset.id)) push(errors, at + '.id', 'must be a short lowercase id.');
+    else if (ids.has(preset.id)) push(errors, at + '.id', 'is duplicated.');
+    else ids.add(preset.id);
+    text(preset.label, at + '.label', errors, 40);
+    if (!finiteNumber(preset.hours, at + '.hours', errors) || preset.hours <= 0) ok = false;
+    if (preset.default === true) defaults += 1;
+    presets.push({ id: preset.id, label: preset.label, hours: preset.hours, default: preset.default === true });
+  });
+  if (defaults !== 1) push(errors, path, 'must mark exactly one preset as the default.');
+  if (minimumHours && isObject(minimumHours) && presets.some(preset => preset.hours < minimumHours.min)) {
+    push(errors, path, 'must not sit below the minimum hours the firm allows a visitor to choose.');
+  }
+  return ok ? presets : null;
+}
+
+function readMaintenance(service, path, errors) {
+  if (service.method !== undefined && service.method !== 'hours') {
+    push(errors, path + '.method', 'must be hours for regular maintenance.');
+    return null;
+  }
+  bounds(service.hourlyRate, path + '.hourlyRate', errors, { minAllowed: 1, maxAllowed: 1000 });
+  bounds(service.minimumHours, path + '.minimumHours', errors, { minAllowed: 0.5, maxAllowed: 24 });
+  const frequencies = readFrequencies(service, path, errors);
+  const sizes = readHourPresets(service.sizes, path + '.sizes', service.minimumHours, errors);
+  if (!frequencies || !sizes) return null;
+  if (!Array.isArray(service.extras) || service.extras.length < 1 || service.extras.length > 6) {
+    push(errors, path + '.extras', 'must list the bundled jobs.');
+    return null;
+  }
+  const ids = new Set();
+  const extras = [];
+  let ok = true;
+  service.extras.forEach((extra, index) => {
+    const at = path + '.extras[' + index + ']';
+    if (!isObject(extra)) {
+      push(errors, at, 'must be an object.');
+      ok = false;
+      return;
+    }
+    unknownKeys(extra, EXTRA_KEYS, at, errors);
+    if (typeof extra.id !== 'string' || !ID_PATTERN.test(extra.id)) push(errors, at + '.id', 'must be a short lowercase id.');
+    else if (ids.has(extra.id)) push(errors, at + '.id', 'is duplicated.');
+    else ids.add(extra.id);
+    text(extra.label, at + '.label', errors, 60);
+    const included = extra.included === true;
+    const annual = extra.timesPerYear !== undefined;
+    if (extra.included !== undefined && extra.included !== true) push(errors, at + '.included', 'must be true when the job is part of every visit.');
+    if (annual && (!Number.isInteger(extra.timesPerYear) || extra.timesPerYear < 1 || extra.timesPerYear > 12)) {
+      push(errors, at + '.timesPerYear', 'must be a whole number from 1 to 12.');
+      ok = false;
+    }
+    if (annual && (!finiteNumber(extra.hoursEach, at + '.hoursEach', errors) || extra.hoursEach <= 0)) ok = false;
+    if (!annual && !included && extra.hours !== undefined && (typeof extra.hours !== 'number' || extra.hours < 0)) {
+      push(errors, at + '.hours', 'must be zero or more.');
+      ok = false;
+    }
+    if (extra.default !== undefined && typeof extra.default !== 'boolean') push(errors, at + '.default', 'must be true or false.');
+    const next = { id: extra.id, label: extra.label, default: extra.default !== false };
+    if (included) next.included = true;
+    else if (annual) {
+      next.timesPerYear = extra.timesPerYear;
+      next.hoursEach = extra.hoursEach;
+    } else if (typeof extra.hours === 'number') next.hours = extra.hours;
+    extras.push(next);
+  });
+  if (!ok) return null;
+  return {
+    id: service.id,
+    label: service.label,
+    priced: true,
+    kind: 'maintenance',
+    default: service.default === true,
+    note: service.note,
+    method: 'hours',
+    hourlyRate: service.hourlyRate,
+    minimumHours: service.minimumHours,
+    sizes,
+    extras,
+    frequencies,
+    defaultFrequency: String(service.defaultFrequency)
+  };
+}
+
+function readModifiers(value, errors) {
+  if (value == null) return null;
+  if (!isObject(value)) {
+    push(errors, 'pricing.modifiers', 'must be an object.');
+    return null;
+  }
+  unknownKeys(value, ['condition', 'access'], 'pricing.modifiers', errors);
+  const condition = readModifierList(value.condition, 'pricing.modifiers.condition', errors);
+  const access = readModifierList(value.access, 'pricing.modifiers.access', errors);
+  if (!condition || !access) return null;
+  return { condition, access };
+}
+
+function readModifierList(list, path, errors) {
+  if (!Array.isArray(list) || list.length < 1 || list.length > 6) {
+    push(errors, path, 'must list between 1 and 6 choices.');
+    return null;
+  }
+  const ids = new Set();
+  let defaults = 0;
+  const choices = [];
+  let ok = true;
+  list.forEach((item, index) => {
+    const at = path + '[' + index + ']';
+    if (!isObject(item)) {
+      push(errors, at, 'must be an object.');
+      ok = false;
+      return;
+    }
+    unknownKeys(item, MODIFIER_KEYS, at, errors);
+    if (typeof item.id !== 'string' || !ID_PATTERN.test(item.id)) push(errors, at + '.id', 'must be a short lowercase id.');
+    else if (ids.has(item.id)) push(errors, at + '.id', 'is duplicated.');
+    else ids.add(item.id);
+    text(item.label, at + '.label', errors, 80);
+    const survey = item.survey === true;
+    const hasMultiplier = item.multiplier !== undefined;
+    if (item.survey !== undefined && item.survey !== true) push(errors, at + '.survey', 'must be true when this answer needs a site visit.');
+    if (survey === hasMultiplier) {
+      push(errors, at, 'must either set a multiplier or survey, not both and not neither.');
+      ok = false;
+    }
+    if (hasMultiplier && (typeof item.multiplier !== 'number' || item.multiplier <= 0 || item.multiplier > 5)) {
+      push(errors, at + '.multiplier', 'must be greater than 0 and at most 5.');
+      ok = false;
+    }
+    if (item.default === true) defaults += 1;
+    const choice = { id: item.id, label: item.label, default: item.default === true };
+    if (survey) choice.survey = true;
+    else choice.multiplier = item.multiplier;
+    choices.push(choice);
+  });
+  if (defaults !== 1) push(errors, path, 'must mark exactly one choice as the default.');
+  return ok ? choices : null;
+}
+
+function readServiceArea(value, errors) {
+  if (value == null) return null;
+  if (!isObject(value)) {
+    push(errors, 'pricing.serviceArea', 'must be an object.');
+    return null;
+  }
+  unknownKeys(value, AREA_KEYS, 'pricing.serviceArea', errors);
+  text(value.outsideMessage, 'pricing.serviceArea.outsideMessage', errors, 240, { multiline: true });
+  const core = readDistricts(value.core, 'pricing.serviceArea.core', errors);
+  const outer = [];
+  if (!Array.isArray(value.outer)) push(errors, 'pricing.serviceArea.outer', 'must list the surcharge bands. Use an empty list if there are none.');
+  else value.outer.forEach((band, index) => {
+    const at = 'pricing.serviceArea.outer[' + index + ']';
+    if (!isObject(band)) {
+      push(errors, at, 'must be an object.');
+      return;
+    }
+    unknownKeys(band, OUTER_KEYS, at, errors);
+    const prefixes = readDistricts(band.prefixes, at + '.prefixes', errors);
+    const survey = band.survey === true;
+    let surcharge = 0;
+    if (!survey) {
+      if (typeof band.surcharge !== 'number' || band.surcharge < 0) push(errors, at + '.surcharge', 'must be zero or more.');
+      else surcharge = band.surcharge;
+    }
+    outer.push({ prefixes, surcharge, survey });
+  });
+  if (!core) return null;
+  return { core, outer, outsideMessage: value.outsideMessage };
+}
+
+function readDistricts(list, path, errors) {
+  if (!Array.isArray(list) || list.length < 1 || list.length > 80) {
+    push(errors, path, 'must list postcode districts such as EH1.');
+    return null;
+  }
+  const seen = new Set();
+  const districts = [];
+  list.forEach((item, index) => {
+    const code = typeof item === 'string' ? item.toUpperCase().replace(/\s+/g, '') : '';
+    if (!OUTWARD_PATTERN.test(code)) push(errors, path + '[' + index + ']', 'must be a postcode district such as EH10.');
+    else if (seen.has(code)) push(errors, path, 'lists ' + code + ' more than once.');
+    else {
+      seen.add(code);
+      districts.push(code);
+    }
+  });
+  return districts;
 }
 
 function readHedge(service, path, errors) {
@@ -670,7 +1138,90 @@ function createCalculator(raw) {
     if (service && service.kind === 'lawn') return calculateLawn(service, state, variance, errors);
     if (service && service.kind === 'hedge') return calculateHedge(service, state, variance, errors);
     if (service && service.kind === 'tidy') return calculateTidy(service, state, variance, errors);
+    if (service && service.kind === 'maintenance') return calculateMaintenance(service, state, variance, errors);
     return { status: 'invalid', errors };
+  }
+
+  function withVat(amount) {
+    const vat = config.currency.vat;
+    if (!vat || vat.mode !== 'inclusive' || !(vat.rate > 0)) return amount;
+    return pounds(pence(amount * (1 + vat.rate / 100)));
+  }
+
+  function modifierChoice(list, selected) {
+    if (!list || !list.length) return null;
+    const found = selected ? list.find(item => item.id === selected) : null;
+    return found || list.find(item => item.default) || list[0];
+  }
+
+  function adjustBase(kind, state, amount) {
+    const mods = pricing.modifiers;
+    if (!mods || (kind !== 'lawn' && kind !== 'hedge' && kind !== 'tidy' && kind !== 'maintenance')) {
+      return { amount, notes: [] };
+    }
+    const notes = [];
+    for (const key of ['condition', 'access']) {
+      const choice = modifierChoice(mods[key], state[key]);
+      if (!choice) continue;
+      if (state[key] && state[key] !== choice.id) {
+        return { invalid: 'Choose a listed ' + (key === 'condition' ? 'condition' : 'access') + '.', field: key };
+      }
+      if (choice.survey && state[key] === choice.id) {
+        return { survey: true, reason: choice.label + ' needs a site visit. No figure is included.' };
+      }
+      if (choice.survey) continue;
+      if (Math.abs(choice.multiplier - 1) > 1e-9 && state[key] === choice.id) {
+        notes.push(choice.label + ' × ' + plain(config, choice.multiplier) + ' (an assumed adjustment).');
+        amount = pounds(pence(amount * choice.multiplier));
+      }
+    }
+    return { amount, notes };
+  }
+
+  function outwardCode(value) {
+    const compact = String(value || '').toUpperCase().replace(/\s+/g, '');
+    if (!compact) return '';
+    if (/^[A-Z]{1,2}\d[A-Z\d]?\d[A-Z]{2}$/.test(compact)) return compact.slice(0, -3);
+    if (OUTWARD_PATTERN.test(compact)) return compact;
+    return null;
+  }
+
+  function coverageFor(postcode) {
+    const area = pricing.serviceArea;
+    if (!area) return { kind: 'skip' };
+    const raw = typeof postcode === 'string' ? postcode.trim() : '';
+    if (!raw) return { kind: 'skip' };
+    const outward = outwardCode(raw);
+    if (outward == null) return { kind: 'invalid' };
+    if (area.core.includes(outward)) return { kind: 'core', outward };
+    for (const band of area.outer) {
+      if (!band.prefixes.includes(outward)) continue;
+      if (band.survey) return { kind: 'survey', outward, reason: area.outsideMessage };
+      return { kind: 'outer', outward, surcharge: band.surcharge };
+    }
+    return { kind: 'outside', outward, reason: area.outsideMessage };
+  }
+
+  function travelOn(state, errors) {
+    const coverage = coverageFor(state.postcode);
+    if (coverage.kind === 'invalid') {
+      errors.postcode = 'Enter a UK postcode, or leave it blank.';
+      return { blocked: true };
+    }
+    if (coverage.kind === 'survey' || coverage.kind === 'outside') {
+      return { survey: true, reason: coverage.reason, outward: coverage.outward };
+    }
+    return { surcharge: coverage.kind === 'outer' ? coverage.surcharge : 0, outward: coverage.outward || '' };
+  }
+
+  function yearView(visit, seasonTotal, oneOff) {
+    const winterVisits = pricing.season.winterVisits || 0;
+    const spread = pricing.billing.spreadMonths;
+    if (oneOff || winterVisits <= 0) return { winterVisits: 0, yearTotal: null, yearMonthly: null, spreadMonths: spread };
+    const winterCost = pounds(pence(visit * winterVisits));
+    const yearTotal = pounds(pence(seasonTotal + winterCost));
+    const yearMonthly = pounds(pence(yearTotal / spread));
+    return { winterVisits, winterCost, yearTotal, yearMonthly, spreadMonths: spread };
   }
 
   function rateError(pathName, value, bound, label) {
@@ -678,50 +1229,37 @@ function createCalculator(raw) {
     return 'Use ' + label + ' from ' + moneyBound(config, bound.min) + ' to ' + moneyBound(config, bound.max) + '.';
   }
 
-  function calculateLawn(service, state, variance, errors) {
-    const finite = value => typeof value === 'number' && Number.isFinite(value);
-    if (!finite(state.area) || state.area <= 0) errors.area = 'Enter a lawn area greater than zero.';
-    const freq = frequencyOf(service, state.frequency);
-    if (!freq) errors.frequency = 'Choose an available visit frequency.';
-    const rate = editable ? state.lawnRate : service.ratePerM2.default;
-    const minimum = editable ? state.lawnMinimum : service.minimumVisit.default;
-    const rateMessage = editable ? rateError('lawn-rate', rate, service.ratePerM2, 'a lawn rate') : '';
-    const minimumMessage = editable ? rateError('lawn-minimum', minimum, service.minimumVisit, 'a minimum visit') : '';
-    if (rateMessage) errors['lawn-rate'] = rateMessage;
-    if (minimumMessage) errors['lawn-minimum'] = minimumMessage;
-    if (Object.keys(errors).length) return { status: 'invalid', errors };
-    if (state.area < service.area.min || state.area > service.area.max) {
-      return {
-        status: 'tailored',
-        errors: {},
-        reason: 'This model covers lawns from ' + plain(config, service.area.min, 2) + ' to ' + plain(config, service.area.max, 2) + ' m². A site visit would be needed for this lawn.',
-        serviceId: service.id,
-        serviceLabel: service.label,
-        kind: 'lawn'
-      };
-    }
-    const raw = state.area * rate;
-    const rawPence = pence(raw);
+  function tailored(service, reason) {
+    return { status: 'tailored', errors: {}, reason, serviceId: service.id, serviceLabel: service.label, kind: service.kind };
+  }
+
+  function priceVisit(rawAmount, minimum) {
+    const adjusted = rawAmount;
+    const rawPence = pence(adjusted);
     const minPence = pence(minimum);
-    const visit = pounds(Math.max(rawPence, minPence));
+    return {
+      rawVisit: pounds(rawPence),
+      visit: withVat(pounds(Math.max(rawPence, minPence))),
+      minimumApplied: rawPence < minPence,
+      minimumEqual: rawPence === minPence
+    };
+  }
+
+  function schedulePrice(service, freq, labourVisit, travel, variance) {
     const math = seasonMath(freq);
     const oneOff = !!freq.oneOff;
-    const seasonTotal = oneOff ? visit : pounds(pence(visit * math.visits));
+    const perVisit = travel ? pounds(pence(labourVisit + travel)) : labourVisit;
+    const seasonTotal = oneOff ? perVisit : pounds(pence(perVisit * math.visits));
     const monthlyAverage = oneOff ? null : pounds(pence(seasonTotal / pricing.season.months));
-    const headline = oneOff ? visit : seasonTotal;
+    const headline = oneOff ? perVisit : seasonTotal;
     const band = outward(headline, variance);
     const monthlyBand = oneOff ? null : outward(monthlyAverage, variance);
+    const year = yearView(perVisit, oneOff ? perVisit : seasonTotal, oneOff);
+    const yearBand = year.yearTotal == null ? null : outward(year.yearTotal, variance);
+    const yearMonthBand = year.yearMonthly == null ? null : outward(year.yearMonthly, variance);
     return {
-      status: 'valid',
-      errors: {},
-      serviceId: service.id,
-      serviceLabel: service.label,
-      kind: 'lawn',
-      rawVisit: pounds(rawPence),
-      visit,
-      waste: 0,
-      wasteOn: false,
-      job: visit,
+      perVisit,
+      travel,
       visits: math.visits,
       visitStep: math.step,
       seasonTotal: oneOff ? null : seasonTotal,
@@ -734,16 +1272,104 @@ function createCalculator(raw) {
       monthlyHigh: monthlyBand ? monthlyBand.high : null,
       oneOff,
       billing: oneOff ? 'one-off' : 'season',
+      winterVisits: year.winterVisits,
+      winterCost: year.winterCost || 0,
+      yearTotal: year.yearTotal,
+      yearMonthly: year.yearMonthly,
+      yearLow: yearBand ? yearBand.low : null,
+      yearHigh: yearBand ? yearBand.high : null,
+      yearMonthlyLow: yearMonthBand ? yearMonthBand.low : null,
+      yearMonthlyHigh: yearMonthBand ? yearMonthBand.high : null,
+      spreadMonths: year.spreadMonths,
+      frequencyId: freq.id,
+      frequencyLabel: freq.label
+    };
+  }
+
+  function calculateLawn(service, state, variance, errors) {
+    const finite = value => typeof value === 'number' && Number.isFinite(value);
+    const freq = frequencyOf(service, state.frequency);
+    if (!freq) errors.frequency = 'Choose an available visit frequency.';
+    const method = service.method || 'perM2';
+    let raw = 0;
+    let rate = 0;
+    let minimum = 0;
+    let measure = 0;
+    let bandLabel = '';
+    if (method === 'sizeBands') {
+      const band = service.sizeBands.find(item => item.id === state.sizeBand) || service.sizeBands.find(item => item.default);
+      if (!band || (state.sizeBand && state.sizeBand !== band.id)) errors['size-band'] = 'Choose a lawn size band.';
+      minimum = editable ? state.lawnMinimum : service.minimumVisit.default;
+      const minimumMessage = editable ? rateError('lawn-minimum', minimum, service.minimumVisit, 'a minimum visit') : '';
+      if (minimumMessage) errors['lawn-minimum'] = minimumMessage;
+      if (Object.keys(errors).length) return { status: 'invalid', errors };
+      raw = band.price;
+      rate = band.price;
+      measure = band.maxM2 || 0;
+      bandLabel = band.label;
+    } else if (method === 'hours') {
+      const preset = service.visitHours.presets.find(item => item.id === state.lawnHours) || service.visitHours.presets.find(item => item.default);
+      if (!preset || (state.lawnHours && state.lawnHours !== preset.id)) errors['lawn-hours'] = 'Choose a visit length.';
+      rate = editable ? state.lawnRate : service.visitHours.rate.default;
+      const minimumHours = editable ? state.lawnMinimum : service.visitHours.minimumHours.default;
+      const rateMessage = editable ? rateError('lawn-rate', rate, service.visitHours.rate, 'an hourly rate') : '';
+      const minimumMessage = editable ? rateError('lawn-minimum', minimumHours, service.visitHours.minimumHours, 'a minimum number of hours') : '';
+      if (rateMessage) errors['lawn-rate'] = rateMessage;
+      if (minimumMessage) errors['lawn-minimum'] = minimumMessage;
+      if (Object.keys(errors).length) return { status: 'invalid', errors };
+      raw = preset.hours * rate;
+      minimum = minimumHours * rate;
+      measure = preset.hours;
+      bandLabel = preset.label;
+    } else {
+      if (!finite(state.area) || state.area <= 0) errors.area = 'Enter a lawn area greater than zero.';
+      rate = editable ? state.lawnRate : service.ratePerM2.default;
+      minimum = editable ? state.lawnMinimum : service.minimumVisit.default;
+      const rateMessage = editable ? rateError('lawn-rate', rate, service.ratePerM2, 'a lawn rate') : '';
+      const minimumMessage = editable ? rateError('lawn-minimum', minimum, service.minimumVisit, 'a minimum visit') : '';
+      if (rateMessage) errors['lawn-rate'] = rateMessage;
+      if (minimumMessage) errors['lawn-minimum'] = minimumMessage;
+      if (Object.keys(errors).length) return { status: 'invalid', errors };
+      if (state.area < service.area.min || state.area > service.area.max) {
+        return tailored(service, 'This model covers lawns from ' + plain(config, service.area.min, 2) + ' to ' + plain(config, service.area.max, 2) + ' m². A site visit would be needed for this lawn.');
+      }
+      raw = state.area * rate;
+      measure = state.area;
+    }
+    const adjusted = adjustBase('lawn', state, raw);
+    if (adjusted.invalid) return { status: 'invalid', errors: Object.assign(errors, { [adjusted.field || 'condition']: adjusted.invalid }) };
+    if (adjusted.survey) return tailored(service, adjusted.reason);
+    const priced = priceVisit(adjusted.amount, minimum);
+    const travel = travelOn(state, errors);
+    if (travel.blocked) return { status: 'invalid', errors };
+    if (travel.survey) return tailored(service, travel.reason);
+    if (!freq) return { status: 'invalid', errors };
+    const plan = schedulePrice(service, freq, priced.visit, withVat(travel.surcharge || 0), variance);
+    return Object.assign({
+      status: 'valid',
+      errors: {},
+      serviceId: service.id,
+      serviceLabel: service.label,
+      kind: 'lawn',
+      method,
+      rawVisit: priced.rawVisit,
+      visit: plan.perVisit,
+      labourVisit: priced.visit,
+      waste: 0,
+      wasteOn: false,
+      job: plan.perVisit,
       usedRate: rate,
       usedMinimum: minimum,
       usedVariance: variance,
       usedWasteFee: 0,
-      minimumApplied: rawPence < minPence,
-      minimumEqual: rawPence === minPence,
-      frequencyId: freq.id,
-      frequencyLabel: freq.label,
-      measure: state.area
-    };
+      minimumApplied: priced.minimumApplied,
+      minimumEqual: priced.minimumEqual,
+      measure,
+      bandLabel,
+      modifierNotes: adjusted.notes,
+      outward: travel.outward || '',
+      pricingMethod: method
+    }, plan);
   }
 
   function calculateHedge(service, state, variance, errors) {
@@ -783,12 +1409,17 @@ function createCalculator(raw) {
     }
     const rate = rates[height.id];
     const wasteOn = state.waste === true;
-    const raw = state.length * rate;
-    const rawPence = pence(raw);
-    const minPence = pence(minimum);
-    const visit = pounds(Math.max(rawPence, minPence));
-    const waste = wasteOn ? pounds(pence(wasteFee)) : 0;
-    const job = pounds(pence(visit + waste));
+    const adjusted = adjustBase('hedge', state, state.length * rate);
+    if (adjusted.invalid) return { status: 'invalid', errors: Object.assign(errors, { [adjusted.field || 'access']: adjusted.invalid }) };
+    if (adjusted.survey) return tailored(service, adjusted.reason);
+    const priced = priceVisit(adjusted.amount, minimum);
+    const travel = travelOn(state, errors);
+    if (travel.blocked) return { status: 'invalid', errors };
+    if (travel.survey) return tailored(service, travel.reason);
+    const visit = priced.visit;
+    const waste = wasteOn ? withVat(pounds(pence(wasteFee))) : 0;
+    const travelFee = withVat(travel.surcharge || 0);
+    const job = travelFee ? pounds(pence(visit + waste + travelFee)) : pounds(pence(visit + waste));
     const band = outward(job, variance);
     return {
       status: 'valid',
@@ -796,10 +1427,15 @@ function createCalculator(raw) {
       serviceId: service.id,
       serviceLabel: service.label,
       kind: 'hedge',
-      rawVisit: pounds(rawPence),
+      method: 'perMetre',
+      rawVisit: priced.rawVisit,
       visit,
+      labourVisit: visit,
       waste,
       wasteOn,
+      travel: travelFee,
+      outward: travel.outward || '',
+      modifierNotes: adjusted.notes,
       job,
       visits: 1,
       seasonTotal: null,
@@ -816,8 +1452,8 @@ function createCalculator(raw) {
       usedMinimum: minimum,
       usedVariance: variance,
       usedWasteFee: wasteFee,
-      minimumApplied: rawPence < minPence,
-      minimumEqual: rawPence === minPence,
+      minimumApplied: priced.minimumApplied,
+      minimumEqual: priced.minimumEqual,
       frequencyId: '',
       frequencyLabel: 'One-off',
       heightId: height.id,
@@ -853,12 +1489,17 @@ function createCalculator(raw) {
       };
     }
     const wasteOn = state.waste === true;
-    const raw = state.hours * rate;
-    const rawPence = pence(raw);
-    const minPence = pence(minimum);
-    const visit = pounds(Math.max(rawPence, minPence));
-    const waste = wasteOn ? pounds(pence(wasteFee)) : 0;
-    const job = pounds(pence(visit + waste));
+    const adjusted = adjustBase('tidy', state, state.hours * rate);
+    if (adjusted.invalid) return { status: 'invalid', errors: Object.assign(errors, { [adjusted.field || 'access']: adjusted.invalid }) };
+    if (adjusted.survey) return tailored(service, adjusted.reason);
+    const priced = priceVisit(adjusted.amount, minimum);
+    const travel = travelOn(state, errors);
+    if (travel.blocked) return { status: 'invalid', errors };
+    if (travel.survey) return tailored(service, travel.reason);
+    const visit = priced.visit;
+    const waste = wasteOn ? withVat(pounds(pence(wasteFee))) : 0;
+    const travelFee = withVat(travel.surcharge || 0);
+    const job = travelFee ? pounds(pence(visit + waste + travelFee)) : pounds(pence(visit + waste));
     const band = outward(job, variance);
     return {
       status: 'valid',
@@ -866,10 +1507,15 @@ function createCalculator(raw) {
       serviceId: service.id,
       serviceLabel: service.label,
       kind: 'tidy',
-      rawVisit: pounds(rawPence),
+      method: 'hours',
+      rawVisit: priced.rawVisit,
       visit,
+      labourVisit: visit,
       waste,
       wasteOn,
+      travel: travelFee,
+      outward: travel.outward || '',
+      modifierNotes: adjusted.notes,
       job,
       visits: 1,
       seasonTotal: null,
@@ -886,11 +1532,112 @@ function createCalculator(raw) {
       usedMinimum: minimum,
       usedVariance: variance,
       usedWasteFee: wasteFee,
-      minimumApplied: rawPence < minPence,
-      minimumEqual: rawPence === minPence,
+      minimumApplied: priced.minimumApplied,
+      minimumEqual: priced.minimumEqual,
       frequencyId: '',
       frequencyLabel: 'One-off',
       measure: state.hours
+    };
+  }
+
+  function calculateMaintenance(service, state, variance, errors) {
+    const freq = frequencyOf(service, state.frequency);
+    if (!freq) errors.frequency = 'Choose an available visit frequency.';
+    const size = service.sizes.find(item => item.id === state.maintenanceSize) || service.sizes.find(item => item.default);
+    if (!size || (state.maintenanceSize && state.maintenanceSize !== size.id)) errors['maintenance-size'] = 'Choose a garden size.';
+    const rate = editable ? state.maintenanceRate : service.hourlyRate.default;
+    const minimumHours = editable ? state.maintenanceMinimumHours : service.minimumHours.default;
+    if (editable) {
+      const rateMessage = rateError('maintenance-rate', rate, service.hourlyRate, 'an hourly rate');
+      const hoursMessage = rateError('maintenance-minimum', minimumHours, service.minimumHours, 'a minimum number of hours');
+      if (rateMessage) errors['maintenance-rate'] = rateMessage;
+      if (hoursMessage) errors['maintenance-minimum'] = hoursMessage;
+    }
+    if (Object.keys(errors).length) return { status: 'invalid', errors };
+    const selected = state.extras && typeof state.extras === 'object' ? state.extras : null;
+    let extraHours = 0;
+    const included = [];
+    const annualExtras = [];
+    for (const extra of service.extras) {
+      const on = selected ? selected[extra.id] === true : extra.default;
+      if (!on) continue;
+      if (extra.included) included.push(extra.label);
+      else if (extra.timesPerYear) annualExtras.push(extra);
+      else extraHours += extra.hours || 0;
+    }
+    const hours = size.hours + extraHours;
+    const adjusted = adjustBase('maintenance', state, hours * rate);
+    if (adjusted.invalid) return { status: 'invalid', errors: { [adjusted.field || 'condition']: adjusted.invalid } };
+    if (adjusted.survey) return tailored(service, adjusted.reason);
+    const minimum = minimumHours * rate;
+    const priced = priceVisit(adjusted.amount, minimum);
+    const travel = travelOn(state, errors);
+    if (travel.blocked) return { status: 'invalid', errors };
+    if (travel.survey) return tailored(service, travel.reason);
+    const annual = annualExtras.reduce((sum, extra) => sum + withVat(pounds(pence(extra.timesPerYear * extra.hoursEach * rate))), 0);
+    const plan = schedulePrice(service, freq, priced.visit, withVat(travel.surcharge || 0), variance);
+    const seasonLabour = plan.oneOff ? plan.perVisit : plan.seasonTotal;
+    const seasonTotal = plan.oneOff ? pounds(pence(plan.perVisit + annual)) : pounds(pence(seasonLabour + annual));
+    const monthlyAverage = plan.oneOff ? null : pounds(pence(seasonTotal / pricing.season.months));
+    const headline = plan.oneOff ? seasonTotal : seasonTotal;
+    const band = outward(headline, variance);
+    const monthlyBand = monthlyAverage == null ? null : outward(monthlyAverage, variance);
+    const year = plan.oneOff ? { winterVisits: 0, yearTotal: null, yearMonthly: null } : yearView(priced.visit + (plan.travel || 0), seasonTotal, false);
+    const yearBand = year.yearTotal == null ? null : outward(year.yearTotal, variance);
+    const yearMonthBand = year.yearMonthly == null ? null : outward(year.yearMonthly, variance);
+    return {
+      status: 'valid',
+      errors: {},
+      serviceId: service.id,
+      serviceLabel: service.label,
+      kind: 'maintenance',
+      method: 'hours',
+      rawVisit: priced.rawVisit,
+      visit: plan.perVisit,
+      labourVisit: priced.visit,
+      waste: 0,
+      wasteOn: false,
+      job: seasonTotal,
+      visits: plan.visits,
+      visitStep: plan.visitStep,
+      seasonTotal: plan.oneOff ? null : seasonTotal,
+      monthlyAverage,
+      midpoint: headline,
+      low: band.low,
+      high: band.high,
+      spread: band.spread,
+      monthlyLow: monthlyBand ? monthlyBand.low : null,
+      monthlyHigh: monthlyBand ? monthlyBand.high : null,
+      oneOff: plan.oneOff,
+      billing: plan.oneOff ? 'one-off' : 'season',
+      winterVisits: year.winterVisits || 0,
+      winterCost: year.winterCost || 0,
+      yearTotal: year.yearTotal,
+      yearMonthly: year.yearMonthly,
+      yearLow: yearBand ? yearBand.low : null,
+      yearHigh: yearBand ? yearBand.high : null,
+      yearMonthlyLow: yearMonthBand ? yearMonthBand.low : null,
+      yearMonthlyHigh: yearMonthBand ? yearMonthBand.high : null,
+      spreadMonths: pricing.billing.spreadMonths,
+      usedRate: rate,
+      usedMinimum: minimum,
+      usedHours: hours,
+      usedMinimumHours: minimumHours,
+      usedVariance: variance,
+      usedWasteFee: 0,
+      minimumApplied: priced.minimumApplied,
+      minimumEqual: priced.minimumEqual,
+      frequencyId: freq.id,
+      frequencyLabel: freq.label,
+      measure: hours,
+      sizeLabel: size.label,
+      included,
+      annualExtras: annualExtras.map(extra => ({ label: extra.label, timesPerYear: extra.timesPerYear, hoursEach: extra.hoursEach, annual: withVat(pounds(pence(extra.timesPerYear * extra.hoursEach * rate))) })),
+      annualExtra: pounds(pence(annual)),
+      seasonLabour,
+      modifierNotes: adjusted.notes,
+      travel: plan.travel || 0,
+      outward: travel.outward || ''
     };
   }
 
@@ -921,16 +1668,55 @@ function createCalculator(raw) {
     return 'Above the ' + floor + ' minimum.';
   }
 
+  function finish(text, result) {
+    let extra = '';
+    if (result.modifierNotes && result.modifierNotes.length) extra += ' ' + result.modifierNotes.join(' ');
+    if (result.travel) extra += ' Travel surcharge ' + money(config, result.travel) + ' for this postcode.';
+    if (result.winterVisits) {
+      extra += ' ' + plain(config, result.winterVisits, 0) + ' winter visits × ' + money(config, result.visit) + ' = ' + money(config, result.winterCost) + '. Year total ' + money(config, result.yearTotal) + '. ' + money(config, result.yearTotal) + ' ÷ ' + result.spreadMonths + ' = ' + money(config, result.yearMonthly) + ' a month, spread over the year.';
+    }
+    return text + extra;
+  }
+
   function workingsText(state, result) {
     if (result.status !== 'valid') return '';
     const variance = result.usedVariance;
+    if (result.kind === 'maintenance') {
+      const hours = plain(config, result.usedHours, 4) + (result.usedHours === 1 ? ' hour' : ' hours');
+      const labour = hours + ' × ' + moneyFlex(config, result.usedRate) + ' = ' + money(config, result.rawVisit) + ' a visit, ' + minimumClause(result).charAt(0).toLowerCase() + minimumClause(result).slice(1);
+      const included = result.included && result.included.length ? ' Included on the visit: ' + result.included.join(', ') + '.' : '';
+      const annual = result.annualExtras && result.annualExtras.length
+        ? ' ' + result.annualExtras.map(extra => extra.label + ', ' + extra.timesPerYear + ' times a year × ' + plain(config, extra.hoursEach, 2) + (extra.hoursEach === 1 ? ' hour' : ' hours') + ' × ' + moneyFlex(config, result.usedRate) + ' = ' + money(config, extra.annual) + ' for the year, added to the season.').join(' ')
+        : '';
+      const seasonLine = result.oneOff
+        ? ' One-off visit ' + money(config, result.job) + '.'
+        : ' ' + money(config, result.labourVisit) + ' × ' + visitCount(result.visits) + ' visits (' + result.visitStep + ') = ' + money(config, result.seasonLabour) + ' before the yearly extras. Season total ' + money(config, result.seasonTotal) + '. ' + money(config, result.seasonTotal) + ' ÷ ' + pricing.season.months + ' = ' + money(config, result.monthlyAverage) + ' a month in season.';
+      const rangeLine = result.spread
+        ? ' The season range is ' + rangeText(result.seasonTotal, variance) + '.'
+        : ' No ± range is applied.';
+      return finish(labour + included + annual + seasonLine + rangeLine, result);
+    }
+    if (result.kind === 'lawn' && result.method && result.method !== 'perM2') {
+      const measure = result.method === 'hours'
+        ? plain(config, result.measure, 4) + ' hours × ' + moneyFlex(config, result.usedRate) + ' = ' + money(config, result.rawVisit) + ' a visit, ' + minimumClause(result).charAt(0).toLowerCase() + minimumClause(result).slice(1)
+        : result.bandLabel + ' at ' + money(config, result.rawVisit) + ' a visit, ' + minimumClause(result).charAt(0).toLowerCase() + minimumClause(result).slice(1);
+      if (result.oneOff) {
+        return finish(measure + ' One-off job total ' + money(config, result.visit) + '.' + (result.spread ? ' The range is ' + rangeText(result.visit, variance) + '.' : ' No ± range is applied.'), result);
+      }
+      const seasonLine = money(config, result.visit) + ' × ' + visitCount(result.visits) + ' visits (' + result.visitStep + ') = ' + money(config, result.seasonTotal) + ' for the season.';
+      const monthLine = money(config, result.seasonTotal) + ' ÷ ' + pricing.season.months + ' = ' + money(config, result.monthlyAverage) + ' a month.';
+      const rangeLine = result.spread
+        ? ' The season range is ' + rangeText(result.seasonTotal, variance) + '. The monthly average range is ' + rangeText(result.monthlyAverage, variance) + '.'
+        : ' No ± range is applied.';
+      return finish(measure + ' ' + seasonLine + ' ' + monthLine + rangeLine, result);
+    }
     if (result.kind === 'lawn') {
       const measure = plain(config, state.area, 4) + ' m² × ' + moneyFlex(config, result.usedRate) + ' = ' + money(config, result.rawVisit) + ' a visit, ' + minimumClause(result).charAt(0).toLowerCase() + minimumClause(result).slice(1);
       if (result.oneOff) {
         const job = money(config, result.visit) + ' for this job.';
-        return result.spread
+        return finish(result.spread
           ? measure + ' One-off job total ' + money(config, result.visit) + '. The range is ' + rangeText(result.visit, variance) + '.'
-          : measure + ' ' + job + ' No ± range is applied.';
+          : measure + ' ' + job + ' No ± range is applied.', result);
       }
       const visits = visitCount(result.visits);
       const seasonLine = money(config, result.visit) + ' × ' + visits + ' visits (' + result.visitStep + ') = ' + money(config, result.seasonTotal) + ' for the season.';
@@ -939,7 +1725,7 @@ function createCalculator(raw) {
       const rangeLine = result.spread
         ? ' The season range is ' + rangeText(result.seasonTotal, variance) + '. The monthly average range is ' + rangeText(result.monthlyAverage, variance) + '.'
         : ' No ± range is applied.';
-      return measure + ' ' + seasonLine + ' ' + monthLine + rangeLine;
+      return finish(measure + ' ' + seasonLine + ' ' + monthLine + rangeLine, result);
     }
     const unit = result.kind === 'hedge'
       ? plain(config, state.length, 4) + ' m × ' + moneyFlex(config, result.usedRate)
@@ -948,7 +1734,7 @@ function createCalculator(raw) {
     const waste = result.wasteOn ? 'Waste removal ' + money(config, result.waste) + '.' : 'Waste removal not included.';
     const total = 'Job total ' + money(config, result.job) + '.';
     const rangeLine = result.spread ? ' The range is ' + rangeText(result.job, variance) + '.' : ' No ± range is applied.';
-    return labour + ' ' + waste + ' ' + total + rangeLine;
+    return finish(labour + ' ' + waste + ' ' + total + rangeLine, result);
   }
 
   function minimumNote(result) {
@@ -992,13 +1778,18 @@ function createCalculator(raw) {
       lines.push('Height: ' + result.heightLabel);
       lines.push('Rate: ' + moneyFlex(config, result.usedRate) + ' / m');
       lines.push('Waste removal: ' + (result.wasteOn ? 'yes' : 'no'));
+    } else if (result.kind === 'maintenance') {
+      lines.push('Garden: ' + (result.sizeLabel || ''));
+      lines.push('Time on a visit: ' + plain(config, result.usedHours, 4) + (result.usedHours === 1 ? ' hour' : ' hours'));
+      lines.push('Hourly rate: ' + moneyFlex(config, result.usedRate));
+      if (result.included && result.included.length) lines.push('Included: ' + result.included.join(', '));
     } else {
       lines.push('Estimated time: ' + plain(config, state.hours, 4) + (state.hours === 1 ? ' hour' : ' hours'));
       lines.push('Hourly rate: ' + moneyFlex(config, result.usedRate));
       lines.push('Waste removal: ' + (result.wasteOn ? 'yes' : 'no'));
     }
     lines.push('Selected range: ± ' + plain(config, result.usedVariance) + '%', '');
-    if (result.kind === 'lawn' && !result.oneOff) {
+    if ((result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff) {
       lines.push(
         'Per visit: ' + money(config, result.visit) + (result.minimumApplied ? ' (minimum applies)' : ''),
         'Visits in the season: ' + visitCount(result.visits),
@@ -1007,6 +1798,13 @@ function createCalculator(raw) {
         (result.spread ? 'Cutting-season range: ' : 'Cutting-season total: ') + figure(result, result.low, result.high),
         (result.spread ? 'Monthly average range: ' : 'Monthly average: ') + monthlyFigure(result)
       );
+      if (result.yearTotal != null) {
+        lines.push(
+          'Winter visits: ' + plain(config, result.winterVisits, 0),
+          'Year total: ' + money(config, result.yearTotal),
+          'Spread over ' + result.spreadMonths + ' months: ' + money(config, result.yearMonthly)
+        );
+      }
     } else {
       lines.push(
         'Charge before range: ' + money(config, result.job),
@@ -1028,8 +1826,10 @@ function createCalculator(raw) {
         : 'The ± range applies to the job total, then rounds outwards to whole pounds.',
       'At ± 0% the result is that figure itself, not a one-pound band.',
       editable ? 'The range is a demo setting, not a confidence interval.' : 'The range is the firm\'s configured allowance, not a confidence interval.',
-      'Travel, access, how overgrown the garden is, and specialist work are excluded.',
+      'Condition, access and travel are included only when the working shows them. Specialist work is not priced.',
       'A site visit, confirmed scope and approved rates are required for a real price.',
+      config.branding.nextStep || '',
+      config.branding.replyTime || '',
       '',
       config.enquiry.destination,
       'Demo by ' + config.firm.product + '. ' + config.branding.fictionalNotice,
@@ -1059,37 +1859,51 @@ function createCalculator(raw) {
     const valid = result.status === 'valid';
     const headline = valid ? figure(result, result.low, result.high) : '';
     let estimateLabel = '';
-    if (valid && result.kind === 'lawn' && !result.oneOff) estimateLabel = result.spread ? 'Cutting-season range' : 'Cutting-season total';
+    if (valid && (result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff) estimateLabel = result.spread ? 'Cutting-season range' : 'Cutting-season total';
     else if (valid) estimateLabel = result.spread ? 'One-off job range' : 'One-off job';
     const monthly = valid ? monthlyFigure(result) : '';
     return {
       figure: headline,
       workings: valid ? workingsText(state, result) : '',
       estimateLabel,
-      measureLabel: result.kind === 'hedge' ? 'Hedge length' : result.kind === 'tidy' ? 'Estimated time' : 'Lawn area',
-      measure: valid ? (result.kind === 'hedge' ? plain(config, state.length, 8) + ' m' : result.kind === 'tidy' ? plain(config, state.hours, 4) + (state.hours === 1 ? ' hour' : ' hours') : plain(config, state.area, 8) + ' m²') : '',
-      rateLabel: result.kind === 'tidy' ? 'Hourly rate' : 'Rate',
-      rate: valid ? (result.kind === 'hedge' ? moneyFlex(config, result.usedRate) + ' / m' : result.kind === 'tidy' ? moneyFlex(config, result.usedRate) + ' / hour' : moneyFlex(config, result.usedRate) + ' / m²') : '',
-      perVisitLabel: result.kind === 'lawn' ? 'Per visit' : 'Before waste',
-      perVisit: valid ? money(config, result.kind === 'lawn' ? result.visit : result.visit) : '',
-      showWaste: valid && result.kind !== 'lawn',
-      wasteText: valid && result.kind !== 'lawn' ? (result.wasteOn ? money(config, result.waste) : 'Not included') : '',
-      showVisits: valid && result.kind === 'lawn' && !result.oneOff,
+      measureLabel: result.kind === 'hedge' ? 'Hedge length' : result.kind === 'tidy' || result.kind === 'maintenance' ? 'Estimated time' : result.method === 'sizeBands' ? 'Size band' : result.method === 'hours' ? 'Hours on the visit' : 'Lawn area',
+      measure: valid ? (result.kind === 'hedge' ? plain(config, state.length, 8) + ' m' : result.kind === 'tidy' ? plain(config, state.hours, 4) + (state.hours === 1 ? ' hour' : ' hours') : result.kind === 'maintenance' ? plain(config, result.usedHours, 4) + (result.usedHours === 1 ? ' hour' : ' hours') : result.method === 'sizeBands' ? (result.bandLabel || '') : result.method === 'hours' ? plain(config, result.measure, 4) + ' hours' : plain(config, state.area, 8) + ' m²') : '',
+      rateLabel: result.kind === 'tidy' || result.kind === 'maintenance' || result.method === 'hours' ? 'Hourly rate' : 'Rate',
+      rate: valid ? (result.kind === 'hedge' ? moneyFlex(config, result.usedRate) + ' / m' : result.kind === 'tidy' || result.kind === 'maintenance' || result.method === 'hours' ? moneyFlex(config, result.usedRate) + ' / hour' : result.method === 'sizeBands' ? moneyFlex(config, result.usedRate) + ' a visit' : moneyFlex(config, result.usedRate) + ' / m²') : '',
+      perVisitLabel: result.kind === 'hedge' || result.kind === 'tidy' ? 'Before waste' : 'Per visit',
+      perVisit: valid ? money(config, result.visit) : '',
+      showWaste: valid && (result.kind === 'hedge' || result.kind === 'tidy'),
+      wasteText: valid && (result.kind === 'hedge' || result.kind === 'tidy') ? (result.wasteOn ? money(config, result.waste) : 'Not included') : '',
+      showVisits: valid && (result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff,
       visitsLabel: 'Visits in the season',
-      visits: valid && result.kind === 'lawn' && !result.oneOff ? visitCount(result.visits) : '',
-      midpointLabel: valid && result.kind === 'lawn' && !result.oneOff ? 'Season total' : 'Job total',
-      midpoint: valid ? money(config, result.kind === 'lawn' && !result.oneOff ? result.seasonTotal : result.job) : '',
-      showMonthly: valid && result.kind === 'lawn' && !result.oneOff,
-      monthlyLabel: result.spread ? 'Monthly average range' : 'Monthly average',
+      visits: valid && (result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff ? visitCount(result.visits) : '',
+      midpointLabel: valid && (result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff ? 'Season total' : 'Job total',
+      midpoint: valid ? money(config, (result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff ? result.seasonTotal : result.job) : '',
+      showMonthly: valid && (result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff,
+      monthlyLabel: result.spread ? 'In-season monthly range' : 'In-season monthly average',
       monthly,
+      showYear: valid && result.yearTotal != null,
+      yearLabel: 'Over ' + (result.spreadMonths || 12) + ' months',
+      yearTotal: valid && result.yearTotal != null ? (result.spread ? money(config, result.yearLow, 0) + '–' + money(config, result.yearHigh, 0) : money(config, result.yearTotal)) : '',
+      yearMonthlyLabel: 'Monthly, spread over the year',
+      yearMonthly: valid && result.yearMonthly != null ? (result.spread ? money(config, result.yearMonthlyLow, 0) + '–' + money(config, result.yearMonthlyHigh, 0) : money(config, result.yearMonthly)) : '',
+      replyTime: config.branding.replyTime || '',
+      nextStep: config.branding.nextStep || '',
+      availability: config.availability && config.availability.mode !== 'open' ? (config.availability.message || '') : '',
       minimumNote: valid ? minimumNote(result) : '',
       serviceNote: service ? (service.note || service.reason || '') : '',
-      mobileCaption: (valid && result.kind === 'lawn' && !result.oneOff ? 'Illustrative cutting-season total' : 'Illustrative one-off job') + (config.firm.isFictional ? ' · demo' : ''),
-      live: valid ? 'Illustrative estimate ' + headline + ', excluding VAT and additional charges. Not a quote.' : '',
+      mobileCaption: (valid && (result.kind === 'lawn' || result.kind === 'maintenance') && !result.oneOff ? 'Illustrative cutting-season total' : 'Illustrative one-off job') + (config.firm.isFictional ? ' · demo' : ''),
+      live: valid ? 'Illustrative estimate ' + headline + '. ' + config.currency.vatLabel + '. Not a quote.' : '',
       summary: summaryText(state, result),
       survey: surveyText(state, result),
       spread: !!result.spread
     };
+  }
+
+  function modifierLabel(key, id) {
+    const list = pricing.modifiers && pricing.modifiers[key];
+    const found = list && list.find(item => item.id === id);
+    return found ? found.label : id;
   }
 
   function assumptionNotes(state) {
@@ -1158,6 +1972,16 @@ function createCalculator(raw) {
       lines.push('Waste removal: ' + (result.wasteOn ? 'yes' : 'no'));
       lines.push((result.spread ? 'One-off job range: ' : 'One-off job: ') + figure(result, result.low, result.high));
       lines.push('VAT: ' + config.currency.vatLabel);
+    } else if (!survey && result.kind === 'maintenance') {
+      lines.push('Garden: ' + (result.sizeLabel || ''));
+      lines.push.apply(lines, ['Frequency: ' + result.frequencyLabel + ', ' + visitCount(result.visits) + ' visits']);
+      lines.push('Per visit before yearly extras: ' + money(config, result.labourVisit));
+      if (result.oneOff) lines.push((result.spread ? 'One-off job range: ' : 'One-off job: ') + figure(result, result.low, result.high));
+      else {
+        lines.push((result.spread ? 'Season range: ' : 'Season total: ') + figure(result, result.low, result.high));
+        lines.push((result.spread ? 'In-season monthly range: ' : 'In-season monthly average: ') + monthlyFigure(result));
+      }
+      lines.push('VAT: ' + config.currency.vatLabel);
     } else if (!survey) {
       lines.push('Estimated time: ' + plain(config, state.hours, 4) + (state.hours === 1 ? ' hour' : ' hours'));
       lines.push('Waste removal: ' + (result.wasteOn ? 'yes' : 'no'));
@@ -1167,9 +1991,19 @@ function createCalculator(raw) {
       if (result.kind === 'lawn' && typeof state.area === 'number' && Number.isFinite(state.area)) lines.push('Lawn area: ' + plain(config, state.area, 8) + ' m²');
       if (result.kind === 'hedge' && typeof state.length === 'number' && Number.isFinite(state.length)) lines.push('Hedge length: ' + plain(config, state.length, 8) + ' m');
       if (result.kind === 'tidy' && typeof state.hours === 'number' && Number.isFinite(state.hours)) lines.push('Estimated time: ' + plain(config, state.hours, 4) + ' hours');
+      if (state.condition) lines.push('Condition: ' + modifierLabel('condition', state.condition));
+      if (state.access) lines.push('Access: ' + modifierLabel('access', state.access));
+      if (state.postcode) lines.push('Postcode district checked.');
       if (result.reason) lines.push(result.reason);
     }
+    if (!survey && result.yearTotal != null) {
+      lines.push('Year total, with winter visits: ' + (result.spread ? money(config, result.yearLow, 0) + '–' + money(config, result.yearHigh, 0) : money(config, result.yearTotal)));
+      lines.push('Spread over ' + result.spreadMonths + ' months: ' + (result.spread ? money(config, result.yearMonthlyLow, 0) + '–' + money(config, result.yearMonthlyHigh, 0) : money(config, result.yearMonthly)));
+    }
     lines.push(indicative);
+    if (config.branding.nextStep) lines.push(config.branding.nextStep);
+    if (config.branding.replyTime) lines.push(config.branding.replyTime);
+    if (config.availability && config.availability.mode !== 'open' && config.availability.message) lines.push(config.availability.message);
     if (notes.length && !survey) lines.push('Assumptions differ from the firm configuration: ' + notes.join('; ') + '.');
     else if (notes.length) lines.push('Visitor-edited assumptions differ from the firm configuration.');
     return { kind: survey ? 'visit' : 'estimate', summary: lines.join('\n'), assumptionsChanged: notes.length > 0, notes, indicative };
@@ -1194,6 +2028,15 @@ function createCalculator(raw) {
     if (fields.postcode && postcode && (postcode.length > 10 || !/^[A-Za-z0-9 ]{2,10}$/.test(postcode))) errors.postcode = 'Enter a postcode using letters, numbers and spaces.';
     if (fields.preferredStart && (preferredStart.length > 80 || /[\u0000-\u001F]/.test(preferredStart))) errors.preferredStart = 'Enter a preferred start in a short line of text.';
     if (message.length > 1000 || /[\u0000-\u0008\u000B\u000C\u000E-\u001F]/.test(message)) errors.message = 'Keep the message to 1,000 characters.';
+    const timeframes = { asap: 'As soon as you can', month: 'Within a month', season: 'Next season' };
+    const timeframe = contact && typeof contact.timeframe === 'string' ? contact.timeframe : '';
+    if (timeframe && !timeframes[timeframe]) errors.timeframe = 'Choose when you would like a visit.';
+    const budgetId = contact && typeof contact.budget === 'string' ? contact.budget : '';
+    const budget = budgetId ? config.enquiry.budgetBands.find(item => item.id === budgetId) : null;
+    if (budgetId && !budget) errors.budget = 'Choose a budget band.';
+    const photoNames = config.enquiry.photos.enabled && contact && Array.isArray(contact.photoNames)
+      ? contact.photoNames.filter(name => typeof name === 'string' && name.trim()).map(name => name.trim()).slice(0, config.enquiry.photos.max)
+      : [];
     if (!contact || contact.consent !== true) errors.consent = 'Tick the box to agree to being contacted about this enquiry.';
     if (!result || result.status === 'invalid') errors.estimate = 'Correct the highlighted calculator inputs before sending an enquiry.';
     const sheet = enquirySummary(state, result);
@@ -1212,6 +2055,14 @@ function createCalculator(raw) {
       assumptions_changed: sheet.assumptionsChanged ? 'yes' : 'no',
       summary: sheet.summary
     };
+    if (config.branding.replyTime) payload.reply_time = config.branding.replyTime;
+    if (config.availability && config.availability.mode !== 'open') payload.availability = config.availability.mode;
+    if (timeframe && timeframes[timeframe]) payload.timeframe = timeframes[timeframe];
+    if (budget) payload.budget_band = budget.label;
+    const contactPref = contact && typeof contact.contactPref === 'string' ? contact.contactPref : '';
+    if (contactPref === 'phone' || contactPref === 'email' || contactPref === 'whatsapp') payload.contact_pref = contactPref;
+    if (config.enquiry.photos.enabled) payload.photo_count = photoNames.length;
+    if (photoNames.length) payload.photo_names = photoNames.join(', ');
     if (fields.phone) payload.phone = phone;
     if (fields.postcode) payload.postcode = postcode;
     if (fields.preferredStart) payload.preferred_start = preferredStart;
@@ -1228,6 +2079,27 @@ function createCalculator(raw) {
           payload.season_visits = visitCount(result.visits);
           payload.season_total = ranged;
           payload.monthly_average = monthlyFigure(result);
+          if (result.yearTotal != null) {
+            payload.winter_visits = String(result.winterVisits);
+            payload.year_total = result.spread ? money(config, result.yearLow, 0) + '–' + money(config, result.yearHigh, 0) : money(config, result.yearTotal);
+            payload.year_monthly = result.spread ? money(config, result.yearMonthlyLow, 0) + '–' + money(config, result.yearMonthlyHigh, 0) : money(config, result.yearMonthly);
+          }
+        }
+        payload.pricing_method = result.method || 'perM2';
+      } else if (result.kind === 'maintenance') {
+        payload.pricing_method = 'hours';
+        payload.maintenance_hours = plain(config, result.usedHours, 4);
+        payload.frequency_label = result.frequencyLabel;
+        payload.per_visit = money(config, result.labourVisit);
+        if (result.oneOff) payload.job_total = ranged;
+        else {
+          payload.season_visits = visitCount(result.visits);
+          payload.season_total = ranged;
+          payload.monthly_average = monthlyFigure(result);
+          if (result.yearTotal != null) {
+            payload.year_total = result.spread ? money(config, result.yearLow, 0) + '–' + money(config, result.yearHigh, 0) : money(config, result.yearTotal);
+            payload.year_monthly = result.spread ? money(config, result.yearMonthlyLow, 0) + '–' + money(config, result.yearMonthlyHigh, 0) : money(config, result.yearMonthly);
+          }
         }
       } else if (result.kind === 'hedge') {
         payload.hedge_length = plain(config, state.length, 8) + ' m';
@@ -1244,9 +2116,16 @@ function createCalculator(raw) {
     return { ok: true, spam: false, errors: {}, kind: sheet.kind, summary: sheet.summary, payload, assumptionsChanged: sheet.assumptionsChanged };
   }
 
-  return { ok: true, config, delivery, calculate, present, enquirySummary, enquiryDraft, money: (n, d) => money(config, n, d) };
+  function whatsAppDraft(summary) {
+    const number = String(config.enquiry.whatsapp || '').replace(/\D/g, '');
+    if (!number) return null;
+    const text = String(summary || '');
+    return { number, text, url: 'https://wa.me/' + number + '?text=' + encodeURIComponent(text), opens: false };
+  }
+
+  return { ok: true, config, delivery, calculate, present, enquirySummary, enquiryDraft, whatsAppDraft, money: (n, d) => money(config, n, d) };
 }
-const FIRM_CONFIG = {"firm":{"name":"Greenway Gardens","mark":"G","tagline":"Fictional landscaping firm","product":"MikaelTech","isFictional":true},"assumptions":{"visitorEditable":true},"branding":{"demoLabel":"DEMO · FICTIONAL RATES","illustrativeLabel":"Illustrative estimate only","headline":"A clearer garden budget.","intro":"Explore a sample price for lawn mowing, hedge trimming or a one-off garden tidy. Patios, turfing, fencing and tree work are not priced here.","fictionalNotice":"Greenway Gardens is a fictional firm. No gardening service is being offered."},"currency":{"code":"GBP","locale":"en-GB","vatLabel":"excludes VAT and any additional charges","vatShort":"Excludes VAT · not a quote"},"enquiry":{"destination":"Demo only. Nothing is sent or booked.","mode":"preview","recipientLabel":"Greenway Gardens","privacyNote":"This is a demo with a fictional firm. Nothing you enter is stored or sent. On a live page, the landscaping firm's own privacy notice is linked here.","successMessage":"Thanks. The firm has the details and can reply to the email address given.","extraFields":{"phone":true,"postcode":true,"preferredStart":false},"endpoint":""},"pricing":{"variancePercent":{"default":15,"min":0,"max":50},"season":{"weeks":30,"months":8},"services":[{"id":"lawn","label":"Lawn mowing","priced":true,"kind":"lawn","default":true,"note":"Regular cut of the lawn area only. Edging, strimming and taking the clippings away are not included.","area":{"default":80,"min":10,"max":400},"ratePerM2":{"default":0.4,"min":0.05,"max":2},"minimumVisit":{"default":25,"min":5,"max":200},"frequencies":[{"id":"weekly","label":"Weekly","everyWeeks":1},{"id":"fortnightly","label":"Fortnightly","everyWeeks":2},{"id":"monthly","label":"Monthly","monthly":true},{"id":"one-off","label":"One-off","oneOff":true}],"defaultFrequency":"fortnightly"},{"id":"hedge","label":"Hedge trimming","priced":true,"kind":"hedge","default":false,"note":"Price is the length times the height-band rate, or the minimum visit, whichever is higher. Waste removal is optional.","length":{"default":12,"min":2,"max":40},"minimumVisit":{"default":40,"min":10,"max":300},"wasteRemoval":{"default":35,"min":0,"max":150},"heights":[{"id":"low","label":"Up to 1.2 m","detail":"Trimmed from the ground","ratePerMetre":{"default":3,"min":0.5,"max":20},"default":false},{"id":"medium","label":"1.2 to 2 m","detail":"A short reach","ratePerMetre":{"default":5,"min":0.5,"max":20},"default":true},{"id":"tall","label":"2 to 3 m","detail":"Taller, still from the ground","ratePerMetre":{"default":8,"min":0.5,"max":20},"default":false}]},{"id":"tidy","label":"Garden tidy","priced":true,"kind":"tidy","default":false,"note":"A one-off tidy priced by estimated hours. A full clearance, or a job over the hour limit, needs a site visit.","hours":{"default":4,"min":1,"max":8},"hourlyRate":{"default":30,"min":15,"max":80},"minimumCharge":{"default":60,"min":20,"max":300},"wasteRemoval":{"default":40,"min":0,"max":200},"sizes":[{"id":"small","label":"Small tidy","hours":2,"default":false},{"id":"medium","label":"Medium tidy","hours":4,"default":true},{"id":"large","label":"Large tidy","hours":7,"default":false}]},{"id":"specialist","label":"Patios, turfing, fencing or tree work","priced":false,"kind":"specialist","reason":"Patios, turfing, fencing and tree work are outside this price model. A site visit is the next step, and no figure is included."}]}};
+const FIRM_CONFIG = {"firm":{"name":"Greenway Gardens","mark":"G","tagline":"Fictional landscaping firm","product":"MikaelTech","isFictional":true},"assumptions":{"visitorEditable":true},"branding":{"demoLabel":"DEMO · FICTIONAL RATES","illustrativeLabel":"Illustrative estimate only","headline":"A clearer garden budget.","intro":"Explore a sample price for lawn mowing, hedge trimming, a one-off garden tidy or regular garden maintenance. Patios, turfing, fencing and tree work are not priced here.","fictionalNotice":"Greenway Gardens is a fictional firm. No gardening service is being offered.","nextStep":"Price confirmed after a free visit.","replyTime":"We reply within 1 working day."},"currency":{"code":"GBP","locale":"en-GB","vatLabel":"excludes VAT and any additional charges","vatShort":"Excludes VAT · not a quote","vat":{"mode":"exclusive","rate":20}},"enquiry":{"destination":"Demo only. Nothing is sent or booked.","mode":"preview","recipientLabel":"Greenway Gardens","privacyNote":"This is a demo with a fictional firm. Nothing you enter is stored or sent. On a live page, the landscaping firm's own privacy notice is linked here.","successMessage":"Thanks. The firm has the details and can reply to the email address given.","extraFields":{"phone":true,"postcode":true,"preferredStart":false},"whatsapp":"+447700900123","photos":{"enabled":false,"max":3,"maxMB":5},"budgetBands":[{"id":"unsure","label":"Not sure yet"},{"id":"small","label":"A small regular visit"},{"id":"project","label":"A larger one-off project"}],"endpoint":""},"availability":{"mode":"preSeason","message":"Booking now for spring."},"embed":{"fullUrl":"index.html","fixedHeight":1400},"pricing":{"variancePercent":{"default":15,"min":0,"max":50},"season":{"weeks":30,"months":8,"winterVisits":4},"billing":{"spreadMonths":12},"modifiers":{"condition":[{"id":"regular","label":"Regular cut","default":true,"multiplier":1},{"id":"long","label":"Longer than usual","default":false,"multiplier":1.3},{"id":"overgrown","label":"Overgrown or neglected","default":false,"survey":true}],"access":[{"id":"side","label":"Side access","default":true,"multiplier":1},{"id":"steps","label":"Steps or slopes","default":false,"multiplier":1.15},{"id":"house","label":"Access through the house only","default":false,"survey":true},{"id":"noside","label":"No side access","default":false,"survey":true}]},"serviceArea":{"core":["EH1","EH2","EH3","EH4","EH5","EH6","EH7","EH8","EH9","EH10","EH11","EH12"],"outer":[{"prefixes":["EH13","EH14","EH15","EH16","EH17"],"surcharge":12,"survey":false}],"outsideMessage":"This postcode is outside the sample area. A site visit is the next step, and no figure is included."},"services":[{"id":"lawn","label":"Lawn mowing","priced":true,"kind":"lawn","default":true,"note":"Regular cut of the lawn area only. Edging, strimming and taking the clippings away are not included.","method":"perM2","frequencies":[{"id":"weekly","label":"Weekly","everyWeeks":1},{"id":"fortnightly","label":"Fortnightly","everyWeeks":2},{"id":"monthly","label":"Monthly","monthly":true},{"id":"one-off","label":"One-off","oneOff":true}],"defaultFrequency":"fortnightly","area":{"default":80,"min":10,"max":400},"ratePerM2":{"default":0.7,"min":0.05,"max":2},"minimumVisit":{"default":45,"min":5,"max":200}},{"id":"hedge","label":"Hedge trimming","priced":true,"kind":"hedge","default":false,"note":"Price is the length times the height-band rate, or the minimum visit, whichever is higher. Waste removal is optional.","length":{"default":12,"min":2,"max":40},"minimumVisit":{"default":110,"min":10,"max":300},"wasteRemoval":{"default":45,"min":0,"max":150},"heights":[{"id":"low","label":"Up to 1.2 m","detail":"Trimmed from the ground","ratePerMetre":{"default":6,"min":0.5,"max":20},"default":false},{"id":"medium","label":"1.2 to 2 m","detail":"A short reach","ratePerMetre":{"default":8,"min":0.5,"max":20},"default":true},{"id":"tall","label":"2 to 3 m","detail":"Taller, still from the ground","ratePerMetre":{"default":12,"min":0.5,"max":20},"default":false}]},{"id":"tidy","label":"Garden tidy","priced":true,"kind":"tidy","default":false,"note":"A one-off tidy priced by estimated hours, with a two-hour minimum. A full clearance, or a job over the hour limit, needs a site visit.","hours":{"default":4,"min":1,"max":8},"hourlyRate":{"default":50,"min":15,"max":80},"minimumCharge":{"default":100,"min":20,"max":300},"wasteRemoval":{"default":45,"min":0,"max":200},"sizes":[{"id":"small","label":"Small tidy","hours":2,"default":false},{"id":"medium","label":"Medium tidy","hours":4,"default":true},{"id":"large","label":"Large tidy","hours":7,"default":false}]},{"id":"specialist","label":"Patios, turfing, fencing or tree work","priced":false,"kind":"specialist","reason":"Patios, turfing, fencing and tree work are outside this price model. A site visit is the next step, and no figure is included."},{"id":"maintenance","label":"Regular garden maintenance","priced":true,"kind":"maintenance","default":false,"note":"Mowing, edging and weeding on each visit, plus a couple of hedge trims across the year. Priced by the hour with a two-hour minimum. These rates are fictional.","method":"hours","hourlyRate":{"default":50,"min":15,"max":80},"minimumHours":{"default":2,"min":0.5,"max":8},"sizes":[{"id":"small","label":"Small garden","hours":2,"default":false},{"id":"medium","label":"Medium garden","hours":2,"default":true},{"id":"large","label":"Large garden","hours":3,"default":false}],"extras":[{"id":"mowing","label":"Mowing","default":true,"included":true},{"id":"edging","label":"Edging","default":true,"included":true},{"id":"weeding","label":"Weeding","default":true,"included":true},{"id":"hedge","label":"Occasional hedge trim","default":true,"timesPerYear":2,"hoursEach":1}],"frequencies":[{"id":"weekly","label":"Weekly","everyWeeks":1},{"id":"fortnightly","label":"Fortnightly","everyWeeks":2},{"id":"monthly","label":"Monthly","monthly":true},{"id":"one-off","label":"One-off","oneOff":true}],"defaultFrequency":"fortnightly"}]}};
 // DOM behaviour for the built page. Firm settings arrive as FIRM_CONFIG.
 // Preview mode does not send the form. Live mode posts the enquiry JSON to the
 // configured HTTPS endpoint and nowhere else. This file does not use storage or cookies.
@@ -1262,7 +2141,7 @@ function boot(rawConfig) {
     box.textContent = engine.message;
     box.tabIndex = -1;
     byId('app').hidden = true;
-    for (const id of ['monthly-range', 'mobile-range', 'workings', 'per-visit', 'midpoint', 'monthly-average', 'print-summary', 'live-result']) {
+    for (const id of ['monthly-range', 'mobile-range', 'workings', 'per-visit', 'midpoint', 'monthly-average', 'year-total', 'year-monthly', 'result-summary', 'print-summary', 'live-result']) {
       const el = byId(id);
       if (el) el.textContent = '';
     }
@@ -1284,6 +2163,10 @@ function boot(rawConfig) {
   let result;
   let toastTimer;
   let enquiryReference = '';
+  const lawn = config.pricing.services.find(item => item.kind === 'lawn');
+  const hedge = config.pricing.services.find(item => item.kind === 'hedge');
+  const tidy = config.pricing.services.find(item => item.kind === 'tidy');
+  const maintenance = config.pricing.services.find(item => item.kind === 'maintenance');
 
   function calculate(s) { return engine.calculate(s); }
 
@@ -1294,23 +2177,87 @@ function boot(rawConfig) {
     return raw === '' ? NaN : Number(raw);
   }
 
+  function fieldValue(id) {
+    const field = byId(id);
+    return field && typeof field.value === 'string' ? field.value : '';
+  }
+
+  function usesFactors(kind) {
+    return kind === 'lawn' || kind === 'hedge' || kind === 'tidy' || kind === 'maintenance';
+  }
+
+  function readExtras() {
+    if (!maintenance) return null;
+    const extras = {};
+    for (const extra of maintenance.extras) {
+      if (extra.included) {
+        extras[extra.id] = true;
+        continue;
+      }
+      const box = byId('extra-' + extra.id);
+      extras[extra.id] = !!(box && box.checked === true);
+    }
+    return extras;
+  }
+
+  function applyChoiceDefaults(forceExtras) {
+    const mods = config.pricing.modifiers;
+    if (mods) {
+      const conditionDefault = mods.condition.find(item => item.default);
+      const accessDefault = mods.access.find(item => item.default);
+      const condition = byId('condition');
+      const access = byId('access');
+      if (condition && conditionDefault && !condition.value) condition.value = conditionDefault.id;
+      if (access && accessDefault && !access.value) access.value = accessDefault.id;
+    }
+    if (!maintenance) return;
+    if (config.assumptions.visitorEditable) {
+      const rateField = byId('maintenance-rate');
+      const hoursField = byId('maintenance-minimum');
+      if (rateField && rateField.value === '') rateField.value = String(maintenance.hourlyRate.default);
+      if (hoursField && hoursField.value === '') hoursField.value = String(maintenance.minimumHours.default);
+    }
+    const size = byId('maintenance-size');
+    if (size && !size.value) {
+      const chosenSize = maintenance.sizes.find(item => item.default);
+      if (chosenSize) size.value = chosenSize.id;
+    }
+    if (!forceExtras) return;
+    for (const extra of maintenance.extras) {
+      if (extra.included) continue;
+      const box = byId('extra-' + extra.id);
+      if (box) box.checked = extra.default !== false;
+    }
+  }
+
   function readState() {
     const s = {};
-    s.service = byId('service').value;
+    s.service = fieldValue('service');
+    const service = config.pricing.services.find(item => item.id === s.service);
+    const kind = service ? service.kind : '';
     s.area = readNumber('area');
-    s.frequency = byId('frequency') ? byId('frequency').value : '';
+    s.frequency = fieldValue('frequency');
     s.length = readNumber('length');
     const height = document.querySelector('input[name="height"]:checked');
     s.height = height ? height.value : '';
     s.hours = readNumber('hours');
     s.waste = !!(byId('waste') && byId('waste').checked === true);
-    const hedge = config.pricing.services.find(item => item.kind === 'hedge');
-    const tidy = config.pricing.services.find(item => item.kind === 'tidy');
-    const lawn = config.pricing.services.find(item => item.kind === 'lawn');
+    s.maintenanceSize = fieldValue('maintenance-size');
+    s.extras = readExtras();
+    if (usesFactors(kind)) {
+      s.condition = fieldValue('condition');
+      s.access = fieldValue('access');
+      s.postcode = fieldValue('coverage-postcode').trim();
+    }
+    if (lawn && lawn.method === 'sizeBands') s.sizeBand = fieldValue('size-band');
+    if (lawn && lawn.method === 'hours') s.lawnHours = fieldValue('lawn-hours');
     // A locked firm always uses its configured rates. The address bar is not read.
     if (config.assumptions.visitorEditable) {
       s.variance = readNumber('variance');
-      if (lawn) {
+      if (lawn && lawn.ratePerM2) {
+        s.lawnRate = readNumber('lawn-rate');
+        s.lawnMinimum = readNumber('lawn-minimum');
+      } else if (lawn && lawn.visitHours) {
         s.lawnRate = readNumber('lawn-rate');
         s.lawnMinimum = readNumber('lawn-minimum');
       }
@@ -1325,11 +2272,18 @@ function boot(rawConfig) {
         s.tidyMinimum = readNumber('tidy-minimum');
         s.tidyWasteFee = readNumber('tidy-waste');
       }
+      if (maintenance) {
+        s.maintenanceRate = readNumber('maintenance-rate');
+        s.maintenanceMinimumHours = readNumber('maintenance-minimum');
+      }
     } else {
       s.variance = config.pricing.variancePercent.default;
-      if (lawn) {
+      if (lawn && lawn.ratePerM2) {
         s.lawnRate = lawn.ratePerM2.default;
         s.lawnMinimum = lawn.minimumVisit.default;
+      } else if (lawn && lawn.visitHours) {
+        s.lawnRate = lawn.visitHours.rate.default;
+        s.lawnMinimum = lawn.visitHours.minimumHours.default;
       }
       if (hedge) {
         s.hedgeRates = {};
@@ -1341,6 +2295,10 @@ function boot(rawConfig) {
         s.tidyRate = tidy.hourlyRate.default;
         s.tidyMinimum = tidy.minimumCharge.default;
         s.tidyWasteFee = tidy.wasteRemoval.default;
+      }
+      if (maintenance) {
+        s.maintenanceRate = maintenance.hourlyRate.default;
+        s.maintenanceMinimumHours = maintenance.minimumHours.default;
       }
     }
     return s;
@@ -1359,20 +2317,29 @@ function boot(rawConfig) {
       if (el) el.hidden = hidden;
     };
     setHidden('lawn-fields', kind !== 'lawn');
+    setHidden('schedule-fields', kind !== 'lawn' && kind !== 'maintenance');
     setHidden('hedge-fields', kind !== 'hedge');
     setHidden('tidy-fields', kind !== 'tidy');
+    setHidden('maintenance-fields', kind !== 'maintenance');
     setHidden('specialist-note', kind !== 'specialist');
+    setHidden('factors-section', !config.pricing.modifiers || !usesFactors(kind));
     setHidden('options-section', kind !== 'hedge' && kind !== 'tidy');
     setHidden('height-section', kind !== 'hedge');
     setHidden('waste-field', kind !== 'hedge' && kind !== 'tidy');
+  }
+
+  function clearMoney() {
+    for (const id of ['monthly-range', 'result-measure', 'result-rate', 'per-visit', 'season-visits', 'midpoint', 'monthly-average', 'year-total', 'year-monthly', 'workings', 'waste-amount']) {
+      const el = byId(id);
+      if (el) el.textContent = '';
+    }
   }
 
   function render() {
     state = readState();
     result = calculate(state);
     showPanels(state.service);
-    const fieldIds = ['area', 'frequency', 'service', 'length', 'hours', 'variance', 'lawn-rate', 'lawn-minimum', 'hedge-minimum', 'hedge-waste', 'tidy-rate', 'tidy-minimum', 'tidy-waste'];
-    const hedge = config.pricing.services.find(item => item.kind === 'hedge');
+    const fieldIds = ['area', 'frequency', 'service', 'length', 'hours', 'variance', 'lawn-rate', 'lawn-minimum', 'hedge-minimum', 'hedge-waste', 'tidy-rate', 'tidy-minimum', 'tidy-waste', 'condition', 'access', 'maintenance-size', 'maintenance-rate', 'maintenance-minimum', 'size-band', 'lawn-hours'];
     if (hedge) for (const band of hedge.heights) fieldIds.push('hedge-rate-' + band.id);
     for (const id of fieldIds) {
       const field = byId(id);
@@ -1382,6 +2349,14 @@ function boot(rawConfig) {
       errorNode.textContent = message;
       field.setAttribute('aria-invalid', message ? 'true' : 'false');
       field.setCustomValidity(message);
+    }
+    const coverage = byId('coverage-postcode');
+    const coverageError = byId('coverage-error');
+    if (coverage && coverageError) {
+      const message = result.errors.postcode || '';
+      coverageError.textContent = message;
+      coverage.setAttribute('aria-invalid', message ? 'true' : 'false');
+      if (coverage.setCustomValidity) coverage.setCustomValidity(message);
     }
     const heightMessage = result.errors.height || '';
     const heightError = byId('height-error');
@@ -1404,6 +2379,8 @@ function boot(rawConfig) {
       const invalidField = document.querySelector('[aria-invalid="true"]');
       if (invalidField) invalidField.focus();
     }
+    const visitQuestions = byId('visit-questions');
+    if (visitQuestions) visitQuestions.hidden = result.status !== 'tailored';
     if (valid) {
       byId('estimate-label').textContent = view.estimateLabel;
       byId('monthly-range').textContent = view.figure;
@@ -1427,21 +2404,30 @@ function boot(rawConfig) {
       byId('monthly-row').hidden = !view.showMonthly;
       byId('monthly-label').textContent = view.monthlyLabel;
       byId('monthly-average').textContent = view.monthly;
+      const yearRow = byId('year-row');
+      if (yearRow) yearRow.hidden = !view.showYear;
+      const yearMonthlyRow = byId('year-monthly-row');
+      if (yearMonthlyRow) yearMonthlyRow.hidden = !view.showYear;
+      if (byId('year-label')) byId('year-label').textContent = view.yearLabel;
+      if (byId('year-total')) byId('year-total').textContent = view.yearTotal;
+      if (byId('year-monthly-label')) byId('year-monthly-label').textContent = view.yearMonthlyLabel;
+      if (byId('year-monthly')) byId('year-monthly').textContent = view.yearMonthly;
       if (byId('mobile-caption')) byId('mobile-caption').textContent = view.mobileCaption;
       byId('minimum-note').hidden = !view.minimumNote;
       byId('minimum-note').textContent = view.minimumNote;
       byId('print-summary').textContent = summary();
       byId('live-result').textContent = view.live;
     } else {
-      for (const id of ['monthly-range', 'result-measure', 'result-rate', 'per-visit', 'season-visits', 'midpoint', 'monthly-average', 'workings', 'waste-amount']) {
-        const el = byId(id);
-        if (el) el.textContent = '';
-      }
+      clearMoney();
       byId('minimum-note').hidden = true;
       byId('range-track').hidden = true;
       byId('waste-row').hidden = true;
       byId('visits-row').hidden = true;
       byId('monthly-row').hidden = true;
+      const yearRow = byId('year-row');
+      if (yearRow) yearRow.hidden = true;
+      const yearMonthlyRow = byId('year-monthly-row');
+      if (yearMonthlyRow) yearMonthlyRow.hidden = true;
       byId('monthly-range').classList.remove('price-long');
       byId('mobile-range').textContent = result.status === 'tailored' ? 'Site visit needed' : 'Check your inputs';
       byId('invalid-heading').textContent = result.status === 'tailored' ? 'A site visit is needed.' : 'Check your inputs.';
@@ -1449,7 +2435,15 @@ function boot(rawConfig) {
       byId('print-summary').textContent = view.survey;
       byId('live-result').textContent = byId('invalid-heading').textContent + ' ' + byId('invalid-detail').textContent;
     }
+    if (byId('reply-promise') && view.replyTime) byId('reply-promise').textContent = view.replyTime;
+    if (byId('next-step') && view.nextStep) byId('next-step').textContent = view.nextStep;
+    const banner = byId('availability-banner');
+    if (banner) {
+      banner.hidden = !view.availability;
+      banner.textContent = view.availability || '';
+    }
     updateEnquiry();
+    updateWhatsApp();
     publishHeight();
     return result;
   }
@@ -1470,6 +2464,8 @@ function boot(rawConfig) {
     const sheet = engine.enquirySummary(state, result);
     const summaryNode = byId('enquiry-summary');
     if (summaryNode) summaryNode.textContent = sheet.summary;
+    const resultSummary = byId('result-summary');
+    if (resultSummary) resultSummary.textContent = result.status === 'invalid' ? '' : sheet.summary;
     const copyWrap = byId('enquiry-copy-wrap');
     if (copyWrap && !copyWrap.hidden && byId('enquiry-copy')) byId('enquiry-copy').value = sheet.summary;
     const extras = config.enquiry.extraFields || {};
@@ -1479,6 +2475,29 @@ function boot(rawConfig) {
     if (postcodeField) postcodeField.hidden = !extras.postcode;
     const startField = byId('enquiry-start-field');
     if (startField) startField.hidden = !extras.preferredStart;
+    const photosField = byId('enquiry-photos-field');
+    if (photosField) photosField.hidden = !(config.enquiry.photos && config.enquiry.photos.enabled);
+  }
+
+  function updateWhatsApp() {
+    const panel = byId('whatsapp-panel');
+    const button = byId('whatsapp-preview');
+    if (!panel || !button) return;
+    panel.hidden = !config.enquiry.whatsapp;
+    button.disabled = result.status === 'invalid';
+  }
+
+  function showWhatsAppDraft() {
+    if (!config.enquiry.whatsapp || !result || result.status === 'invalid') return;
+    const sheet = engine.enquirySummary(state, result);
+    const draft = engine.whatsAppDraft(sheet.summary);
+    const box = byId('whatsapp-draft');
+    if (!draft || !box) return;
+    box.hidden = false;
+    if (byId('whatsapp-url')) byId('whatsapp-url').textContent = draft.url;
+    if (byId('whatsapp-text')) byId('whatsapp-text').value = draft.text;
+    // A fictional demo, and preview mode, never leave the page. A live firm may open the draft.
+    if (!config.firm.isFictional && delivery.mode === 'live' && window.location) window.location.href = draft.url;
   }
 
   function showEnquiryStatus(message) {
@@ -1488,7 +2507,7 @@ function boot(rawConfig) {
   }
 
   function clearEnquiryErrors() {
-    for (const id of ['enquiry-name', 'enquiry-email', 'enquiry-phone', 'enquiry-postcode', 'enquiry-start', 'enquiry-message', 'enquiry-consent']) {
+    for (const id of ['enquiry-name', 'enquiry-email', 'enquiry-phone', 'enquiry-postcode', 'enquiry-start', 'enquiry-message', 'enquiry-consent', 'enquiry-timeframe', 'enquiry-budget']) {
       const field = byId(id);
       if (!field) continue;
       field.setAttribute('aria-invalid', 'false');
@@ -1514,8 +2533,24 @@ function boot(rawConfig) {
     return /^[A-Za-z0-9._:-]{1,80}$/.test(text) ? text : '';
   }
 
+  function chosenPhotos() {
+    const settings = config.enquiry.photos || { enabled: false, max: 3, maxMB: 5 };
+    if (!settings.enabled) return { names: [], files: [] };
+    const input = byId('enquiry-photos');
+    const list = input && input.files ? input.files : [];
+    const maxBytes = settings.maxMB * 1024 * 1024;
+    const files = [];
+    for (let index = 0; index < list.length; index += 1) {
+      const file = list[index];
+      if (!file || files.length >= settings.max) continue;
+      if (typeof file.size === 'number' && file.size > maxBytes) continue;
+      files.push(file);
+    }
+    return { names: files.map(file => file && file.name ? file.name : 'photo'), files };
+  }
+
   function contactFromForm() {
-    return {
+    const contact = {
       name: byId('enquiry-name').value,
       email: byId('enquiry-email').value,
       phone: byId('enquiry-phone') ? byId('enquiry-phone').value : '',
@@ -1525,9 +2560,18 @@ function boot(rawConfig) {
       consent: byId('enquiry-consent').checked === true,
       honey: byId('enquiry-company') ? byId('enquiry-company').value : ''
     };
+    if (result && result.status === 'tailored') {
+      contact.timeframe = fieldValue('enquiry-timeframe');
+      contact.budget = fieldValue('enquiry-budget');
+      contact.contactPref = fieldValue('enquiry-contact');
+    }
+    const photos = chosenPhotos();
+    contact.photoNames = photos.names;
+    return contact;
   }
 
   async function submitEnquiry() {
+    const photos = chosenPhotos();
     const draft = engine.enquiryDraft(state, result, contactFromForm());
     clearEnquiryErrors();
     if (draft.spam) {
@@ -1579,10 +2623,19 @@ function boot(rawConfig) {
         byId('enquiry-status').focus();
         return draft;
       }
+      let body = JSON.stringify(draft.payload);
+      let headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' };
+      if (photos.files.length && typeof FormData === 'function') {
+        const form = new FormData();
+        for (const [key, value] of Object.entries(draft.payload)) form.append(key, value == null ? '' : String(value));
+        for (const file of photos.files) form.append('photos', file, file.name);
+        body = form;
+        headers = { 'Accept': 'application/json' };
+      }
       const response = await window.fetch(delivery.endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(draft.payload),
+        headers,
+        body,
         credentials: 'omit',
         referrerPolicy: 'no-referrer'
       });
@@ -1618,12 +2671,31 @@ function boot(rawConfig) {
   }
 
   function publishHeight() {
-    if (!document.documentElement || window.parent === window) return;
-    const height = Math.ceil(document.documentElement.scrollHeight);
-    window.parent.postMessage({ source: 'mikaeltech-budget-demo', height }, '*');
+    try {
+      if (!document.documentElement || window.parent === window) return;
+      const height = Math.ceil(document.documentElement.scrollHeight);
+      window.parent.postMessage({ source: 'mikaeltech-budget-demo', height }, '*');
+    } catch { /* A nested site-builder frame can block this. The fixed height and the open link still work. */ }
   }
 
-  const tidy = config.pricing.services.find(item => item.kind === 'tidy');
+  function applyLayout() {
+    try {
+      const search = window.location && typeof window.location.search === 'string' ? window.location.search : '';
+      if (!/[?&]layout=compact(?:&|$)/.test(search)) return;
+      if (document.body && document.body.classList && document.body.classList.add) document.body.classList.add('layout-compact');
+    } catch { /* The address bar was not available. */ }
+  }
+
+  function vatModeLabel(mode) {
+    if (mode === 'inclusive') return 'inc VAT';
+    if (mode === 'notRegistered') return 'no VAT charged';
+    return 'ex VAT';
+  }
+
+  applyLayout();
+  const vatTag = byId('vat-tag');
+  if (vatTag && config.currency.vat) vatTag.textContent = vatModeLabel(config.currency.vat.mode);
+
   const tidySize = byId('tidy-size');
   if (tidy && tidySize) {
     tidySize.addEventListener('change', () => {
@@ -1632,10 +2704,12 @@ function boot(rawConfig) {
     });
   }
 
+  applyChoiceDefaults(true);
   byId('calculator').addEventListener('submit', event => event.preventDefault());
   byId('calculator').addEventListener('input', render);
   byId('calculator').addEventListener('change', render);
   byId('calculator').addEventListener('reset', () => setTimeout(() => {
+    applyChoiceDefaults(true);
     render();
     toast(config.firm.isFictional ? 'Sample garden and fictional rates restored.' : 'Sample garden restored.');
   }, 0));
@@ -1652,6 +2726,11 @@ function boot(rawConfig) {
   byId('enquiry-open').addEventListener('click', () => {
     render();
     if (result.status === 'invalid') return;
+    const coverage = byId('coverage-postcode');
+    const enquiryPostcode = byId('enquiry-postcode');
+    if (coverage && enquiryPostcode && !String(enquiryPostcode.value || '').trim() && String(coverage.value || '').trim()) {
+      enquiryPostcode.value = String(coverage.value).trim();
+    }
     byId('enquiry-form').hidden = false;
     byId('enquiry-open').setAttribute('aria-expanded', 'true');
     byId('enquiry-name').focus();
@@ -1660,6 +2739,12 @@ function boot(rawConfig) {
   byId('enquiry-form').addEventListener('submit', event => {
     event.preventDefault();
     submitEnquiry();
+  });
+  const whatsappButton = byId('whatsapp-preview');
+  if (whatsappButton) whatsappButton.addEventListener('click', () => {
+    render();
+    showWhatsAppDraft();
+    publishHeight();
   });
   byId('download').addEventListener('click', () => {
     if (render().status !== 'valid') return;
@@ -1690,8 +2775,8 @@ function boot(rawConfig) {
           type: 'object',
           properties: {
             service: { type: 'string', enum: config.pricing.services.map(service => service.id) },
-            area: priced && priced.kind === 'lawn' ? { type: 'number', minimum: priced.area.min, maximum: priced.area.max } : { type: 'number' },
-            frequency: priced && priced.kind === 'lawn' ? { type: 'string', enum: priced.frequencies.map(item => item.id) } : { type: 'string' }
+            area: priced && priced.kind === 'lawn' && priced.area ? { type: 'number', minimum: priced.area.min, maximum: priced.area.max } : { type: 'number' },
+            frequency: priced && priced.frequencies ? { type: 'string', enum: priced.frequencies.map(item => item.id) } : { type: 'string' }
           },
           required: ['service'],
           additionalProperties: false
@@ -1711,12 +2796,11 @@ function boot(rawConfig) {
     } catch { /* The host did not accept the optional tool. */ }
   }
 
-  const lawn = config.pricing.services.find(item => item.kind === 'lawn');
-  const hedgeService = config.pricing.services.find(item => item.kind === 'hedge');
-  const tidyService = config.pricing.services.find(item => item.kind === 'tidy');
+  const hedgeService = hedge;
+  const tidyService = tidy;
   const defaults = {
     service: config.pricing.services.find(item => item.default).id,
-    area: lawn ? lawn.area.default : null,
+    area: lawn && lawn.area ? lawn.area.default : null,
     frequency: lawn ? lawn.defaultFrequency : null,
     length: hedgeService ? hedgeService.length.default : null,
     height: hedgeService ? hedgeService.heights.find(item => item.default).id : null,
